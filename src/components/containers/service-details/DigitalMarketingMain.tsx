@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import thumbone from "public/images/service/dgm2.jpg";
-import thumbtwo from "public/images/service/dgm1.jpg";
+import thumbone from "/images/service/dgm2.jpg";
+import thumbtwo from "/images/service/dgm1.jpg";
 
 const DigitalMarketingMain = () => {
   return (

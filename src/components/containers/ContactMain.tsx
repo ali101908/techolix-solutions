@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import phone from "public/images/phone.png";
-import mail from "public/images/mail.png";
-import location from "public/images/location.png";
-import time from "public/images/time.png";
+import phone from "/images/phone.png";
+import mail from "/images/mail.png";
+import location from "/images/location.png";
+import time from "/images/time.png";
 
 const ContactMain = () => {
   return (

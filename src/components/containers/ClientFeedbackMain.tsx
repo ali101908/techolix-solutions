@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import avatar from "public/images/testimonial/client.png";
+import avatar from "/images/testimonial/client.png";
 
 const ClientFeedbackMain = () => {
   return (

@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import one from "public/images/projects/one.png";
-import two from "public/images/projects/two.png";
-import three from "public/images/projects/three.png";
-import four from "public/images/projects/four.png";
-import five from "public/images/projects/five.png";
-import six from "public/images/projects/six.png";
-import seven from "public/images/projects/seven.png";
-import eight from "public/images/projects/eight.png";
+import one from "/images/projects/one.png";
+import two from "/images/projects/two.png";
+import three from "/images/projects/three.png";
+import four from "/images/projects/four.png";
+import five from "/images/projects/five.png";
+import six from "/images/projects/six.png";
+import seven from "/images/projects/seven.png";
+import eight from "/images/projects/eight.png";
 
 const HomeFourProject = () => {
   return (

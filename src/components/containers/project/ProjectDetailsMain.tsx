@@ -3,15 +3,15 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import poster from "public/images/projects/poster.png";
-import iconone from "public/images/projects/icon-one.png";
-import icontwo from "public/images/projects/icon-two.png";
-import iconthree from "public/images/projects/icon-three.png";
-import done from "public/images/projects/d-one.png";
-import dtwo from "public/images/projects/d-two.png";
-import dthree from "public/images/projects/d-three.png";
-import dfour from "public/images/projects/d-four.png";
-import dfive from "public/images/projects/d-five.png";
+import poster from "/images/projects/poster.png";
+import iconone from "/images/projects/icon-one.png";
+import icontwo from "/images/projects/icon-two.png";
+import iconthree from "/images/projects/icon-three.png";
+import done from "/images/projects/d-one.png";
+import dtwo from "/images/projects/d-two.png";
+import dthree from "/images/projects/d-three.png";
+import dfour from "/images/projects/d-four.png";
+import dfive from "/images/projects/d-five.png";
 
 const ProjectDetailsMain = () => {
   return (

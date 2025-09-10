@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "public/images/agency/tech-icon.png";
+import logo from "/images/agency/tech-icon.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import videoframethree from "public/images/video-frame-three.png";
-import thumbsmall from "public/images/banner/four-thumb-l-sm.png";
-import fourthumb from "public/images/banner/four-thumb-l.png";
+import videoframethree from "/images/video-frame-three.png";
+import thumbsmall from "/images/banner/four-thumb-l-sm.png";
+import fourthumb from "/images/banner/four-thumb-l.png";
 
 gsap.registerPlugin(ScrollTrigger);
 const HomeFourBannerLight = () => {

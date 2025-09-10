@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "public/images/agency/tech-icon.png";
+import logo from "/images/agency/tech-icon.png";
 
 interface HeaderProps {
   openNav: boolean;

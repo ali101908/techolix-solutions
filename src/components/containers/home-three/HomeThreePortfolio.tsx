@@ -4,9 +4,9 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import eight from "public/images/portfolio/eight.png";
-import nine from "public/images/portfolio/nine.png";
-import ten from "public/images/portfolio/ten.png";
+import eight from "/images/portfolio/eight.png";
+import nine from "/images/portfolio/nine.png";
+import ten from "/images/portfolio/ten.png";
 
 const HomeThreePortfolio = () => {
   return (

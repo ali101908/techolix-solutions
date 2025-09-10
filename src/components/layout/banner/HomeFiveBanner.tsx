@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import nine from "public/images/projects/nine.png";
-import ten from "public/images/projects/ten.png";
-import eleven from "public/images/projects/eleven.png";
-import twelve from "public/images/projects/twelve.png";
-import thirteen from "public/images/projects/thirteen.png";
+import nine from "/images/projects/nine.png";
+import ten from "/images/projects/ten.png";
+import eleven from "/images/projects/eleven.png";
+import twelve from "/images/projects/twelve.png";
+import thirteen from "/images/projects/thirteen.png";
 
 gsap.registerPlugin(ScrollTrigger);
 const HomeFiveBanner = () => {

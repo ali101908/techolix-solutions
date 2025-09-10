@@ -3,12 +3,12 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import one from "public/images/sponsor/one.png";
-import two from "public/images/sponsor/two.png";
-import three from "public/images/sponsor/three.png";
-import four from "public/images/sponsor/four.png";
-import five from "public/images/sponsor/five.png";
-import six from "public/images/sponsor/six.png";
+import one from "/images/sponsor/one.png";
+import two from "/images/sponsor/two.png";
+import three from "/images/sponsor/three.png";
+import four from "/images/sponsor/four.png";
+import five from "/images/sponsor/five.png";
+import six from "/images/sponsor/six.png";
 
 const HomeTwoSponsor = () => {
   return (

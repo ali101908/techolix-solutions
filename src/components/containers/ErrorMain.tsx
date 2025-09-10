@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import thumb from "public/images/error-thumb.png";
+import thumb from "/images/error-thumb.png";
 
 const ErrorMain = () => {
   return (

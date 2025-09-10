@@ -3,12 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import hrone from "public/images/projects/fpr.png";
-import hrtwo from "public/images/projects/prp.png";
-import hrthree from "public/images/projects/tprs.png";
-import hrfour from "public/images/projects/brs.png";
-import hrfive from "public/images/projects/bf1.png";
-import hrsix from "public/images/projects/mb1.png";
+
+// Using string paths for better deployment compatibility
+const projectImages = {
+  hrone: "/images/projects/fpr.png",
+  hrtwo: "/images/projects/prp.png", 
+  hrthree: "/images/projects/tprs.png",
+  hrfour: "/images/projects/brs.png",
+  hrfive: "/images/projects/bf1.png",
+  hrsix: "/images/projects/mb1.png"
+};
 
 gsap.registerPlugin(ScrollTrigger);
 const ProjectMain = () => {
@@ -47,7 +51,7 @@ const ProjectMain = () => {
       <div className="project-sl__single">
         <div className="thumb">
           <Link href="https://firstpagerankerz.com/" target="_blank">
-            <Image src={hrone} alt="Digital Agency Website - USA Client" />
+            <Image src={projectImages.hrone} alt="Digital Agency Website - USA Client" width={600} height={400} />
           </Link>
         </div>
         <div className="content">
@@ -63,7 +67,7 @@ const ProjectMain = () => {
       <div className="project-sl__single">
         <div className="thumb">
           <Link href="https://priceritepainting.com/" target="_blank">
-            <Image src={hrtwo} alt="Painting Company Website - USA Client" />
+            <Image src={projectImages.hrtwo} alt="Painting Company Website - USA Client" width={600} height={400} />
           </Link>
         </div>
         <div className="content">
@@ -79,7 +83,7 @@ const ProjectMain = () => {
       <div className="project-sl__single">
         <div className="thumb">
           <Link href="https://toprecoveryservicesleicester.com/" target="_blank">
-            <Image src={hrthree} alt="Car Recovery Leicester - UK Client" />
+            <Image src={projectImages.hrthree} alt="Car Recovery Leicester - UK Client" width={600} height={400} />
           </Link>
         </div>
         <div className="content">
@@ -95,7 +99,7 @@ const ProjectMain = () => {
       <div className="project-sl__single">
         <div className="thumb">
           <Link href="http://brightreachsolutions.com/" target="_blank">
-            <Image src={hrfour} alt="Digital Agency Website - UK Client" />
+            <Image src={projectImages.hrfour} alt="Digital Agency Website - UK Client" width={600} height={400} />
           </Link>
         </div>
         <div className="content">
@@ -111,7 +115,7 @@ const ProjectMain = () => {
       <div className="project-sl__single">
         <div className="thumb">
           <Link href="https://boundaryfencingservices.com/" target="_blank">
-            <Image src={hrfive} alt="Fencing Services Landing Page - UK Client" />
+            <Image src={projectImages.hrfive} alt="Fencing Services Landing Page - UK Client" width={600} height={400} />
           </Link>
         </div>
         <div className="content">
@@ -127,7 +131,7 @@ const ProjectMain = () => {
       <div className="project-sl__single">
         <div className="thumb">
           <Link href="https://carbreakdownrecovery247.com/" target="_blank">
-            <Image src={hrsix} alt="Car Breakdown Recovery - UK Client" />
+            <Image src={projectImages.hrsix} alt="Car Breakdown Recovery - UK Client" width={600} height={400} />
           </Link>
         </div>
         <div className="content">

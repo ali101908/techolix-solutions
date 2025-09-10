@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import ball from "public/images/ball.png";
+import ball from "/images/ball.png";
 
 const HomeTwoOfferLight = () => {
   useEffect(() => {

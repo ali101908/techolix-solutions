@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import star from "public/images/star.png";
-import dotlarge from "public/images/agency/dot-large.png";
-import clutch from "public/images/agency/clutch.png";
-import thumbthree from "public/images/agency/thumb-three.png";
+import star from "/images/star.png";
+import dotlarge from "/images/agency/dot-large.png";
+import clutch from "/images/agency/clutch.png";
+import thumbthree from "/images/agency/thumb-three.png";
 
 const HomeThreeAgency = () => {
   return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import YoutubeEmbed from "@/components/youtube/YoutubeEmbed";
-import videoframe from "public/images/video-frame.png";
+import videoframe from "/images/video-frame.png";
 
 const WorkSteps = () => {
   const [hover, setHover] = useState(1);

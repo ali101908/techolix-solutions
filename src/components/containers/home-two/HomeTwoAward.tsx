@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import awardthumb from "public/images/banner/award-thumb.png";
-import star from "public/images/star.png";
-import dotlarge from "public/images/agency/dot-large.png";
+import awardthumb from "/images/banner/award-thumb.png";
+import star from "/images/star.png";
+import dotlarge from "/images/agency/dot-large.png";
 
 const HomeTwoAward = () => {
   return (

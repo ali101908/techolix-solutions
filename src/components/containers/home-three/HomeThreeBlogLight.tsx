@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import nine from "public/images/blog/nine.png";
-import ten from "public/images/blog/ten.png";
-import eleven from "public/images/blog/eleven.png";
+import nine from "/images/blog/nine.png";
+import ten from "/images/blog/ten.png";
+import eleven from "/images/blog/eleven.png";
 
 gsap.registerPlugin(ScrollTrigger);
 const HomeThreeBlogLight = () => {

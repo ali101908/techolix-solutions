@@ -3,10 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import thumbone from "public/images/banner/thumb-one.png";
-import thumbtwo from "public/images/banner/thumb-two.png";
-import star from "public/images/star.png";
-import dotlarge from "public/images/agency/dot-large.png";
+import thumbone from "/images/banner/thumb-one.png";
+import thumbtwo from "/images/banner/thumb-two.png";
+import star from "/images/star.png";
+import dotlarge from "/images/agency/dot-large.png";
 
 gsap.registerPlugin(ScrollTrigger);
 const Agency = () => {

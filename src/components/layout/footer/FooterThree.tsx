@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import thumb from "public/images/footer/footer-three-thumb.png";
-import logo from "public/images/agency/tech-icon.png";
+import thumb from "/images/footer/footer-three-thumb.png";
+import logo from "/images/agency/tech-icon.png";
 
 const FooterThree = () => {
   const currentYear = new Date().getFullYear();

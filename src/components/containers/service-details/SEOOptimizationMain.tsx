@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import thumbone from "public/images/service/seo1.jpg";
-import thumbtwo from "public/images/service/seo2.jpg";
+import thumbone from "/images/service/seo1.jpg";
+import thumbtwo from "/images/service/seo2.jpg";
 
 const SEOOptimizationMain = () => {
   return (

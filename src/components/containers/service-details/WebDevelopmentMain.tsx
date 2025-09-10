@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import thumbone from "public/images/service/web1.jpg";
-import thumbtwo from "public/images/service/web2.jpg";
+import thumbone from "/images/service/web1.jpg";
+import thumbtwo from "/images/service/web2.jpg";
 
 const WebDevelopmentMain = () => {
   return (

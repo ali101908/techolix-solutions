@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import one from "public/images/teams/one.png";
-import two from "public/images/teams/two.png";
-import three from "public/images/teams/three.png";
-import four from "public/images/teams/four.png";
-import five from "public/images/teams/five.png";
-import six from "public/images/teams/six.png";
+import one from "/images/teams/one.png";
+import two from "/images/teams/two.png";
+import three from "/images/teams/three.png";
+import four from "/images/teams/four.png";
+import five from "/images/teams/five.png";
+import six from "/images/teams/six.png";
 
 const TeamMain = () => {
   return (

@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import YoutubeEmbed from "@/components/youtube/YoutubeEmbed";
-import eight from "public/images/news/eight.png";
-import nine from "public/images/news/nine.png";
-import ten from "public/images/news/ten.png";
-import eleven from "public/images/news/eleven.png";
-import twelve from "public/images/news/twelve.png";
-import thirteen from "public/images/news/thirteen.png";
-import fourteen from "public/images/news/fourteen.png";
+import eight from "/images/news/eight.png";
+import nine from "/images/news/nine.png";
+import ten from "/images/news/ten.png";
+import eleven from "/images/news/eleven.png";
+import twelve from "/images/news/twelve.png";
+import thirteen from "/images/news/thirteen.png";
+import fourteen from "/images/news/fourteen.png";
 
 const BlogMain = () => {
   const [videoActive, setVideoActive] = useState(false);

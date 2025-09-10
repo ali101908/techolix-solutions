@@ -1,14 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import poster from "public/images/news/poster.png";
-import groupone from "public/images/news/group-one.png";
-import grouptwo from "public/images/news/group-two.png";
-import ten from "public/images/news/ten.png";
-import eleven from "public/images/news/eleven.png";
-import twelve from "public/images/news/twelve.png";
-import thirteen from "public/images/news/thirteen.png";
-import fourteen from "public/images/news/fourteen.png";
+import poster from "/images/news/poster.png";
+import groupone from "/images/news/group-one.png";
+import grouptwo from "/images/news/group-two.png";
+import ten from "/images/news/ten.png";
+import eleven from "/images/news/eleven.png";
+import twelve from "/images/news/twelve.png";
+import thirteen from "/images/news/thirteen.png";
+import fourteen from "/images/news/fourteen.png";
 
 const BlogDetailsMain = () => {
   return (

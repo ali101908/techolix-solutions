@@ -1,12 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import one from "public/images/teams/male-icon.png";
-import two from "public/images/teams/male-icon.png";
-import three from "public/images/teams/male-icon.png";
-import four from "public/images/teams/male-icon.png";
-import five from "public/images/teams/male-icon.png";
-import six from "public/images/teams/male-icon.png";
+import one from "/images/teams/male-icon.png";
+import two from "/images/teams/male-icon.png";
+import three from "/images/teams/male-icon.png";
+import four from "/images/teams/male-icon.png";
+import five from "/images/teams/male-icon.png";
+import six from "/images/teams/male-icon.png";
 
 const TeamMain = () => {
   return (

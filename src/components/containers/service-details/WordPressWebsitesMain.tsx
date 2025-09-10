@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import thumbone from "public/images/service/word.jpg";
-import thumbtwo from "public/images/service/wdp.jpg";
+import thumbone from "/images/service/word.jpg";
+import thumbtwo from "/images/service/wdp.jpg";
 
 const WordPressWebsitesMain = () => {
   return (

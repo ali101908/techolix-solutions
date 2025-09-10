@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import one from "public/images/teams/one.png";
+import one from "/images/teams/one.png";
 
 gsap.registerPlugin(ScrollTrigger);
 const TeamDetailsMain = () => {

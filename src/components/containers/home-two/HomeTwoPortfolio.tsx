@@ -4,12 +4,12 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import one from "public/images/projects/fpr.png";
-import two from "public/images/projects/prp.png";
-import three from "public/images/projects/brs.png";
-import four from "public/images/projects/mb1.png";
-import five from "public/images/projects/tprs.png";
-import six from "public/images/projects/bf1.png";
+import one from "/images/projects/fpr.png";
+import two from "/images/projects/prp.png";
+import three from "/images/projects/brs.png";
+import four from "/images/projects/mb1.png";
+import five from "/images/projects/tprs.png";
+import six from "/images/projects/bf1.png";
 
 const HomeTwoPortfolio = () => {
   const [activeFilter, setActiveFilter] = useState("*");
