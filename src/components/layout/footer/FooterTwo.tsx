@@ -113,7 +113,7 @@ const FooterTwo = () => {
             <div className="footer-two__left">
               <div className="logo">
                 <Link href="/">
-                  <Image src={logo} priority alt="Image" height={100}/>
+                  <Image src={logo} priority alt="Image" height={100} width={100}/>
                 </Link>
               </div>
               <div className="paragraph">

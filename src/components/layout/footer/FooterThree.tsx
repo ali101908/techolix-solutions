@@ -13,7 +13,7 @@ const FooterThree = () => {
           <div className="col-12 col-lg-4">
             <div className="footer-three__single">
               <div className="footer-thumb">
-                <Image src={thumb} alt="Image" height={100}/>
+                <Image src={thumb} alt="Image" height={100} width={100}/>
                 <div className="footer-thumb__content">
                   <h5>Techolix Solutions, USA</h5>
                 </div>
@@ -229,7 +229,7 @@ const FooterThree = () => {
                   <div className="col-12 col-lg-4">
                     <div className="text-center text-lg-end">
                       <Link href="/" className="logo">
-                        <Image src={logo} alt="Image" />
+                        <Image src={logo} alt="Image" height={100} width={100} />
                       </Link>
                     </div>
                   </div>

@@ -55,7 +55,7 @@ const HeaderFour = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
                 <nav className="navbar p-0">
                   <div className="navbar__logo">
                     <Link href="/" aria-label="go to home">
-                      <Image src={logoSrc} alt="Image" height={100} />
+                      <Image src={logoSrc} alt="Image" height={100} width={100} />
                     </Link>
                   </div>
                   <div className="navbar__options">

@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="col-12 col-lg-5 col-xl-6">
             <div className="footer__single">
               <Link href="/" className="logo">
-                <Image src={logo} alt="Image" height={100}/>
+                <Image src={logo} alt="Image" height={100} width={100}/>
               </Link>
               <div className="footer__single-meta">
                 <Link
