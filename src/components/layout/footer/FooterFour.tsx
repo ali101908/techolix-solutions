@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import logo from "public/images/logo.png";
+import logo from "public/images/agency/tech-icon.png";
 import logoLight from "public/images/logo-light.png";
 
 const FooterFour = () => {
@@ -98,7 +98,7 @@ const FooterFour = () => {
                   <div className="col-12 col-lg-4">
                     <div className="text-center text-lg-end">
                       <Link href="/" className="logo">
-                        <Image src={logoSrc} alt="Image" />
+                        <Image src={logoSrc} alt="Image" height={100} />
                       </Link>
                     </div>
                   </div>

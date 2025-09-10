@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import logo from "public/images/logo.png";
+import logo from "public/images/agency/tech-icon.png";
 import logoLight from "public/images/logo-light.png";
 import Offcanvas from "./Offcanvas";
 
@@ -54,8 +54,8 @@ const HeaderFive = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
               <div className="col-12">
                 <nav className="navbar p-0">
                   <div className="navbar__logo">
-                    <Link href="/" aria-label="go to home">
-                      <Image src={logoSrc} alt="Image" />
+                   <Link href="/" aria-label="go to home">
+                      <Image src={logoSrc} alt="Image" priority height={100}/>
                     </Link>
                     <button
                       className="open-offcanvas-nav d-none d-xl-flex"

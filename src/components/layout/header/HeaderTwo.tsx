@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import logo from "public/images/logo.png";
+import logo from "public/images/agency/tech-icon.png";
 import logoLight from "public/images/logo-light.png";
 import Offcanvas from "./Offcanvas";
 
@@ -55,7 +55,7 @@ const HeaderTwo = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
                 <nav className="navbar p-0">
                   <div className="navbar__logo">
                     <Link href="/" aria-label="go to home">
-                      <Image src={logoSrc} priority alt="Image" />
+                      <Image src={logoSrc} priority alt="Image" height={100} />
                     </Link>
                   </div>
                   <div className="navbar__menu">

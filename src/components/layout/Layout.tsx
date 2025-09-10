@@ -177,7 +177,7 @@ const Layout = ({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
           rel="shortcut icon"
-          href="/images/favicon.png"
+          href="/images/agency/tech-icon.png"
           type="image/x-icon"
         />
         <title>Techolix Solutions | Digital Agency for Web Design & Development </title>

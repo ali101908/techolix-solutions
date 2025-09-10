@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "public/images/logo.png";
+import logo from "public/images/agency/tech-icon.png";
 
 interface HeaderProps {
   openNav: boolean;
@@ -72,7 +72,7 @@ const Offcanvas = ({ openNav, setOpenNav }: HeaderProps) => {
           <div className="offcanvas-menu__header nav-fade">
             <div className="logo">
               <Link href="/">
-                <Image src={logo} alt="Image" title="Image" priority />
+                <Image src={logo} alt="Image" title="Image" priority  height={100}/>
               </Link>
             </div>
             <button
@@ -142,9 +142,9 @@ const Offcanvas = ({ openNav, setOpenNav }: HeaderProps) => {
           </div>
           <div className="offcanvas-menu__options nav-fade">
             <div className="offcanvas__mobile-options d-flex">
-              <Link href="contact-us" className="btn btn--secondary">
-                Let&apos;s Talk
-              </Link>
+               <Link href="tel:+13025795453" className="btn btn--secondary">
+                       +1 (302) 579-5453
+                      </Link>
             </div>
           </div>
           <div className="offcanvas-menu__social social nav-fade">

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import thumb from "public/images/footer/footer-three-thumb.png";
-import logo from "public/images/logo.png";
+import logo from "public/images/agency/tech-icon.png";
 
 const FooterThree = () => {
   const currentYear = new Date().getFullYear();
@@ -13,7 +13,7 @@ const FooterThree = () => {
           <div className="col-12 col-lg-4">
             <div className="footer-three__single">
               <div className="footer-thumb">
-                <Image src={thumb} alt="Image" />
+                <Image src={thumb} alt="Image" height={100}/>
                 <div className="footer-thumb__content">
                   <h5>Techolix Solutions, USA</h5>
                 </div>

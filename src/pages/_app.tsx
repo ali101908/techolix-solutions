@@ -13,9 +13,13 @@ import "public/icons/glyphter/css/xpovio.css";
 // main scss
 import "@/styles/main.scss";
 
+// preloader
+import Preloader from "@/components/layout/Preloader";
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Suspense fallback={<div>Loading...</div>}>
+      <Preloader />
       <Component {...pageProps} />
     </Suspense>
   );
