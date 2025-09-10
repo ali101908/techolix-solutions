@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import one from "/images/portfolio/one.png";
-import two from "/images/portfolio/two.png";
-import three from "/images/portfolio/three.png";
-import four from "/images/portfolio/four.png";
-import five from "/images/portfolio/five.png";
-import six from "/images/portfolio/six.png";
-import seven from "/images/portfolio/seven.png";
-import dot from "/images/portfolio/dot.png";
+const one = "/images/portfolio/one.png";
+const two = "/images/portfolio/two.png";
+const three = "/images/portfolio/three.png";
+const four = "/images/portfolio/four.png";
+const five = "/images/portfolio/five.png";
+const six = "/images/portfolio/six.png";
+const seven = "/images/portfolio/seven.png";
+const dot = "/images/portfolio/dot.png";
 
 const PortfolioText = () => {
   const [hover, setHover] = useState(0);
@@ -282,3 +282,4 @@ const PortfolioText = () => {
 };
 
 export default PortfolioText;
+

@@ -1,8 +1,8 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import one from "/images/blog/one.png";
-import two from "/images/blog/two.png";
+const one = "/images/blog/one.png";
+const two = "/images/blog/two.png";
 
 const HomeBlog = () => {
   return (
@@ -73,3 +73,4 @@ const HomeBlog = () => {
 };
 
 export default HomeBlog;
+

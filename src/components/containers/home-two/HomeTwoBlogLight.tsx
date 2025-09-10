@@ -1,12 +1,12 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import three from "/images/blog/three.png";
-import four from "/images/blog/four.png";
-import five from "/images/blog/five.png";
+const three = "/images/blog/three.png";
+const four = "/images/blog/four.png";
+const five = "/images/blog/five.png";
 
 const HomeTwoBlogLight = () => {
   return (
@@ -292,3 +292,4 @@ const HomeTwoBlogLight = () => {
 };
 
 export default HomeTwoBlogLight;
+

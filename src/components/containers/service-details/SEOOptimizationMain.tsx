@@ -1,7 +1,7 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
-import thumbone from "/images/service/seo1.jpg";
-import thumbtwo from "/images/service/seo2.jpg";
+const thumbone = "/images/service/seo1.jpg";
+const thumbtwo = "/images/service/seo2.jpg";
 
 const SEOOptimizationMain = () => {
   return (
@@ -61,3 +61,4 @@ const SEOOptimizationMain = () => {
 };
 
 export default SEOOptimizationMain;
+

@@ -1,15 +1,15 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import one from "/images/teams/male-icon.png";
-import two from "/images/teams/male-icon.png";
-import three from "/images/teams/male-icon.png";
-import four from "/images/teams/male-icon.png";
-import five from "/images/teams/male-icon.png";
-import six from "/images/teams/male-icon.png";
+const one = "/images/teams/male-icon.png";
+const two = "/images/teams/male-icon.png";
+const three = "/images/teams/male-icon.png";
+const four = "/images/teams/male-icon.png";
+const five = "/images/teams/male-icon.png";
+const six = "/images/teams/male-icon.png";
 
 const TeamMembers = () => {
   return (
@@ -499,3 +499,4 @@ const TeamMembers = () => {
 };
 
 export default TeamMembers;
+

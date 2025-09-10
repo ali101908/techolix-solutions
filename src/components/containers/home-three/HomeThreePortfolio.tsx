@@ -1,12 +1,12 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import eight from "/images/portfolio/eight.png";
-import nine from "/images/portfolio/nine.png";
-import ten from "/images/portfolio/ten.png";
+const eight = "/images/portfolio/eight.png";
+const nine = "/images/portfolio/nine.png";
+const ten = "/images/portfolio/ten.png";
 
 const HomeThreePortfolio = () => {
   return (
@@ -238,3 +238,4 @@ const HomeThreePortfolio = () => {
 };
 
 export default HomeThreePortfolio;
+

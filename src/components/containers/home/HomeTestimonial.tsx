@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import sthumb from "/images/testimonial/client.png";
-import sthumbtwo from "/images/testimonial/client.png";
-import sthumbthree from "/images/testimonial/client.png";
+const sthumb = "/images/testimonial/client.png";
+const sthumbtwo = "/images/testimonial/client.png";
+const sthumbthree = "/images/testimonial/client.png";
 
 const HomeTestimonial = () => {
   const [nextSlideIndex, setNextSlideIndex] = useState<number>(1);
@@ -295,3 +295,4 @@ const HomeTestimonial = () => {
 };
 
 export default HomeTestimonial;
+

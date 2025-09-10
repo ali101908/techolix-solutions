@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import YoutubeEmbed from "@/components/youtube/YoutubeEmbed";
-import eight from "/images/news/eight.png";
-import nine from "/images/news/nine.png";
-import ten from "/images/news/ten.png";
-import eleven from "/images/news/eleven.png";
-import twelve from "/images/news/twelve.png";
-import thirteen from "/images/news/thirteen.png";
-import fourteen from "/images/news/fourteen.png";
+const eight = "/images/news/eight.png";
+const nine = "/images/news/nine.png";
+const ten = "/images/news/ten.png";
+const eleven = "/images/news/eleven.png";
+const twelve = "/images/news/twelve.png";
+const thirteen = "/images/news/thirteen.png";
+const fourteen = "/images/news/fourteen.png";
 
 const BlogMain = () => {
   const [videoActive, setVideoActive] = useState(false);
@@ -375,3 +375,4 @@ const BlogMain = () => {
 };
 
 export default BlogMain;
+

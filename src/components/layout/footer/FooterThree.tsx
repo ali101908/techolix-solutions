@@ -1,8 +1,8 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import thumb from "/images/footer/footer-three-thumb.png";
-import logo from "/images/agency/tech-icon.png";
+const thumb = "/images/footer/footer-three-thumb.png";
+const logo = "/images/agency/tech-icon.png";
 
 const FooterThree = () => {
   const currentYear = new Date().getFullYear();
@@ -244,3 +244,4 @@ const FooterThree = () => {
 };
 
 export default FooterThree;
+

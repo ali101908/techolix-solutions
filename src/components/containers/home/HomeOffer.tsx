@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+﻿import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import blogthumb from "/images/offer/blog-thumb.png";
-import two from "/images/offer/two.png";
-import three from "/images/offer/three.png";
-import star from "/images/offer/star.png";
+const blogthumb = "/images/offer/blog-thumb.png";
+const two = "/images/offer/two.png";
+const three = "/images/offer/three.png";
+const star = "/images/offer/star.png";
 
 const HomeOffer = () => {
   useEffect(() => {
@@ -138,3 +138,4 @@ const HomeOffer = () => {
 };
 
 export default HomeOffer;
+

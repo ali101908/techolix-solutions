@@ -1,9 +1,9 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import logo from "/images/agency/tech-icon.png";
-import logoLight from "/images/logo-light.png";
+const logo = "/images/agency/tech-icon.png";
+const logoLight = "/images/logo-light.png";
 
 const FooterFour = () => {
   const currentYear = new Date().getFullYear();
@@ -27,7 +27,7 @@ const FooterFour = () => {
             <div className="footer-four__content">
               <div className="intro text-center">
                 <h2 className="light-title text-uppercase title-anim">
-                  Let&apos;s make some magic ✨ happen and show the world what
+                  Let&apos;s make some magic âœ¨ happen and show the world what
                   your brand is all about!
                 </h2>
               </div>
@@ -113,3 +113,4 @@ const FooterFour = () => {
 };
 
 export default FooterFour;
+

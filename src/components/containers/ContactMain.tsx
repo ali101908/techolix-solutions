@@ -1,10 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import phone from "/images/phone.png";
-import mail from "/images/mail.png";
-import location from "/images/location.png";
-import time from "/images/time.png";
 
 const ContactMain = () => {
   return (
@@ -14,7 +10,7 @@ const ContactMain = () => {
           <div className="col-12 col-sm-6 col-xl-3">
             <div className="contact-m__single topy-tilt fade-top">
               <div className="thumb">
-                <Image src={phone} alt="Image" />
+                <Image src="/images/phone.png" alt="Image" width={60} height={60} />
               </div>
               <div className="content">
                 <h4>Phone & Contact</h4>
@@ -30,7 +26,7 @@ const ContactMain = () => {
           <div className="col-12 col-sm-6 col-xl-3">
             <div className="contact-m__single topy-tilt fade-top">
               <div className="thumb">
-                <Image src={mail} alt="Image" />
+                <Image src="/images/mail.png" alt="Image" width={60} height={60} />
               </div>
               <div className="content">
                 <h4>Email Support</h4>
@@ -50,7 +46,7 @@ const ContactMain = () => {
           <div className="col-12 col-sm-6 col-xl-3">
             <div className="contact-m__single topy-tilt fade-top">
               <div className="thumb">
-                <Image src={location} alt="Image" />
+                <Image src="/images/location.png" alt="Image" width={60} height={60} />
               </div>
               <div className="content">
                 <h4>Service Areas</h4>
@@ -68,7 +64,7 @@ const ContactMain = () => {
           <div className="col-12 col-sm-6 col-xl-3">
             <div className="contact-m__single topy-tilt fade-top">
               <div className="thumb">
-                <Image src={time} alt="Image" />
+                <Image src="/images/time.png" alt="Image" width={60} height={60} />
               </div>
               <div className="content">
                 <h4>Office Hour</h4>

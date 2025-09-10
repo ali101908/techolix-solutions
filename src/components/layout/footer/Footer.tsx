@@ -1,7 +1,7 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "/images/agency/tech-icon.png";
+const logo = "/images/agency/tech-icon.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -140,3 +140,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

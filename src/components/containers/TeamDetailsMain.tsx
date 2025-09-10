@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+﻿import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import one from "/images/teams/one.png";
+const one = "/images/teams/one.png";
 
 gsap.registerPlugin(ScrollTrigger);
 const TeamDetailsMain = () => {
@@ -227,3 +227,4 @@ const TeamDetailsMain = () => {
 };
 
 export default TeamDetailsMain;
+

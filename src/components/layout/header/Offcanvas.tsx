@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "/images/agency/tech-icon.png";
+const logo = "/images/agency/tech-icon.png";
 
 interface HeaderProps {
   openNav: boolean;
@@ -184,3 +184,4 @@ const Offcanvas = ({ openNav, setOpenNav }: HeaderProps) => {
 };
 
 export default Offcanvas;
+

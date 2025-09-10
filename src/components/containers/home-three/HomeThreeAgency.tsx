@@ -1,10 +1,10 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import star from "/images/star.png";
-import dotlarge from "/images/agency/dot-large.png";
-import clutch from "/images/agency/clutch.png";
-import thumbthree from "/images/agency/thumb-three.png";
+const star = "/images/star.png";
+const dotlarge = "/images/agency/dot-large.png";
+const clutch = "/images/agency/clutch.png";
+const thumbthree = "/images/agency/thumb-three.png";
 
 const HomeThreeAgency = () => {
   return (
@@ -70,3 +70,4 @@ const HomeThreeAgency = () => {
 };
 
 export default HomeThreeAgency;
+

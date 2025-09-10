@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+﻿import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "/images/agency/tech-icon.png";
+const logo = "/images/agency/tech-icon.png";
 import gsap from "gsap";
 import chroma from "chroma-js";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -226,3 +226,4 @@ const FooterTwo = () => {
 };
 
 export default FooterTwo;
+

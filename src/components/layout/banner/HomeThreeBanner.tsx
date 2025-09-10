@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import YoutubeEmbed from "@/components/youtube/YoutubeEmbed";
-import videobg from "/images/banner/video-bg.png";
-import dotlarge from "/images/agency/dot-large.png";
-import arrow from "/images/banner/arrow.png";
+const videobg = "/images/banner/video-bg.png";
+const dotlarge = "/images/agency/dot-large.png";
+const arrow = "/images/banner/arrow.png";
 
 const HomeThreeBanner = () => {
   const [videoActive, setVideoActive] = useState(false);
@@ -236,3 +236,4 @@ const HomeThreeBanner = () => {
 };
 
 export default HomeThreeBanner;
+

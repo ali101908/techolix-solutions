@@ -1,7 +1,7 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
-import thumbone from "/images/service/thumb-one.png";
-import thumbtwo from "/images/service/thumb-two.png";
+const thumbone = "/images/service/thumb-one.png";
+const thumbtwo = "/images/service/thumb-two.png";
 
 const ServiceDetailsMain = () => {
   return (
@@ -71,3 +71,4 @@ const ServiceDetailsMain = () => {
 };
 
 export default ServiceDetailsMain;
+

@@ -1,7 +1,7 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
-import thumbone from "/images/service/word.jpg";
-import thumbtwo from "/images/service/wdp.jpg";
+const thumbone = "/images/service/word.jpg";
+const thumbtwo = "/images/service/wdp.jpg";
 
 const WordPressWebsitesMain = () => {
   return (
@@ -61,3 +61,4 @@ const WordPressWebsitesMain = () => {
 };
 
 export default WordPressWebsitesMain;
+

@@ -1,7 +1,7 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
-import thumbone from "/images/service/g-ads2.jpg";
-import thumbtwo from "/images/service/g-ads.jpg";
+const thumbone = "/images/service/g-ads2.jpg";
+const thumbtwo = "/images/service/g-ads.jpg";
 
 const GoogleAdsMain = () => {
   return (
@@ -61,3 +61,4 @@ const GoogleAdsMain = () => {
 };
 
 export default GoogleAdsMain;
+

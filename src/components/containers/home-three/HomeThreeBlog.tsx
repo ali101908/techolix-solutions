@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import nine from "/images/blog/nine.png";
-import ten from "/images/blog/ten.png";
-import eleven from "/images/blog/eleven.png";
+const nine = "/images/blog/nine.png";
+const ten = "/images/blog/ten.png";
+const eleven = "/images/blog/eleven.png";
 
 gsap.registerPlugin(ScrollTrigger);
 const HomeThreeBlog = () => {
@@ -135,3 +135,4 @@ const HomeThreeBlog = () => {
 };
 
 export default HomeThreeBlog;
+

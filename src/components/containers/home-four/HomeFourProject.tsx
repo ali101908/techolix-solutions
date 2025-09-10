@@ -1,14 +1,14 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import one from "/images/projects/one.png";
-import two from "/images/projects/two.png";
-import three from "/images/projects/three.png";
-import four from "/images/projects/four.png";
-import five from "/images/projects/five.png";
-import six from "/images/projects/six.png";
-import seven from "/images/projects/seven.png";
-import eight from "/images/projects/eight.png";
+const one = "/images/projects/one.png";
+const two = "/images/projects/two.png";
+const three = "/images/projects/three.png";
+const four = "/images/projects/four.png";
+const five = "/images/projects/five.png";
+const six = "/images/projects/six.png";
+const seven = "/images/projects/seven.png";
+const eight = "/images/projects/eight.png";
 
 const HomeFourProject = () => {
   return (
@@ -195,3 +195,4 @@ const HomeFourProject = () => {
 };
 
 export default HomeFourProject;
+

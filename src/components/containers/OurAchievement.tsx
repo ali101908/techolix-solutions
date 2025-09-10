@@ -1,13 +1,13 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import one from "/images/achievement/one.png";
-import two from "/images/achievement/two.png";
-import three from "/images/achievement/three.png";
-import four from "/images/achievement/four.png";
-import five from "/images/achievement/five.png";
+const one = "/images/achievement/one.png";
+const two = "/images/achievement/two.png";
+const three = "/images/achievement/three.png";
+const four = "/images/achievement/four.png";
+const five = "/images/achievement/five.png";
 
 const OurAchievement = () => {
   return (
@@ -113,3 +113,4 @@ const OurAchievement = () => {
 };
 
 export default OurAchievement;
+

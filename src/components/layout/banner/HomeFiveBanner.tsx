@@ -1,13 +1,13 @@
-import React, { useEffect, useRef } from "react";
+﻿import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import nine from "/images/projects/nine.png";
-import ten from "/images/projects/ten.png";
-import eleven from "/images/projects/eleven.png";
-import twelve from "/images/projects/twelve.png";
-import thirteen from "/images/projects/thirteen.png";
+const nine = "/images/projects/nine.png";
+const ten = "/images/projects/ten.png";
+const eleven = "/images/projects/eleven.png";
+const twelve = "/images/projects/twelve.png";
+const thirteen = "/images/projects/thirteen.png";
 
 gsap.registerPlugin(ScrollTrigger);
 const HomeFiveBanner = () => {
@@ -190,3 +190,4 @@ const HomeFiveBanner = () => {
 };
 
 export default HomeFiveBanner;
+

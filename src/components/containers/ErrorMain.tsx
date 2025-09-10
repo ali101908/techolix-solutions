@@ -1,7 +1,7 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import thumb from "/images/error-thumb.png";
+const thumb = "/images/error-thumb.png";
 
 const ErrorMain = () => {
   return (
@@ -29,3 +29,4 @@ const ErrorMain = () => {
 };
 
 export default ErrorMain;
+

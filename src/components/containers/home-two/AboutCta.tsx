@@ -1,6 +1,6 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
-import star from "/images/testimonial/star.png";
+const star = "/images/testimonial/star.png";
 
 const AboutCta = () => {
   return (
@@ -48,3 +48,4 @@ const AboutCta = () => {
 };
 
 export default AboutCta;
+

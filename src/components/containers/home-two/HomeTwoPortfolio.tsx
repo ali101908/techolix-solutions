@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import one from "/images/projects/fpr.png";
-import two from "/images/projects/prp.png";
-import three from "/images/projects/brs.png";
-import four from "/images/projects/mb1.png";
-import five from "/images/projects/tprs.png";
-import six from "/images/projects/bf1.png";
+const one = "/images/projects/fpr.png";
+const two = "/images/projects/prp.png";
+const three = "/images/projects/brs.png";
+const four = "/images/projects/mb1.png";
+const five = "/images/projects/tprs.png";
+const six = "/images/projects/bf1.png";
 
 const HomeTwoPortfolio = () => {
   const [activeFilter, setActiveFilter] = useState("*");
@@ -691,3 +691,4 @@ const HomeTwoPortfolio = () => {
 };
 
 export default HomeTwoPortfolio;
+

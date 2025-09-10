@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "/images/agency/tech-icon.png";
-import logoLight from "/images/logo-light.png";
+const logo = "/images/agency/tech-icon.png";
+const logoLight = "/images/logo-light.png";
 import Offcanvas from "./Offcanvas";
 
 interface HeaderProps {
@@ -78,3 +78,4 @@ const Header = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
 };
 
 export default Header;
+

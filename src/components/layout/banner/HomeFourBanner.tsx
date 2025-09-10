@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+﻿import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import videoframethree from "/images/video-frame-three.png";
-import thumbsmall from "/images/banner/four-thumb-small.png";
-import fourthumb from "/images/banner/four-thumb.png";
+const videoframethree = "/images/video-frame-three.png";
+const thumbsmall = "/images/banner/four-thumb-small.png";
+const fourthumb = "/images/banner/four-thumb.png";
 
 gsap.registerPlugin(ScrollTrigger);
 const HomeFourBanner = () => {
@@ -73,3 +73,4 @@ const HomeFourBanner = () => {
 };
 
 export default HomeFourBanner;
+

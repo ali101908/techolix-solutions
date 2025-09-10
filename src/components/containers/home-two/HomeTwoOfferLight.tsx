@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+﻿import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import ball from "/images/ball.png";
+const ball = "/images/ball.png";
 
 const HomeTwoOfferLight = () => {
   useEffect(() => {
@@ -470,3 +470,4 @@ const HomeTwoOfferLight = () => {
 };
 
 export default HomeTwoOfferLight;
+

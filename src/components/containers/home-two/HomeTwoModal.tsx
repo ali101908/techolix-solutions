@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import modalbg from "/images/banner/grpbg4.jpg";
-import frame from "/images/video-frame-two.png";
+const modalbg = "/images/banner/grpbg4.jpg";
+const frame = "/images/video-frame-two.png";
 import YoutubeEmbed from "@/components/youtube/YoutubeEmbed";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -71,3 +71,4 @@ const HomeTwoModal = () => {
 };
 
 export default HomeTwoModal;
+

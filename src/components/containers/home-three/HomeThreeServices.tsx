@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import dotlarge from "/images/agency/dot-large.png";
-import one from "/images/service/one.png";
+const dotlarge = "/images/agency/dot-large.png";
+const one = "/images/service/one.png";
 
 const HomeThreeServices = () => {
   const [imgTab, setImgTab] = useState(0);
@@ -241,3 +241,4 @@ const HomeThreeServices = () => {
 };
 
 export default HomeThreeServices;
+

@@ -1,14 +1,14 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import poster from "/images/news/poster.png";
-import groupone from "/images/news/group-one.png";
-import grouptwo from "/images/news/group-two.png";
-import ten from "/images/news/ten.png";
-import eleven from "/images/news/eleven.png";
-import twelve from "/images/news/twelve.png";
-import thirteen from "/images/news/thirteen.png";
-import fourteen from "/images/news/fourteen.png";
+const poster = "/images/news/poster.png";
+const groupone = "/images/news/group-one.png";
+const grouptwo = "/images/news/group-two.png";
+const ten = "/images/news/ten.png";
+const eleven = "/images/news/eleven.png";
+const twelve = "/images/news/twelve.png";
+const thirteen = "/images/news/thirteen.png";
+const fourteen = "/images/news/fourteen.png";
 
 const BlogDetailsMain = () => {
   return (
@@ -408,3 +408,4 @@ const BlogDetailsMain = () => {
 };
 
 export default BlogDetailsMain;
+

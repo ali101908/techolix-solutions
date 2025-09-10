@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import Image from "next/image";
-import thumb from "/images/agency/faq-thumb.png";
+const thumb = "/images/agency/faq-thumb.png";
 
 const TecholixFaqMain = () => {
   const [imgTab, setImgTab] = useState(0);
@@ -142,3 +142,4 @@ const TecholixFaqMain = () => {
 };
 
 export default TecholixFaqMain;
+

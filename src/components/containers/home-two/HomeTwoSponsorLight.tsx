@@ -1,14 +1,14 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import one from "/images/sponsor/one-dark.png";
-import two from "/images/sponsor/two-dark.png";
-import three from "/images/sponsor/three-dark.png";
-import four from "/images/sponsor/four-dark.png";
-import five from "/images/sponsor/five-dark.png";
-import six from "/images/sponsor/six-dark.png";
+const one = "/images/sponsor/one-dark.png";
+const two = "/images/sponsor/two-dark.png";
+const three = "/images/sponsor/three-dark.png";
+const four = "/images/sponsor/four-dark.png";
+const five = "/images/sponsor/five-dark.png";
+const six = "/images/sponsor/six-dark.png";
 
 const HomeTwoSponsorLight = () => {
   return (
@@ -158,3 +158,4 @@ const HomeTwoSponsorLight = () => {
 };
 
 export default HomeTwoSponsorLight;
+

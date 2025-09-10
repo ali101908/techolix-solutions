@@ -1,7 +1,7 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
-import thumbone from "/images/service/web1.jpg";
-import thumbtwo from "/images/service/web2.jpg";
+const thumbone = "/images/service/web1.jpg";
+const thumbtwo = "/images/service/web2.jpg";
 
 const WebDevelopmentMain = () => {
   return (
@@ -61,3 +61,4 @@ const WebDevelopmentMain = () => {
 };
 
 export default WebDevelopmentMain;
+

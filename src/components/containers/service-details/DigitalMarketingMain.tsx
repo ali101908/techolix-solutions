@@ -1,7 +1,7 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
-import thumbone from "/images/service/dgm2.jpg";
-import thumbtwo from "/images/service/dgm1.jpg";
+const thumbone = "/images/service/dgm2.jpg";
+const thumbtwo = "/images/service/dgm1.jpg";
 
 const DigitalMarketingMain = () => {
   return (
@@ -61,3 +61,4 @@ const DigitalMarketingMain = () => {
 };
 
 export default DigitalMarketingMain;
+

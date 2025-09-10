@@ -1,7 +1,7 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
-import thumbone from "/images/service/shop2.jpg";
-import thumbtwo from "/images/service/shop1.jpg";
+const thumbone = "/images/service/shop2.jpg";
+const thumbtwo = "/images/service/shop1.jpg";
 
 const ShopifyDevelopmentMain = () => {
   return (
@@ -61,3 +61,4 @@ const ShopifyDevelopmentMain = () => {
 };
 
 export default ShopifyDevelopmentMain;
+
