@@ -161,6 +161,9 @@ const ProjectMain = () => {
                               alt={project.alt} 
                               width={400} 
                               height={300}
+                              priority={index === 0}
+                              placeholder="blur"
+                              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                               style={{ width: '100%', height: 'auto' }}
                             />
                           </Link>
@@ -180,7 +183,7 @@ const ProjectMain = () => {
                 </Swiper>
                 
                 {/* Navigation buttons */}
-                <div className="project-mobile-navigation">
+                {/* <div className="project-mobile-navigation">
                   <button className="project-prev">
                     <i className="fa-light fa-angle-left"></i>
                   </button>
@@ -188,7 +191,7 @@ const ProjectMain = () => {
                   <button className="project-next">
                     <i className="fa-light fa-angle-right"></i>
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -200,7 +203,15 @@ const ProjectMain = () => {
             <div key={index} className="project-sl__single">
               <div className="thumb">
                 <Link href={project.link} target="_blank">
-                  <Image src={project.image} alt={project.alt} width={600} height={400} />
+                  <Image 
+                    src={project.image} 
+                    alt={project.alt} 
+                    width={600} 
+                    height={400} 
+                    priority={index === 0}
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                  />
                 </Link>
               </div>
               <div className="content">
