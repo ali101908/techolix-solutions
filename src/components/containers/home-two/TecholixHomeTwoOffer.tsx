@@ -1,10 +1,9 @@
-﻿import React, { useEffect } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-const ball = "/images/ball.png";
 
 const TecholixHomeTwoOffer = () => {
   useEffect(() => {
@@ -72,7 +71,7 @@ const TecholixHomeTwoOffer = () => {
                   <Link href="web-development">Web Development</Link>
                 </h2>
                 <div className="offer-thumb-hover d-none d-md-block">
-                  <Image src={ball} alt="Image" />
+                  <Image src="/images/ball.png" width={40} height={40} alt="Image" />
                 </div>
               </div>
             </div>
@@ -88,7 +87,7 @@ const TecholixHomeTwoOffer = () => {
                   <Link href="wordpress-websites">WordPress Websites</Link>
                 </h2>
                 <div className="offer-thumb-hover d-none d-md-block">
-                  <Image src={ball} alt="Image" />
+                  <Image src="/images/ball.png" width={40} height={40} alt="Image" />
                 </div>
               </div>
             </div>
@@ -104,7 +103,7 @@ const TecholixHomeTwoOffer = () => {
                   <Link href="google-ads">Google Ads</Link>
                 </h2>
                 <div className="offer-thumb-hover d-none d-md-block">
-                  <Image src={ball} alt="Image" />
+                  <Image src="/images/ball.png" width={40} height={40} alt="Image" />
                 </div>
               </div>
             </div>
@@ -120,7 +119,7 @@ const TecholixHomeTwoOffer = () => {
                   <Link href="seo-optimization">SEO Optimization</Link>
                 </h2>
                 <div className="offer-thumb-hover d-none d-md-block">
-                  <Image src={ball} alt="Image" />
+                  <Image src="/images/ball.png" width={40} height={40} alt="Image" />
                 </div>
               </div>
             </div>
@@ -136,7 +135,7 @@ const TecholixHomeTwoOffer = () => {
                   <Link href="shopify-development">Shopify Development</Link>
                 </h2>
                 <div className="offer-thumb-hover d-none d-md-block">
-                  <Image src={ball} alt="Image" />
+                  <Image src="/images/ball.png" width={40} height={40} alt="Image" />
                 </div>
               </div>
             </div>
@@ -152,7 +151,39 @@ const TecholixHomeTwoOffer = () => {
                   <Link href="digital-marketing">Digital Marketing</Link>
                 </h2>
                 <div className="offer-thumb-hover d-none d-md-block">
-                  <Image src={ball} alt="Image" />
+                  <Image src="/images/ball.png" width={40} height={40} alt="Image" />
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+           <SwiperSlide>
+            <div className="offer-two__slider-single offer__cta">
+              <div className="offer__cta-single">
+                <span className="sub-title">
+                  07
+                  <i className="fa-solid fa-arrow-right"></i>
+                </span>
+                <h2>
+                  <Link href="amazon-virtual-assistant">Amazon Virtual Assistant</Link>
+                </h2>
+                <div className="offer-thumb-hover d-none d-md-block">
+                  <Image src="/images/ball.png" width={40} height={40} alt="Image" />
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+           <SwiperSlide>
+            <div className="offer-two__slider-single offer__cta">
+              <div className="offer__cta-single">
+                <span className="sub-title">
+                  08
+                  <i className="fa-solid fa-arrow-right"></i>
+                </span>
+                <h2>
+                  <Link href="cyber-security">Cyber Security</Link>
+                </h2>
+                <div className="offer-thumb-hover d-none d-md-block">
+                  <Image src="/images/ball.png" width={40} height={40} alt="Image" />
                 </div>
               </div>
             </div>
@@ -186,7 +217,7 @@ const TecholixHomeTwoOffer = () => {
                   <Link href="our-services">Tailored Business Solutions</Link>
                 </h2>
                 <div className="offer-thumb-hover d-none d-md-block">
-                  <Image src={ball} alt="Image" />
+                  <Image src="/images/ball.png" width={40} height={40} alt="Image" />
                 </div>
               </div>
             </div>
@@ -202,7 +233,7 @@ const TecholixHomeTwoOffer = () => {
                   <Link href="about-us">USA & UK Operations</Link>
                 </h2>
                 <div className="offer-thumb-hover d-none d-md-block">
-                  <Image src={ball} alt="Image" />
+                  <Image src="/images/ball.png" width={40} height={40} alt="Image" />
                 </div>
               </div>
             </div>
@@ -218,7 +249,7 @@ const TecholixHomeTwoOffer = () => {
                   <Link href="our-teams">Professional Developers</Link>
                 </h2>
                 <div className="offer-thumb-hover d-none d-md-block">
-                  <Image src={ball} alt="Image" />
+                  <Image src="/images/ball.png" width={40} height={40} alt="Image" />
                 </div>
               </div>
             </div>
@@ -234,7 +265,7 @@ const TecholixHomeTwoOffer = () => {
                   <Link href="contact-us">Round-the-Clock Service</Link>
                 </h2>
                 <div className="offer-thumb-hover d-none d-md-block">
-                  <Image src={ball} alt="Image" />
+                  <Image src="/images/ball.png" width={40} height={40} alt="Image" />
                 </div>
               </div>
             </div>
@@ -250,7 +281,7 @@ const TecholixHomeTwoOffer = () => {
                   <Link href="our-projects">Proven Track Record</Link>
                 </h2>
                 <div className="offer-thumb-hover d-none d-md-block">
-                  <Image src={ball} alt="Image" />
+                  <Image src="/images/ball.png" width={40} height={40} alt="Image" />
                 </div>
               </div>
             </div>
@@ -266,7 +297,7 @@ const TecholixHomeTwoOffer = () => {
                   <Link href="portfolio">Cutting-Edge Technology</Link>
                 </h2>
                 <div className="offer-thumb-hover d-none d-md-block">
-                  <Image src={ball} alt="Image" />
+                  <Image src="/images/ball.png" width={40} height={40} alt="Image" />
                 </div>
               </div>
             </div>
@@ -278,4 +309,5 @@ const TecholixHomeTwoOffer = () => {
 };
 
 export default TecholixHomeTwoOffer;
+
 

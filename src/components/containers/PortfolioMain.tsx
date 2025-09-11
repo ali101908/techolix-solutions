@@ -1,14 +1,14 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-const eleven = "/images/portfolio/eleven.png";
-const twelve = "/images/portfolio/twelve.png";
-const thirteen = "/images/portfolio/thirteen.png";
-const fourteen = "/images/portfolio/fourteen.png";
-const fifteen = "/images/portfolio/fifteen.png";
-const sixteen = "/images/portfolio/sixteen.png";
-const seventeen = "/images/portfolio/seventeen.png";
-const eighteen = "/images/portfolio/eighteen.png";
+import eleven from "public/images/portfolio/eleven.png";
+import twelve from "public/images/portfolio/twelve.png";
+import thirteen from "public/images/portfolio/thirteen.png";
+import fourteen from "public/images/portfolio/fourteen.png";
+import fifteen from "public/images/portfolio/fifteen.png";
+import sixteen from "public/images/portfolio/sixteen.png";
+import seventeen from "public/images/portfolio/seventeen.png";
+import eighteen from "public/images/portfolio/eighteen.png";
 
 const PortfolioMain = () => {
   return (
@@ -181,4 +181,5 @@ const PortfolioMain = () => {
 };
 
 export default PortfolioMain;
+
 

@@ -1,6 +1,6 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-const thumb = "/images/faq-thumb.png";
+import thumb from "public/images/faq-thumb.png";
 
 const FaqMain = () => {
   const [imgTab, setImgTab] = useState(0);
@@ -180,4 +180,5 @@ const FaqMain = () => {
 };
 
 export default FaqMain;
+
 

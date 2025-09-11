@@ -1,14 +1,8 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-const one = "/images/sponsor/one.png";
-const two = "/images/sponsor/two.png";
-const three = "/images/sponsor/three.png";
-const four = "/images/sponsor/four.png";
-const five = "/images/sponsor/five.png";
-const six = "/images/sponsor/six.png";
 
 const AboutSponsor = () => {
   return (
@@ -50,92 +44,92 @@ const AboutSponsor = () => {
               >
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={one} alt="Image" />
+                    <Image src="/images/sponsor/one.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={two} alt="Image" />
+                    <Image src="/images/sponsor/two.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={three} alt="Image" />
+                    <Image src="/images/sponsor/three.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={four} alt="Image" />
+                    <Image src="/images/sponsor/four.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={five} alt="Image" />
+                    <Image src="/images/sponsor/five.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={six} alt="Image" />
+                    <Image src="/images/sponsor/six.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={one} alt="Image" />
+                    <Image src="/images/sponsor/one.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={two} alt="Image" />
+                    <Image src="/images/sponsor/two.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={one} alt="Image" />
+                    <Image src="/images/sponsor/one.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={two} alt="Image" />
+                    <Image src="/images/sponsor/two.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={three} alt="Image" />
+                    <Image src="/images/sponsor/three.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={four} alt="Image" />
+                    <Image src="/images/sponsor/four.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={five} alt="Image" />
+                    <Image src="/images/sponsor/five.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={six} alt="Image" />
+                    <Image src="/images/sponsor/six.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={three} alt="Image" />
+                    <Image src="/images/sponsor/three.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={four} alt="Image" />
+                    <Image src="/images/sponsor/four.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={five} alt="Image" />
+                    <Image src="/images/sponsor/five.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
                   <div className="sponsor__slider-item">
-                    <Image src={six} alt="Image" />
+                    <Image src="/images/sponsor/six.png" width={120} height={60} alt="Image" />
                   </div>
                 </SwiperSlide>
               </Swiper>
@@ -155,4 +149,5 @@ const AboutSponsor = () => {
 };
 
 export default AboutSponsor;
+
 

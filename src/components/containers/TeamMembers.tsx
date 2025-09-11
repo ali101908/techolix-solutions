@@ -1,15 +1,15 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-const one = "/images/teams/male-icon.png";
-const two = "/images/teams/male-icon.png";
-const three = "/images/teams/male-icon.png";
-const four = "/images/teams/male-icon.png";
-const five = "/images/teams/male-icon.png";
-const six = "/images/teams/male-icon.png";
+import one from "public/images/teams/male-icon.png";
+import two from "public/images/teams/male-icon.png";
+import three from "public/images/teams/male-icon.png";
+import four from "public/images/teams/male-icon.png";
+import five from "public/images/teams/male-icon.png";
+import six from "public/images/teams/male-icon.png";
 
 const TeamMembers = () => {
   return (
@@ -79,7 +79,7 @@ const TeamMembers = () => {
               <div className="team-s__slider-single">
                 <div className="team-wrap">
                   <div className="thumb">
-                    <Link href="team-single">
+                    <Link href="ryan-parker">
                       <Image src={one} alt="Image" />
                     </Link>
                     <div
@@ -88,21 +88,21 @@ const TeamMembers = () => {
                     >
                       <div className="info">
                         <p>
-                          "Leading innovative web solutions with cutting-edge technologies and user-centric design approaches."
+                          &quot;Leading innovative web solutions with cutting-edge technologies and user-centric design approaches.&quot;
                         </p>
                       </div>
                       <h4>
-                        <Link href="team-single">Ryan Parker</Link>
+                        <Link href="ryan-parker">Ryan Parker</Link>
                       </h4>
-                      <p>Web Development Lead</p>
+                      <p>Web Development Lead & Cyber Expert</p>
                     </div>
                   </div>
                   <div className="content">
                     <div className="intro">
                       <h5>
-                        <Link href="team-single">Ryan Parker</Link>
+                        <Link href="ryan-parker">Ryan Parker</Link>
                       </h5>
-                      <p>Web Development Lead</p>
+                      <p>Web Development Lead & Cyber Expert</p>
                     </div>
                     <hr />
                     <div className="inner">
@@ -147,7 +147,7 @@ const TeamMembers = () => {
               <div className="team-s__slider-single">
                 <div className="team-wrap">
                   <div className="thumb">
-                    <Link href="team-single">
+                    <Link href="salman">
                       <Image src={two} alt="Image" />
                     </Link>
                     <div
@@ -156,11 +156,11 @@ const TeamMembers = () => {
                     >
                       <div className="info">
                         <p>
-                          "Orchestrating seamless project delivery through strategic planning and efficient team coordination."
+                          &quot;Orchestrating seamless project delivery through strategic planning and efficient team coordination.&quot;
                         </p>
                       </div>
                       <h4>
-                        <Link href="team-single">Salman</Link>
+                        <Link href="salman">Salman</Link>
                       </h4>
                       <p>Project Manager</p>
                     </div>
@@ -168,7 +168,7 @@ const TeamMembers = () => {
                   <div className="content">
                     <div className="intro">
                       <h5>
-                        <Link href="team-single">Salman</Link>
+                        <Link href="salman">Salman</Link>
                       </h5>
                       <p>Project Manager</p>
                     </div>
@@ -215,7 +215,7 @@ const TeamMembers = () => {
               <div className="team-s__slider-single">
                 <div className="team-wrap">
                   <div className="thumb">
-                    <Link href="team-single">
+                    <Link href="rohaan">
                       <Image src={three} alt="Image" />
                     </Link>
                     <div
@@ -224,21 +224,21 @@ const TeamMembers = () => {
                     >
                       <div className="info">
                         <p>
-                          "Driving organic growth through advanced SEO strategies and data-driven optimization techniques."
+                          &quot;Driving organic growth through advanced SEO strategies and data-driven optimization techniques.&quot;
                         </p>
                       </div>
                       <h4>
-                        <Link href="team-single">Rohaan</Link>
+                        <Link href="rohaan">Rohaan</Link>
                       </h4>
-                      <p>SEO Specialist</p>
+                      <p>SEO Specialist & Amazon Entrepreneur</p>
                     </div>
                   </div>
                   <div className="content">
                     <div className="intro">
                       <h5>
-                        <Link href="team-single">Rohaan</Link>
+                        <Link href="rohaan">Rohaan</Link>
                       </h5>
-                      <p>SEO Specialist</p>
+                      <p>SEO Specialist & Amazon Entrepreneur</p>
                     </div>
                     <hr />
                     <div className="inner">
@@ -283,7 +283,7 @@ const TeamMembers = () => {
               <div className="team-s__slider-single">
                 <div className="team-wrap">
                   <div className="thumb">
-                    <Link href="team-single">
+                    <Link href="sam-collins">
                       <Image src={four} alt="Image" />
                     </Link>
                     <div
@@ -292,11 +292,11 @@ const TeamMembers = () => {
                     >
                       <div className="info">
                         <p>
-                          "Crafting powerful WordPress solutions with custom themes and seamless functionality."
+                          &quot;Crafting powerful WordPress solutions with custom themes and seamless functionality.&quot;
                         </p>
                       </div>
                       <h4>
-                        <Link href="team-single">Sam Collins</Link>
+                        <Link href="sam-collins">Sam Collins</Link>
                       </h4>
                       <p>WordPress Developer</p>
                     </div>
@@ -304,7 +304,7 @@ const TeamMembers = () => {
                   <div className="content">
                     <div className="intro">
                       <h5>
-                        <Link href="team-single">Sam Collins</Link>
+                        <Link href="sam-collins">Sam Collins</Link>
                       </h5>
                       <p>WordPress Developer</p>
                     </div>
@@ -351,7 +351,7 @@ const TeamMembers = () => {
               <div className="team-s__slider-single">
                 <div className="team-wrap">
                   <div className="thumb">
-                    <Link href="team-single">
+                    <Link href="abraham">
                       <Image src={five} alt="Image" />
                     </Link>
                     <div
@@ -360,11 +360,11 @@ const TeamMembers = () => {
                     >
                       <div className="info">
                         <p>
-                          "Amplifying brand presence through strategic digital campaigns and creative marketing solutions."
+                          &quot;Amplifying brand presence through strategic digital campaigns and creative marketing solutions.&quot;
                         </p>
                       </div>
                       <h4>
-                        <Link href="team-single">Abraham</Link>
+                        <Link href="abraham">Abraham</Link>
                       </h4>
                       <p>Digital Marketing Expert</p>
                     </div>
@@ -372,7 +372,7 @@ const TeamMembers = () => {
                   <div className="content">
                     <div className="intro">
                       <h5>
-                        <Link href="team-single">Abraham</Link>
+                        <Link href="abraham">Abraham</Link>
                       </h5>
                       <p>Digital Marketing Expert</p>
                     </div>
@@ -419,7 +419,7 @@ const TeamMembers = () => {
               <div className="team-s__slider-single">
                 <div className="team-wrap">
                   <div className="thumb">
-                    <Link href="team-single">
+                    <Link href="oliver-mitchell">
                       <Image src={six} alt="Image" />
                     </Link>
                     <div
@@ -428,11 +428,11 @@ const TeamMembers = () => {
                     >
                       <div className="info">
                         <p>
-                          "Building robust e-commerce solutions with Shopify expertise and conversion optimization."
+                          &quot;Building robust e-commerce solutions with Shopify expertise and conversion optimization.&quot;
                         </p>
                       </div>
                       <h4>
-                        <Link href="team-single">Oliver Mitchell</Link>
+                        <Link href="oliver-mitchell">Oliver Mitchell</Link>
                       </h4>
                       <p>Shopify Developer</p>
                     </div>
@@ -440,7 +440,7 @@ const TeamMembers = () => {
                   <div className="content">
                     <div className="intro">
                       <h5>
-                        <Link href="team-single">Oliver Mitchell</Link>
+                        <Link href="oliver-mitchell">Oliver Mitchell</Link>
                       </h5>
                       <p>Shopify Developer</p>
                     </div>
@@ -499,4 +499,5 @@ const TeamMembers = () => {
 };
 
 export default TeamMembers;
+
 

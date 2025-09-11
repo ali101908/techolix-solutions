@@ -1,9 +1,9 @@
-﻿import React, { useEffect } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-const dawn = "/images/banner/dawn-light.png";
+import dawn from "public/images/banner/dawn-light.png";
 
 gsap.registerPlugin(ScrollTrigger);
 const HomeTwoLightBanner = () => {
@@ -93,4 +93,5 @@ const HomeTwoLightBanner = () => {
 };
 
 export default HomeTwoLightBanner;
+
 

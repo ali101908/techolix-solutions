@@ -1,12 +1,6 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-const one = "/images/teams/male-icon.png";
-const two = "/images/teams/male-icon.png";
-const three = "/images/teams/male-icon.png";
-const four = "/images/teams/male-icon.png";
-const five = "/images/teams/male-icon.png";
-const six = "/images/teams/male-icon.png";
 
 const TeamMain = () => {
   return (
@@ -16,8 +10,8 @@ const TeamMain = () => {
           <div className="col-12 col-md-6 col-xl-4">
             <div className="team-m__single fade-top">
               <div className="thumb">
-                <Link href="team-single">
-                  <Image src={one} alt="Image" />
+                <Link href="ryan-parker">
+                  <Image src="/images/teams/male-icon.png" width={300} height={350} alt="Image" />
                 </Link>
                 <div
                   className="thumb__content"
@@ -25,13 +19,13 @@ const TeamMain = () => {
                 >
                   <div className="info">
                     <p>
-                      "Leading innovative web solutions with cutting-edge technologies and user-centric design approaches."
+                      &quot;Leading innovative web solutions with cutting-edge technologies and user-centric design approaches.&quot;
                     </p>
                   </div>
                   <h4>
-                    <Link href="team-single">Ryan Parker</Link>
+                    <Link href="ryan-parker">Ryan Parker</Link>
                   </h4>
-                  <p>Web Development Lead</p>
+                  <p>Web Development Lead & Cyber Expert</p>
                 </div>
               </div>
             </div>
@@ -39,8 +33,8 @@ const TeamMain = () => {
           <div className="col-12 col-md-6 col-xl-4">
             <div className="team-m__single fade-top">
               <div className="thumb">
-                <Link href="team-single">
-                  <Image src={two} alt="Image" />
+                <Link href="salman">
+                  <Image src="/images/teams/male-icon.png" width={300} height={350} alt="Image" />
                 </Link>
                 <div
                   className="thumb__content"
@@ -48,11 +42,11 @@ const TeamMain = () => {
                 >
                   <div className="info">
                     <p>
-                      "Orchestrating seamless project delivery through strategic planning and efficient team coordination."
+                      &quot;Orchestrating seamless project delivery through strategic planning and efficient team coordination.&quot;
                     </p>
                   </div>
                   <h4>
-                    <Link href="team-single">Salman</Link>
+                    <Link href="salman">Salman</Link>
                   </h4>
                   <p>Project Manager</p>
                 </div>
@@ -62,8 +56,8 @@ const TeamMain = () => {
           <div className="col-12 col-md-6 col-xl-4">
             <div className="team-m__single fade-top">
               <div className="thumb">
-                <Link href="team-single">
-                  <Image src={three} alt="Image" />
+                <Link href="rohaan">
+                  <Image src="/images/teams/male-icon.png" width={300} height={350} alt="Image" />
                 </Link>
                 <div
                   className="thumb__content"
@@ -71,13 +65,13 @@ const TeamMain = () => {
                 >
                   <div className="info">
                     <p>
-                      "Driving organic growth through advanced SEO strategies and data-driven optimization techniques."
+                      &quot;Driving organic growth through advanced SEO strategies and data-driven optimization techniques.&quot;
                     </p>
                   </div>
                   <h4>
-                    <Link href="team-single">Rohaan</Link>
+                    <Link href="rohaan">Rohaan</Link>
                   </h4>
-                  <p>SEO Specialist</p>
+                  <p>SEO Specialist & Amazon Entrepreneur</p>
                 </div>
               </div>
             </div>
@@ -85,8 +79,8 @@ const TeamMain = () => {
           <div className="col-12 col-md-6 col-xl-4">
             <div className="team-m__single fade-top">
               <div className="thumb">
-                <Link href="team-single">
-                  <Image src={four} alt="Image" />
+                <Link href="sam-collins">
+                  <Image src="/images/teams/male-icon.png" width={300} height={350} alt="Image" />
                 </Link>
                 <div
                   className="thumb__content"
@@ -94,11 +88,11 @@ const TeamMain = () => {
                 >
                   <div className="info">
                     <p>
-                      "Crafting powerful WordPress solutions with custom themes and seamless functionality."
+                      &quot;Crafting powerful WordPress solutions with custom themes and seamless functionality.&quot;
                     </p>
                   </div>
                   <h4>
-                    <Link href="team-single">Sam Collins</Link>
+                    <Link href="sam-collins">Sam Collins</Link>
                   </h4>
                   <p>WordPress Developer</p>
                 </div>
@@ -108,8 +102,8 @@ const TeamMain = () => {
           <div className="col-12 col-md-6 col-xl-4">
             <div className="team-m__single fade-top">
               <div className="thumb">
-                <Link href="team-single">
-                  <Image src={five} alt="Image" />
+                <Link href="abraham">
+                  <Image src="/images/teams/male-icon.png" width={300} height={350} alt="Image" />
                 </Link>
                 <div
                   className="thumb__content"
@@ -117,11 +111,11 @@ const TeamMain = () => {
                 >
                   <div className="info">
                     <p>
-                      "Amplifying brand presence through strategic digital campaigns and creative marketing solutions."
+                      &quot;Amplifying brand presence through strategic digital campaigns and creative marketing solutions.&quot;
                     </p>
                   </div>
                   <h4>
-                    <Link href="team-single">Abraham</Link>
+                    <Link href="abraham">Abraham</Link>
                   </h4>
                   <p>Digital Marketing Expert</p>
                 </div>
@@ -131,8 +125,8 @@ const TeamMain = () => {
           <div className="col-12 col-md-6 col-xl-4">
             <div className="team-m__single fade-top">
               <div className="thumb">
-                <Link href="team-single">
-                  <Image src={six} alt="Image" />
+                <Link href="oliver-mitchell">
+                  <Image src="/images/teams/male-icon.png" width={300} height={350} alt="Image" />
                 </Link>
                 <div
                   className="thumb__content"
@@ -140,11 +134,11 @@ const TeamMain = () => {
                 >
                   <div className="info">
                     <p>
-                      "Building robust e-commerce solutions with Shopify expertise and conversion optimization."
+                      &quot;Building robust e-commerce solutions with Shopify expertise and conversion optimization.&quot;
                     </p>
                   </div>
                   <h4>
-                    <Link href="team-single">Oliver Mitchell</Link>
+                    <Link href="oliver-mitchell">Oliver Mitchell</Link>
                   </h4>
                   <p>Shopify Developer</p>
                 </div>
@@ -165,4 +159,5 @@ const TeamMain = () => {
 };
 
 export default TeamMain;
+
 

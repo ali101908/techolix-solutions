@@ -209,6 +209,62 @@ const TecholixServiceMain = () => {
                     </div>
                   </div>
                 </SwiperSlide>
+                <SwiperSlide>
+                  <div className="service-t-single-wrapper">
+                    <div className="service-t__slider-single">
+                      <div className="intro">
+                        <span className="sub-title">
+                          07
+                          <i className="fa-solid fa-arrow-right"></i>
+                        </span>
+                        <h4>
+                          <Link href="amazon-virtual-assistant">Amazon Virtual Assistant</Link>
+                        </h4>
+                      </div>
+                      <ul>
+                        <li>Product Research & Sourcing</li>
+                        <li>Listing Optimization</li>
+                        <li>PPC Campaign Management</li>
+                        <li>Inventory Management</li>
+                        <li>White Label Solutions</li>
+                      </ul>
+                      <div className="cta">
+                        <Link href="amazon-virtual-assistant">
+                          <i className="icon-arrow-top-right"></i>
+                          <span>service details</span>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <div className="service-t-single-wrapper">
+                    <div className="service-t__slider-single">
+                      <div className="intro">
+                        <span className="sub-title">
+                          08
+                          <i className="fa-solid fa-arrow-right"></i>
+                        </span>
+                        <h4>
+                          <Link href="cyber-security">Cyber Security</Link>
+                        </h4>
+                      </div>
+                      <ul>
+                        <li>Security Assessment</li>
+                        <li>Threat Detection & Response</li>
+                        <li>Network Security</li>
+                        <li>Data Protection</li>
+                        <li>Compliance Management</li>
+                      </ul>
+                      <div className="cta">
+                        <Link href="cyber-security">
+                          <i className="icon-arrow-top-right"></i>
+                          <span>service details</span>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
               </Swiper>
             </div>
           </div>

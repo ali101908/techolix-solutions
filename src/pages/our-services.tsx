@@ -4,7 +4,7 @@ import CmnBanner from "@/components/layout/banner/CmnBanner";
 import TecholixServiceMain from "@/components/containers/TecholixServiceMain";
 import HomeTwoModal from "@/components/containers/home-two/HomeTwoModal";
 import UxProcessTwo from "@/components/containers/service-details/UxProcessTwo";
-import HomeTestimonialThree from "@/components/containers/home-three/HomeTestimonialThree";
+// import HomeTestimonialThree from "@/components/containers/home-three/HomeTestimonialThree";
 import CtaTwo from "@/components/containers/service-details/CtaTwo";
 
 const OurServices = () => {

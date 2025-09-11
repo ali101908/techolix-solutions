@@ -1,7 +1,6 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import YoutubeEmbed from "@/components/youtube/YoutubeEmbed";
-const videoframe = "/images/video-frame.png";
 
 const WorkStepsProject = () => {
   const [hover, setHover] = useState(1);
@@ -154,7 +153,7 @@ const WorkStepsProject = () => {
           className="video-frame video-btn d-none d-md-flex"
           onClick={() => setVideoActive(true)}
         >
-          <Image src={videoframe} alt="Image" />
+          <Image src="/images/video-frame.png" width={300} height={200} alt="Image" />
           <i className="fa-sharp fa-solid fa-play"></i>
         </button> */}
       </section>

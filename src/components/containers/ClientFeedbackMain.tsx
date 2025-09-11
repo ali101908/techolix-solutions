@@ -101,7 +101,7 @@ const ClientFeedbackMain = () => {
                   <i className="fa-solid fa-quote-right"></i>
                 </div>
                 <p>
-                  Techolix created a professional landing page for our fencing services that perfectly showcases our work. The lead generation forms and contact system work flawlessly. We've seen a 350% increase in quote requests since the website launch!
+                  Techolix created a professional landing page for our fencing services that perfectly showcases our work. The lead generation forms and contact system work flawlessly. We&apos;ve seen a 350% increase in quote requests since the website launch!
                 </p>
               </div>
               <hr />

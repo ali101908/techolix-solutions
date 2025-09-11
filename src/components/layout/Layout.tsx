@@ -4,16 +4,16 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import VanillaTilt from "vanilla-tilt";
 import { useRouter } from "next/router";
-import Header from "./header/Header";
+// import Header from "./header/Header";
 import HeaderTwo from "./header/HeaderTwo";
-import HeaderThree from "./header/HeaderThree";
-import HeaderFour from "./header/HeaderFour";
-import HeaderFive from "./header/HeaderFive";
-import Footer from "./footer/Footer";
+// import HeaderThree from "./header/HeaderThree";
+// import HeaderFour from "./header/HeaderFour";
+// import HeaderFive from "./header/HeaderFive";
+// import Footer from "./footer/Footer";
 import FooterTwo from "./footer/FooterTwo";
-import FooterThree from "./footer/FooterThree";
-import FooterFour from "./footer/FooterFour";
-import FooterFive from "./footer/FooterFive";
+// import FooterThree from "./footer/FooterThree";
+// import FooterFour from "./footer/FooterFour";
+// import FooterFive from "./footer/FooterFive";
 import VideoModal from "./VideoModal";
 import ScrollProgressBtn from "./ScrollProgressBtn";
 import CustomCursor from "./CustomCursor";
@@ -188,13 +188,13 @@ const Layout = ({
         />
       </Head>
       <div className={combinedClassName}>
-        {header === 1 && (
+        {/* {header === 1 && (
           <Header
             openNav={openNav}
             handleNav={handleNav}
             setOpenNav={setOpenNav}
           />
-        )}
+        )} */}
         {header === 2 && (
           <HeaderTwo
             openNav={openNav}
@@ -202,7 +202,7 @@ const Layout = ({
             setOpenNav={setOpenNav}
           />
         )}
-        {header === 3 && (
+        {/* {header === 3 && (
           <HeaderThree
             openNav={openNav}
             handleNav={handleNav}
@@ -222,13 +222,13 @@ const Layout = ({
             handleNav={handleNav}
             setOpenNav={setOpenNav}
           />
-        )}
+        )} */}
         <main>{children}</main>
-        {footer === 1 && <Footer />}
+        {/* {footer === 1 && <Footer />} */}
         {footer === 2 && <FooterTwo />}
-        {footer === 3 && <FooterThree />}
-        {footer === 4 && <FooterFour />}
-        {footer === 5 && <FooterFive />}
+        {/* {footer === 3 && <FooterThree />} */}
+        {/* {footer === 4 && <FooterFour />} */}
+        {/* {footer === 5 && <FooterFive />} */}
         {video ? <VideoModal /> : null}
         <ScrollProgressBtn />
         <CustomCursor

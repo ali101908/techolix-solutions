@@ -1,7 +1,7 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
-const one = "/images/mission/one.png";
-const two = "/images/mission/two.png";
+import one from "public/images/mission/one.png";
+import two from "public/images/mission/two.png";
 
 const OurMission = () => {
   return (
@@ -72,4 +72,5 @@ const OurMission = () => {
 };
 
 export default OurMission;
+
 

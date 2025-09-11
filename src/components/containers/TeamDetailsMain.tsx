@@ -1,9 +1,9 @@
-﻿import React, { useEffect } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-const one = "/images/teams/one.png";
+import one from "public/images/teams/one.png";
 
 gsap.registerPlugin(ScrollTrigger);
 const TeamDetailsMain = () => {
@@ -64,7 +64,7 @@ const TeamDetailsMain = () => {
               textContent: 5,
             },
           },
-          "<"
+          // &quot;<"
         );
       }
     });
@@ -77,7 +77,7 @@ const TeamDetailsMain = () => {
           <div className="col-12 col-lg-5 col-xxl-4">
             <div className="team-det__thumb fade-top">
               <Image src={one} alt="Image" />
-              <div className="social-alt">
+              {/* <div className="social-alt">
                 <Link
                   href="https://www.facebook.com/"
                   target="_blank"
@@ -99,19 +99,19 @@ const TeamDetailsMain = () => {
                 >
                   <i className="fa-brands fa-linkedin-in"></i>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="col-12 col-lg-7 col-xxl-8">
             <div className="team-det__content fade-top">
               <div className="intro">
                 <div className="intro-left">
-                  <h4>Sana p. Lesh</h4>
-                  <p>Senior engineer</p>
+                  <h4>Ryan Parker</h4>
+                  <p>Web Development Lead & Cyber Expert</p>
                 </div>
                 <div className="intro-right">
                   <Link href="contact-us" className="btn btn--primary">
-                    Hire Me
+                    Contact Us
                     <i className="fa-sharp fa-solid fa-paper-plane"></i>
                   </Link>
                 </div>
@@ -119,22 +119,24 @@ const TeamDetailsMain = () => {
               <div className="content">
                 <h5>About Me</h5>
                 <p>
-                  Proin ultricies ultricies est vitae cursus. Nulla sit amet
-                  suscipit tortor. Maecenas dui erat, ornare eget tristique
-                  vitae, rutrum pretium justo. Phasellus vitae consequat nisi,
-                  quis luctus nisl. Praesent faucibus sem id massa semper
-                  ornare. Nam eu magna at mi pellentesque mattis. Morbi at
-                  condimentum velit. Phasellus aliquet, leo auctor volutpat
-                  ultrices, metus dolor dictum enim, sed convallis lacus urna
-                  nec erat.
+                  Expert in modern web technologies, I lead our development team with innovative solutions and clean, scalable code. 
+                  I specialize in React, Next.js, and full-stack development with a strong focus on cyber security practices. 
+                  My approach combines cutting-edge frontend frameworks with robust backend architectures, ensuring both 
+                  exceptional user experiences and secure, performant applications. I&apos;m dedicated to delivering solutions 
+                  that not only meet current requirements but are built to scale and adapt to future needs.
+                </p>
+                <p>
+                  With extensive experience in cyber security, I implement best practices for secure coding, vulnerability 
+                  assessment, and protection against modern web threats. My expertise spans from secure authentication systems 
+                  to implementing comprehensive security protocols that safeguard user data and business operations.
                 </p>
               </div>
               <div className="skill-wrap">
                 <div className="skill-bar-single">
                   <div className="skill-bar-title">
-                    <p>Wireframe</p>
+                    <p>Frontend Development</p>
                   </div>
-                  <div className="skill-bar-wrapper" data-percent="75%">
+                  <div className="skill-bar-wrapper" data-percent="95%">
                     <div className="skill-bar">
                       <div className="skill-bar-percent">
                         <span className="percent-value"></span>
@@ -144,7 +146,7 @@ const TeamDetailsMain = () => {
                 </div>
                 <div className="skill-bar-single">
                   <div className="skill-bar-title">
-                    <p>Visual Design</p>
+                    <p>Backend Development</p>
                   </div>
                   <div className="skill-bar-wrapper" data-percent="90%">
                     <div className="skill-bar">
@@ -156,9 +158,9 @@ const TeamDetailsMain = () => {
                 </div>
                 <div className="skill-bar-single">
                   <div className="skill-bar-title">
-                    <p>Wireframe</p>
+                    <p>Cyber Security</p>
                   </div>
-                  <div className="skill-bar-wrapper" data-percent="75%">
+                  <div className="skill-bar-wrapper" data-percent="88%">
                     <div className="skill-bar">
                       <div className="skill-bar-percent">
                         <span className="percent-value"></span>
@@ -168,9 +170,9 @@ const TeamDetailsMain = () => {
                 </div>
                 <div className="skill-bar-single">
                   <div className="skill-bar-title">
-                    <p>Visual Design</p>
+                    <p>Project Architecture</p>
                   </div>
-                  <div className="skill-bar-wrapper" data-percent="90%">
+                  <div className="skill-bar-wrapper" data-percent="92%">
                     <div className="skill-bar">
                       <div className="skill-bar-percent">
                         <span className="percent-value"></span>
@@ -182,49 +184,12 @@ const TeamDetailsMain = () => {
             </div>
           </div>
         </div>
-        <div className="row">
-          <div className="col-12">
-            <div className="team-det__info fade-top">
-              <h4>Education background</h4>
-              <div className="group">
-                <h5>
-                  Bachelor&apos;s degree,
-                  <span>2010</span>
-                </h5>
-                <p>
-                  Proin ultricies ultricies est vitae cursus. Nulla sit amet
-                  suscipit tortor. Maecenas dui erat, ornare eget tristique
-                  vitae, rutrum pretium justo. Phasellus vitae consequat nisi,
-                  quis luctus nisl. Praesent faucibus sem id massa semper
-                  ornare. Nam eu magna at mi pellentesque mattis. Morbi at
-                  condimentum velit. Phasellus aliquet, leo auctor volutpat
-                  ultrices, metus dolor dictum enim, sed convallis lacus urna
-                  nec erat.
-                </p>
-              </div>
-              <div className="group">
-                <h5>
-                  Master&apos;s degree in design,
-                  <span>2015</span>
-                </h5>
-                <p>
-                  Proin ultricies ultricies est vitae cursus. Nulla sit amet
-                  suscipit tortor. Maecenas dui erat, ornare eget tristique
-                  vitae, rutrum pretium justo. Phasellus vitae consequat nisi,
-                  quis luctus nisl. Praesent faucibus sem id massa semper
-                  ornare. Nam eu magna at mi pellentesque mattis. Morbi at
-                  condimentum velit. Phasellus aliquet, leo auctor volutpat
-                  ultrices, metus dolor dictum enim, sed convallis lacus urna
-                  nec erat.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </section>
   );
 };
 
 export default TeamDetailsMain;
+
 

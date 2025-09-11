@@ -21,7 +21,7 @@ const TermsAndConditions = () => {
                 <div className="terms-section">
                   <h3>1. Introduction</h3>
                   <p>
-                    By accessing this website and using our services, we assume you accept these terms and conditions. Do not continue to use Techolix Solutions' services if you do not agree to take all of the terms and conditions stated on this page.
+                    By accessing this website and using our services, we assume you accept these terms and conditions. Do not continue to use Techolix Solutions&apos; services if you do not agree to take all of the terms and conditions stated on this page.
                   </p>
                 </div>
 
@@ -61,7 +61,7 @@ const TermsAndConditions = () => {
                 <div className="terms-section">
                   <h3>6. Liability and Warranties</h3>
                   <p>
-                    While we strive to provide the highest quality services, Techolix Solutions provides services "as is" without warranties of any kind. Our liability is limited to the amount paid for services rendered.
+                    While we strive to provide the highest quality services, Techolix Solutions provides services as is without warranties of any kind. Our liability is limited to the amount paid for services rendered.
                   </p>
                 </div>
 

@@ -1,15 +1,15 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-const one = "/images/projects/fpr.png";
-const two = "/images/projects/prp.png";
-const three = "/images/projects/brs.png";
-const four = "/images/projects/mb1.png";
-const five = "/images/projects/tprs.png";
-const six = "/images/projects/bf1.png";
+import one from "public/images/projects/fpr.png";
+import two from "public/images/projects/prp.png";
+import three from "public/images/projects/brs.png";
+import four from "public/images/projects/mb1.png";
+import five from "public/images/projects/tprs.png";
+import six from "public/images/projects/bf1.png";
 
 const HomeTwoPortfolio = () => {
   const [activeFilter, setActiveFilter] = useState("*");
@@ -605,6 +605,20 @@ const HomeTwoPortfolio = () => {
                 </div>
                 <h5>Laravel</h5>
               </div>
+              
+              <div className="tech-item fade-top">
+                <div className="tech-icon">
+                  <i className="fab fa-amazon" style={{color: '#FF9900', fontSize: '48px'}}></i>
+                </div>
+                <h5>Amazon VA</h5>
+              </div>
+              
+              <div className="tech-item fade-top">
+                <div className="tech-icon">
+                  <i className="fas fa-shield-alt" style={{color: '#007ACC', fontSize: '48px'}}></i>
+                </div>
+                <h5>Cyber Security</h5>
+              </div>
             </div>
           </div>
         </div>
@@ -691,4 +705,5 @@ const HomeTwoPortfolio = () => {
 };
 
 export default HomeTwoPortfolio;
+
 

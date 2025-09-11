@@ -1,9 +1,8 @@
-﻿import React, { useEffect } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-const dawn = "/images/banner/dawn.png";
 
 gsap.registerPlugin(ScrollTrigger);
 const HomeTwoBanner = () => {
@@ -47,11 +46,11 @@ const HomeTwoBanner = () => {
           <div className="col-12">
             <div className="banner-two-inner">
               <div className="banner-two__meta">
-                <div className="thumb imae">
+                {/* <div className="thumb imae">
                   <video autoPlay loop muted controls>
                     <source src="/images/banner-video.mp4" type="video/mp4" />
                   </video>
-                </div>
+                </div> */}
                 <div className="cta section__content-cta m-0">
                   <div className="single">
                     <h5 className="fw-7">5+ Years</h5>
@@ -78,7 +77,7 @@ const HomeTwoBanner = () => {
                   </div>
                   <div className="cta">
                     <Link href="contact-us" className="btn btn--tertiary">
-                      book a call now
+                      Get a quote
                       <i className="fa-sharp fa-solid fa-arrow-up-right"></i>
                     </Link>
                   </div>
@@ -88,7 +87,7 @@ const HomeTwoBanner = () => {
           </div>
         </div>
       </div>
-      <Image src={dawn} alt="Image" className="dawn" />
+      <Image src="/images/banner/dawn.png" width={200} height={200} alt="Image" className="dawn" />
     </section>
   );
 };

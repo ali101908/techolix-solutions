@@ -1,8 +1,40 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import emailjs from '@emailjs/browser';
 
 const ContactMain = () => {
+  const form = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<string>('');
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    if (form.current) {
+      emailjs.sendForm(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        form.current,
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      )
+      .then((result: any) => {
+        console.log(result.text);
+        setSubmitStatus('Message sent successfully!');
+        setIsSubmitting(false);
+        // Reset form
+        if (form.current) {
+          form.current.reset();
+        }
+      }, (error: any) => {
+        console.log(error.text);
+        setSubmitStatus('Failed to send message. Please try again.');
+        setIsSubmitting(false);
+      });
+    }
+  };
   return (
     <section className="section contact-m fade-wrapper">
       <div className="container">
@@ -18,7 +50,7 @@ const ContactMain = () => {
                   <Link href="tel:+13025795453">Mobile : +1 (302) 579-5453</Link>
                 </p>
                 <p>
-                  <Link href="mailto:Info@techolixsolutions.com">Email : Info@techolixsolutions.com</Link>
+                  <Link href="tel:+447727840213">Mobile : +44 (772) 7840213</Link>
                 </p>
               </div>
             </div>
@@ -49,14 +81,16 @@ const ContactMain = () => {
                 <Image src="/images/location.png" alt="Image" width={60} height={60} />
               </div>
               <div className="content">
-                <h4>Service Areas</h4>
+                <h4>Location</h4>
                 <p>
-                  <Link
-                    href="https://www.google.com/maps/d/viewer?mid=1UZ57Drfs3SGrTgh6mrYjQktu6uY&hl=en_US&ll=18.672105000000013%2C105.68673800000003&z=17"
-                    target="_blank"
-                  >
-                    USA & UK Markets
-                  </Link>
+                  <Link  href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=/maps/place/1460%2BBroadway,%2BNew%2BYork,%2BNY%2B10036,%2BUSA/data%3D!4m2!3m1!1s0x89c259ab29218b1d:0x34803c530c7340ec%3Fsa%3DX%26ved%3D1t:242%26ictx%3D111&ved=2ahUKEwiCjerp89CPAxWKVaQEHXzkOysQ8gF6BAgSEAI&usg=AOvVaw3ht_DPHJOk5N5olfpovW-2" target="_blank">
+                  <i className="fa-sharp fa-solid fa-location-dot"></i>
+                  1460 Broadway, New York, NY 10036, USA
+                </Link>
+                 <Link  href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=/maps/place/30%2BStamford%2BSt,%2BLondon%2BSE1%2B9LS,%2BUK/data%3D!4m2!3m1!1s0x487604b1cec7ed4d:0x24ab5debdff26773%3Fsa%3DX%26ved%3D1t:242%26ictx%3D111&ved=2ahUKEwjeidDs9NCPAxVXVqQEHSsSJQwQ8gF6BAgPEAI&usg=AOvVaw2Z4b36r2V9bkx7RawpQeAP">
+                  <i className="fa-sharp fa-solid fa-location-dot"></i>
+                  30 Stamford Street, London SE1 9LQ, United Kingdom
+                </Link>
                 </p>
               </div>
             </div>
@@ -68,8 +102,10 @@ const ContactMain = () => {
               </div>
               <div className="content">
                 <h4>Office Hour</h4>
-                <p>Sun - Thu 09 am - 06pm</p>
-                <p>Fri - Sat 4 pm - 10pm</p>
+                <p>Mon - Fri 09 am - 05pm (USA)</p>
+                <p>Sat    10am - 4pm (USA)</p>
+                 <p>Mon - Fri 12 pm - 09pm (USA)</p>
+                <p>Sat    12pm - 4pm (USA)</p>
               </div>
             </div>
           </div>
@@ -77,67 +113,73 @@ const ContactMain = () => {
         <div className="row">
           <div className="col-12">
             <div className="map-wrapper">
-              <div className="row gaper">
-                <div className="col-12 col-lg-6">
-                  <div className="contact__map fade-top">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20342.411046372905!2d-74.16638039276373!3d40.719832743885284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1649562691355!5m2!1sen!2sbd"
-                      width="100"
-                      height="800"
-                      style={{ border: "0px" }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                  </div>
-                </div>
-                <div className="col-12 col-lg-6">
-                  <div className="contact-main__form  fade-top">
+              <div className="row justify-content-center">
+                <div className="col-12 col-lg-8 col-xl-6">
+                  <div className="contact-main__form fade-top">
                     <h3>Leave A Message</h3>
                     <form
-                      action="#"
-                      method="post"
+                      ref={form}
+                      onSubmit={sendEmail}
                       className="section__content-cta"
                     >
                       <div className="group-wrapper">
-                        <div className="group-input ">
+                        <div className="group-input">
                           <input
                             type="text"
-                            name="contact-name"
+                            name="user_name"
                             id="contactName"
                             placeholder="Name"
+                            required
                           />
                         </div>
-                        <div className="group-input ">
+                        <div className="group-input">
                           <input
                             type="email"
-                            name="contact-email"
+                            name="user_email"
                             id="contactEmail"
                             placeholder="Email"
+                            required
                           />
                         </div>
                       </div>
                       <div className="group-input drt">
-                        <select className="subject">
-                          <option data-display="Subject">Subject</option>
-                          <option value="1">Account</option>
-                          <option value="2">Service</option>
-                          <option value="3">Pricing</option>
-                          <option value="4">Support</option>
+                        <select name="subject" className="subject" required>
+                          <option value="">Select Service</option>
+                          <option value="Web Development">Web Development</option>
+                          <option value="WordPress Websites">WordPress Websites</option>
+                          <option value="Shopify Development">Shopify Development</option>
+                          <option value="Digital Marketing">Digital Marketing</option>
+                          <option value="SEO Optimization">SEO Optimization</option>
+                          <option value="Google Ads">Google Ads</option>
+                          <option value="Amazon Virtual Assistant">Amazon Virtual Assistant</option>
+                          <option value="Cyber Security">Cyber Security</option>
+                          <option value="General Inquiry">General Inquiry</option>
+                          <option value="Support">Support</option>
+                          <option value="Pricing">Pricing</option>
                         </select>
                       </div>
-                      <div className="group-input ">
+                      <div className="group-input">
                         <textarea
-                          name="contact-message"
+                          name="message"
                           id="contactMessage"
                           placeholder="Message"
+                          required
                         ></textarea>
                       </div>
-                      <div className="form-cta justify-content-start">
-                        <button type="submit" className="btn btn--primary">
-                          Send Message
+                      <div className="form-cta justify-content-center">
+                        <button 
+                          type="submit" 
+                          className="btn btn--primary"
+                          disabled={isSubmitting}
+                        >
+                          {isSubmitting ? 'Sending...' : 'Send Message'}
                         </button>
                       </div>
+                      {submitStatus && (
+                        <div className={`submit-status ${submitStatus.includes('successfully') ? 'success' : 'error'}`}>
+                          {submitStatus}
+                        </div>
+                      )}
                     </form>
                   </div>
                 </div>
@@ -146,6 +188,62 @@ const ContactMain = () => {
           </div>
         </div>
       </div>
+      
+      <style jsx>{`
+        .contact-main__form {
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 15px;
+          padding: 40px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+        }
+        
+        .contact-main__form h3 {
+          text-align: center;
+          margin-bottom: 30px;
+          color: #fff;
+          font-size: 28px;
+        }
+        
+        .submit-status {
+          text-align: center;
+          margin-top: 15px;
+          padding: 10px;
+          border-radius: 5px;
+          font-weight: 500;
+        }
+        
+        .submit-status.success {
+          background: rgba(34, 197, 94, 0.1);
+          color: #22c55e;
+          border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        
+        .submit-status.error {
+          background: rgba(239, 68, 68, 0.1);
+          color: #ef4444;
+          border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        .form-cta {
+          text-align: center;
+        }
+        
+        .btn:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+        
+        @media (max-width: 768px) {
+          .contact-main__form {
+            padding: 25px;
+          }
+          
+          .contact-main__form h3 {
+            font-size: 24px;
+          }
+        }
+      `}</style>
     </section>
   );
 };

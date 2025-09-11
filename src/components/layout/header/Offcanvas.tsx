@@ -1,7 +1,6 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-const logo = "/images/agency/tech-icon.png";
 
 interface HeaderProps {
   openNav: boolean;
@@ -72,7 +71,7 @@ const Offcanvas = ({ openNav, setOpenNav }: HeaderProps) => {
           <div className="offcanvas-menu__header nav-fade">
             <div className="logo">
               <Link href="/">
-                <Image src={logo} alt="Image" title="Image" priority  height={100} width={100}/>
+                <Image src="/images/agency/tech-icon.png"  alt="Image" title="Image" priority  height={100} width={100}/>
               </Link>
             </div>
             <button
@@ -126,6 +125,12 @@ const Offcanvas = ({ openNav, setOpenNav }: HeaderProps) => {
                     <li>
                       <Link href="digital-marketing">Digital Marketing</Link>
                     </li>
+                    <li>
+                      <Link href="amazon-virtual-assistant">Amazon Virtual Assistant</Link>
+                    </li>
+                    <li>
+                      <Link href="cyber-security">Cyber Security</Link>
+                    </li>
                   </ul>
                 </li>
                 <li className="navbar__item nav-fade">
@@ -142,12 +147,17 @@ const Offcanvas = ({ openNav, setOpenNav }: HeaderProps) => {
           </div>
           <div className="offcanvas-menu__options nav-fade">
             <div className="offcanvas__mobile-options d-flex">
-               <Link href="tel:+13025795453" className="btn btn--secondary">
+               <Link href="https://wa.me/13025795453" className="btn btn--secondary">
                        +1 (302) 579-5453
                       </Link>
             </div>
+             <div className="offcanvas__mobile-options d-flex">
+               <Link href="https://wa.me/+447727840213" className="btn btn--secondary">
+                        +44 (772) 7840213
+                      </Link>
+            </div>
           </div>
-          <div className="offcanvas-menu__social social nav-fade">
+          {/* <div className="offcanvas-menu__social social nav-fade">
             <Link
               href="https://www.facebook.com/"
               target="_blank"
@@ -176,7 +186,7 @@ const Offcanvas = ({ openNav, setOpenNav }: HeaderProps) => {
             >
               <i className="fa-brands fa-instagram"></i>
             </Link>
-          </div>
+          </div> */}
         </nav>
       </div>
     </div>

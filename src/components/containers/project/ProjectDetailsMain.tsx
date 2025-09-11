@@ -1,17 +1,17 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-const poster = "/images/projects/poster.png";
-const iconone = "/images/projects/icon-one.png";
-const icontwo = "/images/projects/icon-two.png";
-const iconthree = "/images/projects/icon-three.png";
-const done = "/images/projects/d-one.png";
-const dtwo = "/images/projects/d-two.png";
-const dthree = "/images/projects/d-three.png";
-const dfour = "/images/projects/d-four.png";
-const dfive = "/images/projects/d-five.png";
+import poster from "public/images/projects/poster.png";
+import iconone from "public/images/projects/icon-one.png";
+import icontwo from "public/images/projects/icon-two.png";
+import iconthree from "public/images/projects/icon-three.png";
+import done from "public/images/projects/d-one.png";
+import dtwo from "public/images/projects/d-two.png";
+import dthree from "public/images/projects/d-three.png";
+import dfour from "public/images/projects/d-four.png";
+import dfive from "public/images/projects/d-five.png";
 
 const ProjectDetailsMain = () => {
   return (
@@ -352,4 +352,5 @@ const ProjectDetailsMain = () => {
 };
 
 export default ProjectDetailsMain;
+
 

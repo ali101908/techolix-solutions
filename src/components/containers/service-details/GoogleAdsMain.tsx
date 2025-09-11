@@ -1,7 +1,7 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
-const thumbone = "/images/service/g-ads2.jpg";
-const thumbtwo = "/images/service/g-ads.jpg";
+import thumbone from "public/images/service/g-ads2.jpg";
+import thumbtwo from "public/images/service/g-ads.jpg";
 
 const GoogleAdsMain = () => {
   return (
@@ -17,7 +17,7 @@ const GoogleAdsMain = () => {
                 <div className="details-group section__cta text-start">
                   <h3 className="title-anim">Expert Google Ads Management by Techolix</h3>
                   <p>
-                    Maximize your ROI with Techolix's professional Google Ads management services across the USA and UK. Our certified Google Ads specialists create and optimize high-performing campaigns that drive qualified traffic, increase conversions, and accelerate business growth in both regions.
+                    Maximize your ROI with Techolix&apos;s professional Google Ads management services across the USA and UK. Our certified Google Ads specialists create and optimize high-performing campaigns that drive qualified traffic, increase conversions, and accelerate business growth in both regions.
                   </p>
                   <p>
                     From keyword research and ad copywriting to bid management and performance analysis, we handle every aspect of your Google Ads campaigns. Our data-driven approach ensures optimal ad spend allocation and maximum return on investment for your advertising budget, whether targeting American or British customers.
@@ -61,4 +61,5 @@ const GoogleAdsMain = () => {
 };
 
 export default GoogleAdsMain;
+
 

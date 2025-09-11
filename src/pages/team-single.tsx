@@ -8,7 +8,7 @@ const TeamDetails = () => {
   return (
     <Layout header={2} footer={5} video={0}>
       <CmnBanner
-        title="SANA P. LESH"
+        title="RYAN PARKER"
         navigation="Team Details"
         parent="Our Teams"
         parentLink="our-teams"

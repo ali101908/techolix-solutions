@@ -1,12 +1,9 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-const sthumb = "/images/testimonial/client.png";
-const sthumbtwo = "/images/testimonial/client.png";
-const sthumbthree = "/images/testimonial/client.png";
 
 const HomeTestimonial = () => {
   const [nextSlideIndex, setNextSlideIndex] = useState<number>(1);
@@ -136,7 +133,7 @@ const HomeTestimonial = () => {
                     <div className="row gaper align-items-center">
                       <div className="col-12 col-lg-4 col-xxl-4">
                         <div className="thumb">
-                          <Image src={sthumb} alt="Image" />
+                          <Image src="/images/testimonial/client.png" width={60} height={60} alt="Image" />
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="44"
@@ -176,7 +173,7 @@ const HomeTestimonial = () => {
                     <div className="row gaper align-items-center">
                       <div className="col-12 col-lg-4 col-xxl-4">
                         <div className="thumb">
-                          <Image src={sthumbtwo} alt="Image" />
+                          <Image src="/images/testimonial/client.png" width={60} height={60} alt="Image" />
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="44"
@@ -216,7 +213,7 @@ const HomeTestimonial = () => {
                     <div className="row gaper align-items-center">
                       <div className="col-12 col-lg-4 col-xxl-4">
                         <div className="thumb">
-                          <Image src={sthumbthree} alt="Image" />
+                          <Image src="/images/testimonial/client.png" width={60} height={60} alt="Image" />
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="44"
@@ -275,11 +272,13 @@ const HomeTestimonial = () => {
           className="other-section-image"
           src={
             nextSlideIndex === 0
-              ? sthumb
+              ? "/images/testimonial/client.png"
               : nextSlideIndex === 1
-              ? sthumbtwo
-              : sthumbthree
+              ? "/images/testimonial/client.png"
+              : "/images/testimonial/client.png"
           }
+          width={300}
+          height={300}
           alt="Next Slide Image"
         />
       </div>

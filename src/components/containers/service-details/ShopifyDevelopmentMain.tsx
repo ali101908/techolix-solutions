@@ -1,7 +1,7 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
-const thumbone = "/images/service/shop2.jpg";
-const thumbtwo = "/images/service/shop1.jpg";
+import thumbone from "public/images/service/shop2.jpg";
+import thumbtwo from "public/images/service/shop1.jpg";
 
 const ShopifyDevelopmentMain = () => {
   return (
@@ -17,7 +17,7 @@ const ShopifyDevelopmentMain = () => {
                 <div className="details-group section__cta text-start">
                   <h3 className="title-anim">Professional Shopify Development Solutions</h3>
                   <p>
-                    Transform your e-commerce vision into reality with Techolix's expert Shopify development services across the USA and UK. Our Shopify specialists create stunning, high-converting online stores that drive sales and enhance customer experience across all devices for both markets.
+                    Transform your e-commerce vision into reality with Techolix&apos;s expert Shopify development services across the USA and UK. Our Shopify specialists create stunning, high-converting online stores that drive sales and enhance customer experience across all devices for both markets.
                   </p>
                   <p>
                     From custom theme development and app integrations to payment gateway setup and inventory management, we provide comprehensive Shopify solutions that scale with your business growth. Our e-commerce experts ensure your store is optimized for conversions and search engines, supporting both US and UK payment methods and shipping requirements.
@@ -61,4 +61,5 @@ const ShopifyDevelopmentMain = () => {
 };
 
 export default ShopifyDevelopmentMain;
+
 

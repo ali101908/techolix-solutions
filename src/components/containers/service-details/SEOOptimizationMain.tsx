@@ -1,7 +1,7 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
-const thumbone = "/images/service/seo1.jpg";
-const thumbtwo = "/images/service/seo2.jpg";
+import thumbone from "public/images/service/seo1.jpg";
+import thumbtwo from "public/images/service/seo2.jpg";
 
 const SEOOptimizationMain = () => {
   return (
@@ -17,7 +17,7 @@ const SEOOptimizationMain = () => {
                 <div className="details-group section__cta text-start">
                   <h3 className="title-anim">Advanced SEO Optimization by Techolix</h3>
                   <p>
-                    Boost your search engine rankings and organic traffic with Techolix's comprehensive SEO optimization services across the USA and UK. Our SEO experts employ white-hat techniques and industry best practices to improve your website's visibility on Google and other search engines in both markets.
+                    Boost your search engine rankings and organic traffic with Techolix&apos;s comprehensive SEO optimization services across the USA and UK. Our SEO experts employ white-hat techniques and industry best practices to improve your website&apos;s visibility on Google and other search engines in both markets.
                   </p>
                   <p>
                     From technical SEO audits and on-page optimization to content strategy and link building, we provide end-to-end SEO solutions that drive sustainable organic growth. Our data-driven approach ensures measurable improvements in search rankings and website traffic for both American and British search behaviors.
@@ -29,7 +29,7 @@ const SEOOptimizationMain = () => {
                       <div className="details-group">
                         <h3 className="title-anim">Comprehensive SEO Strategy</h3>
                         <p>
-                          Techolix's SEO methodology includes thorough website analysis, competitor research, keyword optimization, and technical improvements to enhance your search engine performance and user experience.
+                          Techolix&apos;s SEO methodology includes thorough website analysis, competitor research, keyword optimization, and technical improvements to enhance your search engine performance and user experience.
                         </p>
                         <p>
                           Our SEO specialists focus on both on-page and off-page optimization, ensuring your website meets all search engine requirements while providing valuable content to your target audience.
@@ -61,4 +61,5 @@ const SEOOptimizationMain = () => {
 };
 
 export default SEOOptimizationMain;
+
 

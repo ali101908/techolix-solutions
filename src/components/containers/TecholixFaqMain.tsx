@@ -1,6 +1,6 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-const thumb = "/images/agency/faq-thumb.png";
+import thumb from "public/images/agency/faq-thumb.png";
 
 const TecholixFaqMain = () => {
   const [imgTab, setImgTab] = useState(0);
@@ -23,7 +23,7 @@ const TecholixFaqMain = () => {
       answer: "Techolix stands out with our dual USA-UK presence, allowing us to serve clients across different time zones effectively. We combine cutting-edge technology with proven methodologies, offer 24/7 support, and focus on delivering measurable results that drive business growth."
     },
     {
-      question: "Can you help improve my website's search engine rankings?",
+      question: "Can you help improve my website&apos;s search engine rankings?",
       answer: "Absolutely! Our SEO optimization services include comprehensive keyword research, on-page optimization, technical SEO, content strategy, and link building. We use white-hat techniques to improve your search engine rankings and drive organic traffic to your website."
     },
     {
@@ -52,7 +52,7 @@ const TecholixFaqMain = () => {
     },
     {
       question: "How do I get started with Techolix?",
-      answer: "Getting started is easy! Contact us through our website, phone, or email to schedule a free consultation. We'll discuss your project requirements, provide recommendations, and create a customized proposal. Our team is ready to help bring your digital vision to life."
+      answer: "Getting started is easy! Contact us through our website, phone, or email to schedule a free consultation. We&apos;ll discuss your project requirements, provide recommendations, and create a customized proposal. Our team is ready to help bring your digital vision to life."
     }
   ];
 
@@ -122,7 +122,7 @@ const TecholixFaqMain = () => {
         <div className="row">
           <div className="col-12">
             <div className="section__content-cta text-center">
-              <p>Still have questions? We're here to help!</p>
+              <p>Still have questions? We&apos;re here to help!</p>
               <div className="section__content-cta-group">
                 <a href="contact-us" className="btn btn--primary">
                   Contact Us Today
@@ -142,4 +142,5 @@ const TecholixFaqMain = () => {
 };
 
 export default TecholixFaqMain;
+
 

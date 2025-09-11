@@ -1,11 +1,11 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-const banneronethumb = "/images/banner/banner-one-thumb.png";
-const star = "/images/star.png";
-const videoframe = "/images/video-frame.png";
+import banneronethumb from "public/images/banner/banner-one-thumb.png";
+import star from "public/images/star.png";
+import videoframe from "public/images/video-frame.png";
 import YoutubeEmbed from "@/components/youtube/YoutubeEmbed";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -141,4 +141,5 @@ const HomeOneBanner = () => {
 };
 
 export default HomeOneBanner;
+
 

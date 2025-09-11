@@ -1,7 +1,5 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
-const thumbone = "/images/service/thumb-one.png";
-const thumbtwo = "/images/service/thumb-two.png";
 
 const ServiceDetailsMain = () => {
   return (
@@ -12,7 +10,7 @@ const ServiceDetailsMain = () => {
             <div className="service-details__slider">
               <div className="service-details__slider-single">
                 <div className="poster fade-top">
-                  <Image src={thumbone} alt="Image" />
+                  <Image src="/images/service/thumb-one.png" alt="Image" width={500} height={300} />
                 </div>
                 <div className="details-group section__cta text-start">
                   <h3 className="title-anim">Why do we use it?</h3>
@@ -56,7 +54,7 @@ const ServiceDetailsMain = () => {
                     </div>
                     <div className="col-12 col-lg-5">
                       <div className="poster-small">
-                        <Image src={thumbtwo} alt="Image" />
+                        <Image src="/images/service/thumb-two.png" alt="Image" width={400} height={250} />
                       </div>
                     </div>
                   </div>
@@ -71,4 +69,5 @@ const ServiceDetailsMain = () => {
 };
 
 export default ServiceDetailsMain;
+
 

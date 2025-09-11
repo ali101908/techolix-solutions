@@ -1,12 +1,8 @@
-﻿import React, { useEffect } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-const thumbone = "/images/banner/thumb-one.png";
-const thumbtwo = "/images/banner/thumb-two.png";
-const star = "/images/star.png";
-const dotlarge = "/images/agency/dot-large.png";
 
 gsap.registerPlugin(ScrollTrigger);
 const Agency = () => {
@@ -67,7 +63,7 @@ const Agency = () => {
               textContent: 5,
             },
           },
-          "<"
+          // &quot;<"
         );
       }
     });
@@ -80,13 +76,13 @@ const Agency = () => {
           <div className="col-12 col-lg-6">
             <div className="agency__thumb">
               <Image
-                src={thumbone}
+                src="/images/banner/thumb-one.png" width={400} height={300}
                 alt="Image"
                 className="thumb-one fade-left"
                 priority
               />
               <Image
-                src={thumbtwo}
+                src="/images/banner/thumb-two.png" width={400} height={300}
                 alt="Image"
                 className="thumb-two fade-right"
                 priority
@@ -104,7 +100,7 @@ const Agency = () => {
               </h2>
               <div className="paragraph">
                 <p>
-                  Techolix Solutions brings innovative digital strategies that ensure your business success across both American and British markets. Our comprehensive services include web development, digital marketing, SEO optimization, and custom solutions tailored to drive measurable growth and competitive advantage in today's digital landscape.
+                  Techolix Solutions brings innovative digital strategies that ensure your business success across both American and British markets. Our comprehensive services include web development, digital marketing, SEO optimization, and custom solutions tailored to drive measurable growth and competitive advantage in today&apos;s digital landscape.
                 </p>
               </div>
               <div className="skill-wrap">
@@ -154,11 +150,12 @@ const Agency = () => {
           </div>
         </div>
       </div>
-      <Image src={star} alt="Image" className="star" priority />
-      <Image src={dotlarge} alt="Image" className="dot-large" priority />
+      <Image src="/images/star.png" width={30} height={30} alt="Image" className="star" priority />
+      <Image src="/images/agency/dot-large.png" width={50} height={50} alt="Image" className="dot-large" priority />
     </section>
   );
 };
 
 export default Agency;
+
 

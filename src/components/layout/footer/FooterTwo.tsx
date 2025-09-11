@@ -1,7 +1,6 @@
-﻿import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-const logo = "/images/agency/tech-icon.png";
 import gsap from "gsap";
 import chroma from "chroma-js";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -113,7 +112,7 @@ const FooterTwo = () => {
             <div className="footer-two__left">
               <div className="logo">
                 <Link href="/">
-                  <Image src={logo} priority alt="Image" height={100} width={100}/>
+                  <Image src="/images/agency/tech-icon.png"  priority alt="Image" height={100} width={200}/>
                 </Link>
               </div>
               <div className="paragraph">
@@ -145,7 +144,7 @@ const FooterTwo = () => {
           </div>
           <div className="col-12 col-lg-7 col-xl-7 offset-xl-1 col-xxl-5 offset-xxl-3">
             <div className="footer-two__right">
-              <div className="social justify-content-start justify-content-lg-start">
+              {/* <div className="social justify-content-start justify-content-lg-start">
                 <Link href="https://www.facebook.com/" target="_blank">
                   <i className="fa-brands fa-facebook-f"></i>
                   <span>Facebook</span>
@@ -166,14 +165,15 @@ const FooterTwo = () => {
                   <i className="fa-light fa-basketball"></i>
                   <span>Dribble</span>
                 </Link>
-              </div>
+              </div> */}
               <div className="footer__single-meta section__content-cta">
-                <Link
-                  href="https://www.google.com/maps/d/viewer?mid=1UZ57Drfs3SGrTgh6mrYjQktu6uY&hl=en_US&ll=18.672105000000013%2C105.68673800000003&z=17"
-                  target="_blank"
-                >
+                <Link  href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=/maps/place/1460%2BBroadway,%2BNew%2BYork,%2BNY%2B10036,%2BUSA/data%3D!4m2!3m1!1s0x89c259ab29218b1d:0x34803c530c7340ec%3Fsa%3DX%26ved%3D1t:242%26ictx%3D111&ved=2ahUKEwiCjerp89CPAxWKVaQEHXzkOysQ8gF6BAgSEAI&usg=AOvVaw3ht_DPHJOk5N5olfpovW-2" target="_blank">
                   <i className="fa-sharp fa-solid fa-location-dot"></i>
-                  901 N Pitt Str., Suite 170 Alexandria, USA
+                  1460 Broadway, New York, NY 10036, USA
+                </Link>
+                 <Link  href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=/maps/place/30%2BStamford%2BSt,%2BLondon%2BSE1%2B9LS,%2BUK/data%3D!4m2!3m1!1s0x487604b1cec7ed4d:0x24ab5debdff26773%3Fsa%3DX%26ved%3D1t:242%26ictx%3D111&ved=2ahUKEwjeidDs9NCPAxVXVqQEHSsSJQwQ8gF6BAgPEAI&usg=AOvVaw2Z4b36r2V9bkx7RawpQeAP">
+                  <i className="fa-sharp fa-solid fa-location-dot"></i>
+                  30 Stamford Street, London SE1 9LQ, United Kingdom
                 </Link>
                 <Link href="tel:+13025795453">
                   <i className="fa-sharp fa-solid fa-phone-volume"></i>
@@ -201,7 +201,7 @@ const FooterTwo = () => {
             </div>
             <div className="col-12 col-xl-6">
               <ul className="justify-content-center justify-content-xl-end">
-                <li>
+                {/* <li>
                   <Link href="/">Home</Link>
                 </li>
                 <li>
@@ -209,7 +209,7 @@ const FooterTwo = () => {
                 </li>
                 <li>
                   <Link href="our-services">Services</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href="terms-and-conditions">Terms & Conditions</Link>
                 </li>

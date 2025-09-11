@@ -1,10 +1,14 @@
-﻿import React, { useEffect, useState } from "react";
+import React, { useEffect,useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-const logo = "/images/agency/tech-icon.png";
-const logoLight = "/images/tech-icon.png";
 import Offcanvas from "./Offcanvas";
+// import Link from "next/link";
+// import Image from "next/image";
+// import { useRouter } from "next/router";
+// import logo from "/images/agency/tech-icon.png";
+// import logoLight from "/images/agency/tech-icon.png";
+// import Offcanvas from "./Offcanvas";
 
 interface HeaderProps {
   openNav: boolean;
@@ -38,11 +42,11 @@ const HeaderTwo = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
     scrolled ? " navbar-active" : " "
   } ${defaultClasses}`;
 
-  let logoSrc = logo;
+  let logoSrc = "/images/agency/tech-icon.png";
 
   const router = useRouter();
   if (router.pathname === "/index-two-light") {
-    logoSrc = logoLight;
+    logoSrc = "/images/agency/tech-icon.png";
   }
 
   return (
@@ -55,7 +59,7 @@ const HeaderTwo = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
                 <nav className="navbar p-0">
                   <div className="navbar__logo">
                     <Link href="/" aria-label="go to home">
-                      <Image src={logoSrc} priority alt="Image" height={100} width={100} />
+                      <Image src={logoSrc} priority alt="Image" height={100} width={200} />
                     </Link>
                   </div>
                   <div className="navbar__menu">
@@ -95,6 +99,12 @@ const HeaderTwo = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
                           <li>
                             <Link href="digital-marketing">Digital Marketing</Link>
                           </li>
+                          <li>
+                            <Link href="amazon-virtual-assistant">Amazon Virtual Assistant</Link>
+                          </li>
+                          <li>
+                            <Link href="cyber-security">Cyber Security</Link>
+                          </li>
                         </ul>
                       </li>
                       <li className="navbar__item nav-fade">
@@ -110,7 +120,7 @@ const HeaderTwo = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
                   </div>
                   <div className="navbar__options">
                     <div className="navbar__mobile-options d-none d-sm-flex">
-                      <Link href="tel:+13025795453" className="btn btn--secondary">
+                      <Link href="https://wa.me/13025795453" className="btn btn--secondary">
                        +1 (302) 579-5453
                       </Link>
                     </div>
@@ -134,4 +144,5 @@ const HeaderTwo = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
 };
 
 export default HeaderTwo;
+
 
