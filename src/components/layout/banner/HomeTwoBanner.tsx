@@ -51,7 +51,7 @@ const HomeTwoBanner = () => {
                     <source src="/images/banner-video.mp4" type="video/mp4" />
                   </video>
                 </div> */}
-                <div className="cta section__content-cta m-0">
+                {/* <div className="cta section__content-cta m-0">
                   <div className="single">
                     <h5 className="fw-7">5+ Years</h5>
                     <p className="fw-5">Digital Excellence</p>
@@ -60,7 +60,7 @@ const HomeTwoBanner = () => {
                     <h5 className="fw-7">200+</h5>
                     <p className="fw-5">Projects Delivered</p>
                   </div>
-                </div>
+                </div> */}
               </div>
               <div className="banner-two__content">
                 <h1 className="title-anim">
