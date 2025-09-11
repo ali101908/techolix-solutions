@@ -1,0 +1,129 @@
+/* Mobile Project Slider Styles */
+.project-mobile-slider {
+  padding: 60px 0;
+}
+
+.project-mobile-slider .section__header {
+  margin-bottom: 40px;
+}
+
+.project-mobile-slider .section__header h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.project-mobile-slider .section__header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.project-mobile-swiper {
+  padding-bottom: 60px;
+}
+
+.project-mobile-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+}
+
+.project-mobile-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-mobile-thumb img {
+  transition: transform 0.3s ease;
+}
+
+.project-mobile-thumb:hover img {
+  transform: scale(1.05);
+}
+
+.project-mobile-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.project-mobile-content h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.project-mobile-content h3 a {
+  color: #333;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.project-mobile-content h3 a:hover {
+  color: #007bff;
+}
+
+.project-mobile-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-mobile-navigation button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-mobile-navigation button:hover {
+  background: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.project-pagination {
+  display: flex;
+  gap: 8px;
+}
+
+.project-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-pagination .swiper-pagination-bullet-active {
+  background: #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .project-mobile-slider {
+    padding: 40px 0;
+  }
+  
+  .project-mobile-slider .section__header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .project-mobile-content {
+    padding: 15px;
+  }
+  
+  .project-mobile-content h3 {
+    font-size: 1rem;
+  }
+}

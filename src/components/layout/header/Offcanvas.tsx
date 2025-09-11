@@ -71,7 +71,7 @@ const Offcanvas = ({ openNav, setOpenNav }: HeaderProps) => {
           <div className="offcanvas-menu__header nav-fade">
             <div className="logo">
               <Link href="/">
-                <Image src="/images/agency/tech-icon.png"  alt="Image" title="Image" priority  height={100} width={100}/>
+                <Image src="/images/agency/tech-icon.png"  alt="Image" title="Image" priority  height={100} width={200}/>
               </Link>
             </div>
             <button

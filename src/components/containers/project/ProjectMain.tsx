@@ -1,8 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/swiper-bundle.css";
 
 // Using string paths for better deployment compatibility
 const projectImages = {
@@ -14,9 +17,66 @@ const projectImages = {
   hrsix: "/images/projects/mb1.png"
 };
 
+const projectsData = [
+  {
+    image: projectImages.hrone,
+    title: "digital agency",
+    subtitle: "website (USA)",
+    link: "https://firstpagerankerz.com/",
+    alt: "Digital Agency Website - USA Client"
+  },
+  {
+    image: projectImages.hrtwo,
+    title: "painting company",
+    subtitle: "website (USA)",
+    link: "https://priceritepainting.com/",
+    alt: "Painting Company Website - USA Client"
+  },
+  {
+    image: projectImages.hrthree,
+    title: "car recovery",
+    subtitle: "Leicester (UK)",
+    link: "https://toprecoveryservicesleicester.com/",
+    alt: "Car Recovery Leicester - UK Client"
+  },
+  {
+    image: projectImages.hrfour,
+    title: "digital agency",
+    subtitle: "website (UK)",
+    link: "http://brightreachsolutions.com/",
+    alt: "Digital Agency Website - UK Client"
+  },
+  {
+    image: projectImages.hrfive,
+    title: "fencing services",
+    subtitle: "landing page (UK)",
+    link: "https://boundaryfencingservices.com/",
+    alt: "Fencing Services Landing Page - UK Client"
+  },
+  {
+    image: projectImages.hrsix,
+    title: "car breakdown",
+    subtitle: "recovery (UK)",
+    link: "https://carbreakdownrecovery247.com/",
+    alt: "Car Breakdown Recovery - UK Client"
+  }
+];
+
 gsap.registerPlugin(ScrollTrigger);
 const ProjectMain = () => {
   const slider = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 992);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const ele = slider.current;
@@ -47,200 +107,116 @@ const ProjectMain = () => {
   }, []);
 
   return (
-    <section className="section project-sl" ref={slider}>
-      <div className="project-sl__single">
-        <div className="thumb">
-          <Link href="https://firstpagerankerz.com/" target="_blank">
-            <Image src={projectImages.hrone} alt="Digital Agency Website - USA Client" width={600} height={400} />
-          </Link>
-        </div>
-        <div className="content">
-          <h2>
-            <Link href="https://firstpagerankerz.com/" target="_blank">
-              digital agency
-              <br />
-              website (USA)
-            </Link>
-          </h2>
-        </div>
-      </div>
-      <div className="project-sl__single">
-        <div className="thumb">
-          <Link href="https://priceritepainting.com/" target="_blank">
-            <Image src={projectImages.hrtwo} alt="Painting Company Website - USA Client" width={600} height={400} />
-          </Link>
-        </div>
-        <div className="content">
-          <h2>
-            <Link href="https://priceritepainting.com/" target="_blank">
-              painting company
-              <br />
-              website (USA)
-            </Link>
-          </h2>
-        </div>
-      </div>
-      <div className="project-sl__single">
-        <div className="thumb">
-          <Link href="https://toprecoveryservicesleicester.com/" target="_blank">
-            <Image src={projectImages.hrthree} alt="Car Recovery Leicester - UK Client" width={600} height={400} />
-          </Link>
-        </div>
-        <div className="content">
-          <h2>
-            <Link href="https://toprecoveryservicesleicester.com/" target="_blank">
-              car recovery
-              <br />
-              Leicester (UK)
-            </Link>
-          </h2>
-        </div>
-      </div>
-      <div className="project-sl__single">
-        <div className="thumb">
-          <Link href="http://brightreachsolutions.com/" target="_blank">
-            <Image src={projectImages.hrfour} alt="Digital Agency Website - UK Client" width={600} height={400} />
-          </Link>
-        </div>
-        <div className="content">
-          <h2>
-            <Link href="http://brightreachsolutions.com/" target="_blank">
-              digital agency
-              <br />
-              website (UK)
-            </Link>
-          </h2>
-        </div>
-      </div>
-      <div className="project-sl__single">
-        <div className="thumb">
-          <Link href="https://boundaryfencingservices.com/" target="_blank">
-            <Image src={projectImages.hrfive} alt="Fencing Services Landing Page - UK Client" width={600} height={400} />
-          </Link>
-        </div>
-        <div className="content">
-          <h2>
-            <Link href="https://boundaryfencingservices.com/" target="_blank">
-              fencing services
-              <br />
-              landing page (UK)
-            </Link>
-          </h2>
-        </div>
-      </div>
-      <div className="project-sl__single">
-        <div className="thumb">
-          <Link href="https://carbreakdownrecovery247.com/" target="_blank">
-            <Image src={projectImages.hrsix} alt="Car Breakdown Recovery - UK Client" width={600} height={400} />
-          </Link>
-        </div>
-        <div className="content">
-          <h2>
-            <Link href="https://carbreakdownrecovery247.com/" target="_blank">
-              car breakdown
-              <br />
-              recovery (UK)
-            </Link>
-          </h2>
-        </div>
-      </div>
-      {/* <div className="project-sl__single">
-        <div className="thumb">
-          <Link href="project-single">
-            <Image src={hrone} alt="Image" />
-          </Link>
-        </div>
-        <div className="content">
-          <h2>
-            <Link href="project-single">
-              mobile app
-              <br />
-              development
-            </Link>
-          </h2>
-        </div>
-      </div>
-      <div className="project-sl__single">
-        <div className="thumb">
-          <Link href="project-single">
-            <Image src={hrtwo} alt="Image" />
-          </Link>
-        </div>
-        <div className="content">
-          <h2>
-            <Link href="project-single">
-              brand identity
-              <br />
-              difference
-            </Link>
-          </h2>
-        </div>
-      </div>
-      <div className="project-sl__single">
-        <div className="thumb">
-          <Link href="project-single">
-            <Image src={hrthree} alt="Image" />
-          </Link>
-        </div>
-        <div className="content">
-          <h2>
-            <Link href="project-single">
-              marketing app
-              <br />
-              solutions
-            </Link>
-          </h2>
-        </div>
-      </div>
-      <div className="project-sl__single">
-        <div className="thumb">
-          <Link href="project-single">
-            <Image src={hrfour} alt="Image" />
-          </Link>
-        </div>
-        <div className="content">
-          <h2>
-            <Link href="project-single">
-              LMS web app
-              <br />
-              lication
-            </Link>
-          </h2>
-        </div>
-      </div>
-      <div className="project-sl__single">
-        <div className="thumb">
-          <Link href="project-single">
-            <Image src={hrfive} alt="Image" />
-          </Link>
-        </div>
-        <div className="content">
-          <h2>
-            <Link href="project-single">
-              brand identity
-              <br />
-              difference
-            </Link>
-          </h2>
-        </div>
-      </div>
-      <div className="project-sl__single">
-        <div className="thumb">
-          <Link href="project-single">
-            <Image src={hrsix} alt="Image" />
-          </Link>
-        </div>
-        <div className="content">
-          <h2>
-            <Link href="project-single">
-              digital website
-              <br />
-              development
-            </Link>
-          </h2>
-        </div>
-      </div> */}
-    </section>
+    <>
+      {isMobile ? (
+        // Mobile Swiper Layout
+        <section className="section project-mobile-slider">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <div className="section__header text-center">
+                  <h2 className="title title-anim">Our Recent Projects</h2>
+                  <p>Swipe to explore our portfolio</p>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-12">
+                <Swiper
+                  slidesPerView={1}
+                  spaceBetween={20}
+                  loop={true}
+                  pagination={{
+                    clickable: true,
+                    el: '.project-pagination'
+                  }}
+                  navigation={{
+                    nextEl: '.project-next',
+                    prevEl: '.project-prev'
+                  }}
+                  autoplay={{
+                    delay: 4000,
+                    disableOnInteraction: false,
+                  }}
+                  modules={[Navigation, Pagination, Autoplay]}
+                  className="project-mobile-swiper"
+                  breakpoints={{
+                    576: {
+                      slidesPerView: 1.2,
+                      spaceBetween: 20,
+                    },
+                    768: {
+                      slidesPerView: 1.5,
+                      spaceBetween: 30,
+                    }
+                  }}
+                >
+                  {projectsData.map((project, index) => (
+                    <SwiperSlide key={index}>
+                      <div className="project-mobile-card">
+                        <div className="project-mobile-thumb">
+                          <Link href={project.link} target="_blank">
+                            <Image 
+                              src={project.image} 
+                              alt={project.alt} 
+                              width={400} 
+                              height={300}
+                              style={{ width: '100%', height: 'auto' }}
+                            />
+                          </Link>
+                        </div>
+                        <div className="project-mobile-content">
+                          <h3>
+                            <Link href={project.link} target="_blank">
+                              {project.title}
+                              <br />
+                              {project.subtitle}
+                            </Link>
+                          </h3>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+                
+                {/* Navigation buttons */}
+                <div className="project-mobile-navigation">
+                  <button className="project-prev">
+                    <i className="fa-light fa-angle-left"></i>
+                  </button>
+                  <div className="project-pagination"></div>
+                  <button className="project-next">
+                    <i className="fa-light fa-angle-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : (
+        // Desktop GSAP Layout
+        <section className="section project-sl" ref={slider}>
+          {projectsData.map((project, index) => (
+            <div key={index} className="project-sl__single">
+              <div className="thumb">
+                <Link href={project.link} target="_blank">
+                  <Image src={project.image} alt={project.alt} width={600} height={400} />
+                </Link>
+              </div>
+              <div className="content">
+                <h2>
+                  <Link href={project.link} target="_blank">
+                    {project.title}
+                    <br />
+                    {project.subtitle}
+                  </Link>
+                </h2>
+              </div>
+            </div>
+          ))}
+        </section>
+      )}
+    </>
   );
 };
 
