@@ -190,7 +190,7 @@ const Layout = ({
         />
         <meta name="keywords" content="web development, digital agency, WordPress websites, Shopify development, digital marketing, SEO optimization, Google Ads, Amazon virtual assistant, cyber security, web design, mobile apps, e-commerce development, techolix solutions" />
         <meta name="author" content="Techolix Solutions" />
-        <meta name="robots" content="index, follow" />
+        {/* <meta name="robots" content="index, follow" /> */}
         <link rel="canonical" href="https://techolixsolutions.com" />
         
         {/* Open Graph / Facebook */}
