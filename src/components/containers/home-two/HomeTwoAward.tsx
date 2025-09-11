@@ -33,17 +33,17 @@ const HomeTwoAward = () => {
                 <div className="single">
                   <h4>2023</h4>
                   <h4>USA Clients</h4>
-                  <p>Digital agency & painting websites</p>
+                  <p>Digital Agency & Painting Websites</p>
                 </div>
                 <div className="single">
                   <h4>2024</h4>
                   <h4>UK Market</h4>
-                  <p>Recovery & fencing services</p>
+                  <p>Recovery & Fencing Services</p>
                 </div>
                 <div className="single">
                   <h4>2025</h4>
                   <h4>Expansion</h4>
-                  <p>Global reach & premium services</p>
+                  <p>Global Reach & Premium Services</p>
                 </div>
               </div>
               <div className="section__content-cta">

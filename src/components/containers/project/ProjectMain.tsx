@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
+// import "../../../../mobile-project-slider.css";
 
 // Using string paths for better deployment compatibility
 const projectImages = {
@@ -20,43 +21,43 @@ const projectImages = {
 const projectsData = [
   {
     image: projectImages.hrone,
-    title: "digital agency",
-    subtitle: "website (USA)",
+    title: "Digital Agency",
+    subtitle: "Website (USA)",
     link: "https://firstpagerankerz.com/",
     alt: "Digital Agency Website - USA Client"
   },
   {
     image: projectImages.hrtwo,
-    title: "painting company",
-    subtitle: "website (USA)",
+    title: "Painting Company",
+    subtitle: "Website (USA)",
     link: "https://priceritepainting.com/",
     alt: "Painting Company Website - USA Client"
   },
   {
     image: projectImages.hrthree,
-    title: "car recovery",
+    title: "Car Recovery",
     subtitle: "Leicester (UK)",
     link: "https://toprecoveryservicesleicester.com/",
     alt: "Car Recovery Leicester - UK Client"
   },
   {
     image: projectImages.hrfour,
-    title: "digital agency",
-    subtitle: "website (UK)",
+    title: "Digital Agency",
+    subtitle: "Website (UK)",
     link: "http://brightreachsolutions.com/",
     alt: "Digital Agency Website - UK Client"
   },
   {
     image: projectImages.hrfive,
-    title: "fencing services",
-    subtitle: "landing page (UK)",
+    title: "Fencing Services",
+    subtitle: "Landing Page (UK)",
     link: "https://boundaryfencingservices.com/",
     alt: "Fencing Services Landing Page - UK Client"
   },
   {
     image: projectImages.hrsix,
-    title: "car breakdown",
-    subtitle: "recovery (UK)",
+    title: "Car Breakdown",
+    subtitle: "Recovery (UK)",
     link: "https://carbreakdownrecovery247.com/",
     alt: "Car Breakdown Recovery - UK Client"
   }
@@ -153,7 +154,7 @@ const ProjectMain = () => {
                 >
                   {projectsData.map((project, index) => (
                     <SwiperSlide key={index}>
-                      <div className="project-mobile-card">
+                      <div className="project-mobile-card mx-auto">
                         <div className="project-mobile-thumb">
                           <Link href={project.link} target="_blank">
                             <Image 
@@ -168,9 +169,9 @@ const ProjectMain = () => {
                             />
                           </Link>
                         </div>
-                        <div className="project-mobile-content">
-                          <h3>
-                            <Link href={project.link} target="_blank">
+                        <div className="project-mobile-content text-center">
+                          <h3 className="text-center mb-0">
+                            <Link href={project.link} target="_blank" className=" text-center">
                               {project.title}
                               <br />
                               {project.subtitle}
@@ -183,12 +184,12 @@ const ProjectMain = () => {
                 </Swiper>
                 
                 {/* Navigation buttons */}
-                {/* <div className="project-mobile-navigation">
-                  <button className="project-prev">
+                {/* <div className="project-mobile-navigation d-flex justify-content-center align-items-center mt-4">
+                  <button className="project-prev me-3">
                     <i className="fa-light fa-angle-left"></i>
                   </button>
-                  <div className="project-pagination"></div>
-                  <button className="project-next">
+                  <div className="project-pagination mx-3"></div>
+                  <button className="project-next ms-3">
                     <i className="fa-light fa-angle-right"></i>
                   </button>
                 </div> */}

@@ -9,6 +9,28 @@ import { usePathname } from 'next/navigation'
     const pathname = usePathname()
     const isHomePage = pathname === '/'
 
+    // Additional effect to ensure proper cleanup after component unmounts
+    useEffect(() => {
+        const handlePageLoad = () => {
+            // Force cleanup of any remaining styles
+            setTimeout(() => {
+                document.body.style.overflow = ''
+                document.body.style.overflowX = ''
+                document.documentElement.style.overflowX = ''
+            }, 100)
+        }
+
+        if (document.readyState === 'complete') {
+            handlePageLoad()
+        } else {
+            window.addEventListener('load', handlePageLoad)
+        }
+
+        return () => {
+            window.removeEventListener('load', handlePageLoad)
+        }
+    }, [])
+
     useEffect(() => {
         // Check if user has visited before (using sessionStorage for first visit detection)
         const visited = sessionStorage.getItem("techolix-visited")
@@ -23,6 +45,8 @@ import { usePathname } from 'next/navigation'
         document.documentElement.style.backgroundColor = '#000000'
         document.body.style.backgroundColor = '#000000'
         document.body.style.overflow = 'hidden'
+        document.body.style.overflowX = 'hidden'
+        document.documentElement.style.overflowX = 'hidden'
         
         // Mark as visited
         sessionStorage.setItem("techolix-visited", "true")
@@ -33,20 +57,36 @@ import { usePathname } from 'next/navigation'
             setTimeout(() => {
                 document.documentElement.style.backgroundColor = ''
                 document.body.style.backgroundColor = ''
-                document.body.style.overflow = 'auto'
-            }, 500)
-        }, 4000) // Extended to 4 seconds for better experience
+                document.body.style.overflow = ''
+                document.body.style.overflowX = ''
+                document.documentElement.style.overflowX = ''
+                // Force reflow to prevent layout issues
+                document.body.offsetHeight
+            }, 1000) // Increased delay to ensure animations complete
+        }, 3000) // Extended to 3 seconds for better experience
 
         return () => {
             clearTimeout(timer)
             document.documentElement.style.backgroundColor = ''
             document.body.style.backgroundColor = ''
-            document.body.style.overflow = 'auto'
+            document.body.style.overflow = ''
+            document.body.style.overflowX = ''
+            document.documentElement.style.overflowX = ''
+            // Force reflow
+            document.body.offsetHeight
         }
     }, [])
 
     // Don't show preloader if user has already visited
-    if (hasVisited || !loading) return null
+    if (hasVisited || !loading) {
+        // Ensure overflow is reset when preloader is not shown
+        if (typeof document !== 'undefined') {
+            document.body.style.overflow = ''
+            document.body.style.overflowX = ''
+            document.documentElement.style.overflowX = ''
+        }
+        return null
+    }
 
     return (
         <div 
@@ -58,7 +98,8 @@ import { usePathname } from 'next/navigation'
                 width: '100vw',
                 height: '100vh',
                 backgroundColor: '#000000',
-                zIndex: 9999
+                zIndex: 9999,
+                overflow: 'hidden'
             }}
         >
             <div className="preloader-curtain preloader-curtain-left"></div>
@@ -123,6 +164,21 @@ import { usePathname } from 'next/navigation'
           overflow: hidden;
         }
 
+        .preloader-hidden {
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+
+        html, body {
+          overflow-x: hidden !important;
+          max-width: 100vw !important;
+        }
+
         .preloader::before {
           content: '';
           position: absolute;
@@ -143,6 +199,7 @@ import { usePathname } from 'next/navigation'
           transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
           z-index: 10001;
           box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.3);
+          will-change: transform;
         }
 
         .curtain::before {

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import emailjs from '@emailjs/browser';
@@ -7,9 +7,46 @@ const ContactMain = () => {
   const form = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<string>('');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState('');
+  
+  const services = [
+    'Web Development',
+    'WordPress Websites', 
+    'Shopify Development',
+    'Digital Marketing',
+    'SEO Optimization',
+    'Google Ads',
+    'Amazon Virtual Assistant',
+    'Cyber Security',
+    'General Inquiry',
+    'Support',
+    'Pricing'
+  ];
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.custom-dropdown')) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate that a service is selected
+    if (!selectedService) {
+      setSubmitStatus('Please select a service before submitting.');
+      return;
+    }
+    
     setIsSubmitting(true);
     setSubmitStatus('');
 
@@ -27,6 +64,7 @@ const ContactMain = () => {
         // Reset form
         if (form.current) {
           form.current.reset();
+          setSelectedService('');
         }
       }, (error: any) => {
         console.log(error.text);
@@ -142,21 +180,61 @@ const ContactMain = () => {
                           />
                         </div>
                       </div>
-                      <div className="group-input drt">
-                        <select name="subject" className="subject" required>
-                          <option value="">Select Service</option>
-                          <option value="Web Development">Web Development</option>
-                          <option value="WordPress Websites">WordPress Websites</option>
-                          <option value="Shopify Development">Shopify Development</option>
-                          <option value="Digital Marketing">Digital Marketing</option>
-                          <option value="SEO Optimization">SEO Optimization</option>
-                          <option value="Google Ads">Google Ads</option>
-                          <option value="Amazon Virtual Assistant">Amazon Virtual Assistant</option>
-                          <option value="Cyber Security">Cyber Security</option>
-                          <option value="General Inquiry">General Inquiry</option>
-                          <option value="Support">Support</option>
-                          <option value="Pricing">Pricing</option>
-                        </select>
+                      <div className="group-input ">
+                        <div className="custom-dropdown">
+                          <div 
+                            className="dropdown-toggle" 
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              console.log('Toggle clicked. Current state:', isDropdownOpen);
+                              console.log('Event target:', e.target);
+                              console.log('Services array:', services);
+                              const newState = !isDropdownOpen;
+                              setIsDropdownOpen(newState);
+                              console.log('Setting new state to:', newState);
+                              // Force re-render check
+                              setTimeout(() => {
+                                console.log('State after timeout:', isDropdownOpen);
+                                const menuElement = document.querySelector('.dropdown-menu');
+                                console.log('Menu element found:', menuElement);
+                                console.log('Menu element styles:', menuElement ? window.getComputedStyle(menuElement) : 'not found');
+                              }, 100);
+                            }}
+                          >
+                            <span>{selectedService || 'Select Service'} 
+                               </span>
+                            <i className={`fa-solid fa-chevron-down ${isDropdownOpen ? 'rotate' : ''}`}></i>
+                          </div>
+                          {isDropdownOpen && (
+                            <div className="dropdown-menu show">
+                              {/* <div style={{padding: '10px', color: 'white', background: 'red'}}>
+                                DEBUG: Dropdown is open! Services count: {services.length}
+                              </div> */}
+                              {services.map((service, index) => (
+                                <div 
+                                  key={index}
+                                  className={`dropdown-item ${selectedService === service ? 'active' : ''}`}
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    console.log('Service selected:', service);
+                                    setSelectedService(service);
+                                    setIsDropdownOpen(false);
+                                  }}
+                                >
+                                  {service}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                          {/* Hidden input for form submission */}
+                          <input 
+                            type="hidden" 
+                            name="subject" 
+                            value={selectedService}
+                          />
+                        </div>
                       </div>
                       <div className="group-input">
                         <textarea
@@ -205,6 +283,121 @@ const ContactMain = () => {
           font-size: 28px;
         }
         
+        .custom-dropdown {
+          position: relative;
+          width: 100%;
+        }
+        
+        .dropdown-toggle {
+          width: 100%;
+          padding: 15px 50px 15px 20px;
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 8px;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          min-height: 54px;
+        }
+        
+        .dropdown-toggle::after {
+          display: none !important;
+          content: none !important;
+        }
+        
+        .dropdown-toggle:hover {
+          border-color: rgba(255, 255, 255, 0.4);
+          background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .dropdown-toggle i {
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 14px;
+          transition: transform 0.3s ease;
+        }
+        
+        .dropdown-toggle i.rotate {
+          transform: rotate(180deg);
+        }
+        
+        .dropdown-menu {
+          position: absolute;
+          top: calc(100% + 5px);
+          left: 0;
+          right: 0;
+          background: rgba(0, 0, 0, 0.95);
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          border-radius: 8px;
+          z-index: 9999;
+          max-height: 300px;
+          overflow-y: auto;
+          backdrop-filter: blur(10px);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+          animation: dropdownFadeIn 0.2s ease-out;
+          margin-top: 2px;
+        }
+        
+        .dropdown-menu.show {
+          display: block !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+        }
+        
+        @keyframes dropdownFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .dropdown-item {
+          padding: 12px 20px;
+          color: #fff;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .dropdown-item:last-child {
+          border-bottom: none;
+        }
+        
+        .dropdown-item:hover {
+          background: rgba(0, 123, 255, 0.8);
+          color: #fff;
+        }
+        
+        .dropdown-item.active {
+          background: rgba(0, 123, 255, 0.6);
+          color: #fff;
+        }
+        
+        .dropdown-menu::-webkit-scrollbar {
+          width: 6px;
+        }
+        
+        .dropdown-menu::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 3px;
+        }
+        
+        .dropdown-menu::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 3px;
+        }
+        
+        .dropdown-menu::-webkit-scrollbar-thumb:hover {
+          background: rgba(255, 255, 255, 0.5);
+        }
+        
         .submit-status {
           text-align: center;
           margin-top: 15px;
@@ -234,6 +427,34 @@ const ContactMain = () => {
           cursor: not-allowed;
         }
         
+        /* Improve other form inputs styling to match */
+        .group-input input,
+        .group-input textarea {
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: #fff;
+          transition: all 0.3s ease;
+        }
+        
+        .group-input input:focus,
+        .group-input textarea:focus {
+          border-color: #007bff;
+          background: rgba(255, 255, 255, 0.15);
+          box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+          outline: none;
+        }
+        
+        .group-input input:hover,
+        .group-input textarea:hover {
+          border-color: rgba(255, 255, 255, 0.4);
+          background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .group-input input::placeholder,
+        .group-input textarea::placeholder {
+          color: rgba(255, 255, 255, 0.6);
+        }
+        
         @media (max-width: 768px) {
           .contact-main__form {
             padding: 25px;
@@ -242,6 +463,16 @@ const ContactMain = () => {
           .contact-main__form h3 {
             font-size: 24px;
           }
+          
+          .dropdown-toggle {
+            padding: 12px 45px 12px 15px;
+            font-size: 15px;
+          }
+        }
+        
+        /* For Internet Explorer */
+        select::-ms-expand {
+          display: none;
         }
       `}</style>
     </section>
