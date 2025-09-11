@@ -10,7 +10,7 @@ import "swiper/swiper-bundle.css";
 
 // Using string paths for better deployment compatibility
 const projectImages = {
-  hrone: "/images/projects/fpr.png",
+  hrone: "/images/portfolio/fpr.png",
   hrtwo: "/images/projects/prp.png", 
   hrthree: "/images/projects/tprs.png",
   hrfour: "/images/projects/brs.png",
