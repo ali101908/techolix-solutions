@@ -127,7 +127,7 @@ const ContactMain = () => {
                 </Link>
                  <Link  href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=/maps/place/30%2BStamford%2BSt,%2BLondon%2BSE1%2B9LS,%2BUK/data%3D!4m2!3m1!1s0x487604b1cec7ed4d:0x24ab5debdff26773%3Fsa%3DX%26ved%3D1t:242%26ictx%3D111&ved=2ahUKEwjeidDs9NCPAxVXVqQEHSsSJQwQ8gF6BAgPEAI&usg=AOvVaw2Z4b36r2V9bkx7RawpQeAP">
                   <i className="fa-sharp fa-solid fa-location-dot"></i>
-                  30 Stamford Street, London SE1 9LQ, United Kingdom
+                  30 Stamford Street, London SE1 9LQ, UK
                 </Link>
                 </p>
               </div>
