@@ -142,8 +142,8 @@ const ContactMain = () => {
                 <h4>Office Hour</h4>
                 <p>Mon - Fri 09 am - 05pm (USA)</p>
                 <p>Sat    10am - 4pm (USA)</p>
-                 <p>Mon - Fri 12 pm - 09pm (USA)</p>
-                <p>Sat    12pm - 4pm (USA)</p>
+                 <p>Mon - Fri 12 pm - 09pm (UK)</p>
+                <p>Sat    12pm - 4pm (UK)</p>
               </div>
             </div>
           </div>
