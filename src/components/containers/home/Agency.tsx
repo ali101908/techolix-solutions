@@ -142,7 +142,7 @@ const Agency = () => {
                 </div>
               </div>
               <div className="section__content-cta">
-                <Link href="about-us" className="btn btn--primary">
+                <Link href="our-services" className="btn btn--primary">
                   Know More
                 </Link>
               </div>
