@@ -3,7 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/404": "pages/404.js",
-  "/contact-us": "pages/contact-us.js",
-  "/api/contact": "pages/api/contact.js"
+  "/api/newsletter": "pages/api/newsletter.js"
 }
