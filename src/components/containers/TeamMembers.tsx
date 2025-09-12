@@ -23,7 +23,7 @@ const TeamMembers = () => {
                   <div className="section__header text-center text-lg-start mb-0">
                     <span className="sub-title">
                       our awesome crew
-                      <i className="fa-solid fa-arrow-right"></i>
+                      {/* <i className="fa-solid fa-arrow-right"></i> */}
                     </span>
                     <h2 className="title title-anim">
                       our techolix team members

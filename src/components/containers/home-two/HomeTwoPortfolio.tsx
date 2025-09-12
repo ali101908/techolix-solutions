@@ -505,7 +505,7 @@ const HomeTwoPortfolio = () => {
             <div className="section__header text-center mb-4">
               <span className="sub-title">
                 technologies we use
-                <i className="fa-solid fa-arrow-right"></i>
+                {/* <i className="fa-solid fa-arrow-right"></i> */}
               </span>
               <h3 className="title">Our Tech Stack</h3>
             </div>

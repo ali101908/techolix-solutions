@@ -12,7 +12,7 @@ const HomeTwoSponsor = () => {
             <div className="section__header text-center">
               <span className="sub-title mb-0">
                 TRUSTED BY LEADING COMPANIES
-                <i className="fa-solid fa-arrow-right"></i>
+                {/* <i className="fa-solid fa-arrow-right"></i> */}
               </span>
             </div>
           </div>
@@ -24,14 +24,14 @@ const HomeTwoSponsor = () => {
                 slidesPerView={1}
                 spaceBetween={30}
                 slidesPerGroup={1}
-                speed={1200}
+                speed={800}
                 loop={true}
                 roundLengths={true}
                 centeredSlides={true}
                 centeredSlidesBounds={false}
                 modules={[Autoplay]}
                 autoplay={{
-                  delay: 3000,
+                  delay: 1000,
                   disableOnInteraction: false,
                   pauseOnMouseEnter: true,
                 }}

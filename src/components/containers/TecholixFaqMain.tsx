@@ -64,7 +64,7 @@ const TecholixFaqMain = () => {
             <div className="section__header text-center">
               <span className="sub-title">
                 frequently asked questions
-                <i className="fa-solid fa-arrow-right"></i>
+                {/* <i className="fa-solid fa-arrow-right"></i> */}
               </span>
               <h2 className="title title-anim">Everything You Need to Know About Techolix Services</h2>
               <p>Find answers to the most commonly asked questions about our digital services, processes, and how we can help grow your business.</p>

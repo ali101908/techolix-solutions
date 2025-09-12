@@ -37,7 +37,7 @@ const TecholixHomeTwoOffer = () => {
             <div className="section__header text-center">
               <span className="sub-title">
                 what Techolix offers
-                <i className="fa-solid fa-arrow-right"></i>
+                {/* <i className="fa-solid fa-arrow-right"></i> */}
               </span>
               <h2 className="title title-anim">our premium services</h2>
             </div>

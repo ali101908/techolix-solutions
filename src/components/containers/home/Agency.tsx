@@ -93,7 +93,7 @@ const Agency = () => {
             <div className="agency__content section__content">
               <span className="sub-title">
                 WELCOME TO TECHOLIX
-                <i className="fa-solid fa-arrow-right"></i>
+                {/* <i className="fa-solid fa-arrow-right"></i> */}
               </span>
               <h2 className="title title-anim">
                 We are digital solutions agency serving USA & UK

@@ -19,7 +19,7 @@ const HomeTwoAward = () => {
             <div className="award__content section__content">
               <span className="sub-title">
                 TECHOLIX ACHIEVEMENTS
-                <i className="fa-solid fa-arrow-right"></i>
+                {/* <i className="fa-solid fa-arrow-right"></i> */}
               </span>
               <h2 className="title title-anim">
                 Our Client <span>Success Stories</span>

@@ -38,7 +38,7 @@ const HomeTwoOffer = () => {
             <div className="section__header text-center">
               <span className="sub-title">
                 what we offer
-                <i className="fa-solid fa-arrow-right"></i>
+                {/* <i className="fa-solid fa-arrow-right"></i> */}
               </span>
               <h2 className="title title-anim">our main services</h2>
             </div>
