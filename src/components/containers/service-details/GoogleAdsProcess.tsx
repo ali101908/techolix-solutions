@@ -11,7 +11,7 @@ const GoogleAdsProcess = () => {
             <div className="section__header text-center">
               <span className="sub-title">
                 Google Ads Process
-                <i className="fa-solid fa-arrow-right"></i>
+                {/* <i className="fa-solid fa-arrow-right"></i> */}
               </span>
               <h2 className="title title-anim">Our Google Ads Management Process</h2>
             </div>

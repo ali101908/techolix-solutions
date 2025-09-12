@@ -11,7 +11,7 @@ const UxProcessTwo = () => {
             <div className="section__header text-center">
               <span className="sub-title">
                 Techolix Design Process
-                <i className="fa-solid fa-arrow-right"></i>
+                {/* <i className="fa-solid fa-arrow-right"></i> */}
               </span>
               <h2 className="title title-anim">Our UX/UI Development Process</h2>
             </div>

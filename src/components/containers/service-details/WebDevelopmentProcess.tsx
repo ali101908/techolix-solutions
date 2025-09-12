@@ -11,7 +11,7 @@ const WebDevelopmentProcess = () => {
             <div className="section__header text-center">
               <span className="sub-title">
                 Development Process
-                <i className="fa-solid fa-arrow-right"></i>
+                {/* <i className="fa-solid fa-arrow-right"></i> */}
               </span>
               <h2 className="title title-anim">Our Web Development Workflow</h2>
             </div>

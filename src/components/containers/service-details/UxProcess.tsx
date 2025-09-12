@@ -11,7 +11,7 @@ const UxProcess = () => {
             <div className="section__header text-center">
               <span className="sub-title">
                 UX Process
-                <i className="fa-solid fa-arrow-right"></i>
+                {/* <i className="fa-solid fa-arrow-right"></i> */}
               </span>
               <h2 className="title title-anim">working UX Process</h2>
             </div>

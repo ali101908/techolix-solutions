@@ -11,7 +11,7 @@ const DigitalMarketingProcess = () => {
             <div className="section__header text-center">
               <span className="sub-title">
                 Marketing Process
-                <i className="fa-solid fa-arrow-right"></i>
+                {/* <i className="fa-solid fa-arrow-right"></i> */}
               </span>
               <h2 className="title title-anim">Our Digital Marketing Process</h2>
             </div>
