@@ -123,11 +123,11 @@ const FooterTwo = () => {
               <div className="section__content-cta">
                 <h2>
                   <Link
-                    href="mailto:Info@techolixsolutions.com"
+                    href="mailto:info@techolixsolutions.com"
                     className="folks-text animated-text"
                     ref={animatedTextRef}
                   >
-                    Info@techolixsolutions.com
+                    info@techolixsolutions.com
                     {animatedTextContent.split("").map((char, index) => (
                       <span
                         aria-hidden="true"
@@ -179,9 +179,9 @@ const FooterTwo = () => {
                   <i className="fa-sharp fa-solid fa-phone-volume"></i>
                   +1 (302) 579-5453
                 </Link>
-                <Link href="mailto:Info@techolixsolutions.com">
-                  <i className="fa-sharp fa-solid fa-envelope"></i>
-                  Info@techolixsolutions.com
+                <Link href="tel:+447727840213">
+                  <i className="fa-sharp fa-solid fa-phone-volume"></i>
+                  +44 (772) 7840213
                 </Link>
               </div>
             </div>

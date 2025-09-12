@@ -148,12 +148,12 @@ const Offcanvas = ({ openNav, setOpenNav }: HeaderProps) => {
           <div className="offcanvas-menu__options nav-fade">
             <div className="offcanvas__mobile-options d-flex">
                <Link href="https://wa.me/13025795453" className="btn btn--secondary">
-                       +1 (302) 579-5453
+                       <i className="fa-brands fa-whatsapp"></i>   +1 (302) 579-5453
                       </Link>
             </div>
              <div className="offcanvas__mobile-options d-flex">
                <Link href="https://wa.me/+447727840213" className="btn btn--secondary">
-                        +44 (772) 7840213
+                    <i className="fa-brands fa-whatsapp"></i>    +44 (772) 7840213
                       </Link>
             </div>
           </div>

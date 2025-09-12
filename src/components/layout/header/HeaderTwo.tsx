@@ -120,10 +120,12 @@ const HeaderTwo = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
                   </div>
                   <div className="navbar__options">
                     <div className="navbar__mobile-options d-none d-sm-flex">
+                       
                       <Link href="https://wa.me/13025795453" className="btn btn--secondary">
-                       +1 (302) 579-5453
+                       <i className="fa-brands fa-whatsapp"></i>   +1 (302) 579-5453
                       </Link>
                     </div>
+                    
                     <button
                       className="open-mobile-menu d-flex d-xl-none"
                       aria-label="toggle mobile menu"
@@ -139,6 +141,99 @@ const HeaderTwo = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
         </div>
       </header>
       <Offcanvas openNav={openNav} setOpenNav={setOpenNav} />
+      
+     
+
+      {/* <style jsx>{`
+        .navbar__whatsapp .whatsapp-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background: #25D366;
+          color: white;
+          border-radius: 50%;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          margin-right: 15px;
+          font-size: 20px;
+        }
+        
+        .navbar__whatsapp .whatsapp-btn:hover {
+          background: #128C7E;
+          transform: scale(1.1);
+          box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-floating {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 9999;
+          animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 60px;
+          height: 60px;
+          background: #25D366;
+          color: white;
+          border-radius: 50%;
+          text-decoration: none;
+          font-size: 28px;
+          box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+          transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float-btn:hover {
+          background: #128C7E;
+          transform: scale(1.1);
+          box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+          color: white;
+        }
+        
+        @keyframes pulse {
+          0% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+          }
+          70% {
+            box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+          }
+          100% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .whatsapp-floating {
+            bottom: 15px;
+            right: 15px;
+          }
+          
+          .whatsapp-float-btn {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .whatsapp-floating {
+            bottom: 10px;
+            right: 10px;
+          }
+          
+          .whatsapp-float-btn {
+            width: 45px;
+            height: 45px;
+            font-size: 22px;
+          }
+        }
+      `}</style> */}
     </>
   );
 };

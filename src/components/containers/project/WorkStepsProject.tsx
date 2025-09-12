@@ -46,7 +46,7 @@ const WorkStepsProject = () => {
                     <div className="section__header text-center text-lg-start mb-0">
                       <span className="sub-title">
                         Techolix Project Workflow
-                        <i className="fa-solid fa-arrow-right"></i>
+                        {/* <i className="fa-solid fa-arrow-right"></i> */}
                       </span>
                       <h2 className="title title-anim">How We Deliver Projects</h2>
                     </div>
