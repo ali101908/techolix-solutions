@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import emailjs from '@emailjs/browser';
 
 const ContactMain = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -9,7 +8,7 @@ const ContactMain = () => {
   const [submitStatus, setSubmitStatus] = useState<string>('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('');
-  
+
   const services = [
     'Web Development',
     'WordPress Websites', 
@@ -31,123 +30,137 @@ const ContactMain = () => {
         setIsDropdownOpen(false);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
-  const sendEmail = (e: React.FormEvent) => {
+  // Auto-hide success message after 2 seconds
+  useEffect(() => {
+    if (submitStatus.includes("successfully")) {
+      const timer = setTimeout(() => {
+        setSubmitStatus('');
+      }, 2000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus]);
+
+  const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Validate that a service is selected
+
     if (!selectedService) {
       setSubmitStatus('Please select a service before submitting.');
       return;
     }
-    
+
     setIsSubmitting(true);
     setSubmitStatus('');
 
     if (form.current) {
-      emailjs.sendForm(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-        form.current,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
-      )
-      .then((result: any) => {
-        console.log(result.text);
-        setSubmitStatus('Message sent successfully!');
-        setIsSubmitting(false);
-        // Reset form
-        if (form.current) {
+      const formData = new FormData(form.current);
+      const payload = {
+        name: formData.get("user_name"),
+        email: formData.get("user_email"),
+        message: formData.get("message"),
+        service_type: selectedService,
+      };
+
+      try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_CONTACT_URL}/contact`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          setSubmitStatus("Message sent successfully!");
           form.current.reset();
           setSelectedService('');
+        } else {
+          setSubmitStatus(data.error || "Failed to send message. Please try again.");
         }
-      }, (error: any) => {
-        console.log(error.text);
-        setSubmitStatus('Failed to send message. Please try again.');
+      } catch (error) {
+        console.error(error);
+        setSubmitStatus("Failed to send message. Please try again.");
+      } finally {
         setIsSubmitting(false);
-      });
+      }
     }
   };
+
   return (
     <section className="section contact-m fade-wrapper">
       <div className="container">
+        {/* Contact Info Cards */}
         <div className="row gaper">
+          {/* Phone & Contact */}
           <div className="col-12 col-sm-6 col-xl-3">
             <div className="contact-m__single topy-tilt fade-top">
               <div className="thumb">
-                <Image src="/images/phone.png" alt="Image" width={60} height={60} />
+                <Image src="/images/phone.png" alt="Phone" width={60} height={60} />
               </div>
               <div className="content">
                 <h4>Phone & Contact</h4>
-                <p>
-                  <Link href="tel:+13025795453">Mobile : +1 (302) 579-5453</Link>
-                </p>
-                <p>
-                  <Link href="tel:+447727840213">Mobile : +44 (772) 7840213</Link>
-                </p>
+                <p><Link href="tel:+13025795453">+1 (302) 579-5453</Link></p>
+                <p><Link href="tel:+447727840213">+44 (772) 7840213</Link></p>
               </div>
             </div>
           </div>
+          {/* Email Support */}
           <div className="col-12 col-sm-6 col-xl-3">
             <div className="contact-m__single topy-tilt fade-top">
               <div className="thumb">
-                <Image src="/images/mail.png" alt="Image" width={60} height={60} />
+                <Image src="/images/mail.png" alt="Mail" width={60} height={60} />
               </div>
               <div className="content">
                 <h4>Email Support</h4>
-                <p>
-                  <Link href="mailto:Info@techolixsolutions.com">
-                    Info@techolixsolutions.com
-                  </Link>
-                </p>
-                <p>
-                  <Link href="mailto:Info@techolixsolutions.com">
-                    General Inquiries
-                  </Link>
-                </p>
+                <p><Link href="mailto:info@techolixsolutions.com">info@techolixsolutions.com</Link></p>
+                <p><Link href="mailto:info@techolixsolutions.com">General Inquiries</Link></p>
               </div>
             </div>
           </div>
+          {/* Location */}
           <div className="col-12 col-sm-6 col-xl-3">
             <div className="contact-m__single topy-tilt fade-top">
               <div className="thumb">
-                <Image src="/images/location.png" alt="Image" width={60} height={60} />
+                <Image src="/images/location.png" alt="Location" width={60} height={60} />
               </div>
               <div className="content">
                 <h4>Location</h4>
                 <p>
-                  <Link  href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=/maps/place/1460%2BBroadway,%2BNew%2BYork,%2BNY%2B10036,%2BUSA/data%3D!4m2!3m1!1s0x89c259ab29218b1d:0x34803c530c7340ec%3Fsa%3DX%26ved%3D1t:242%26ictx%3D111&ved=2ahUKEwiCjerp89CPAxWKVaQEHXzkOysQ8gF6BAgSEAI&usg=AOvVaw3ht_DPHJOk5N5olfpovW-2" target="_blank">
-                  <i className="fa-sharp fa-solid fa-location-dot"></i>
-                  1460 Broadway, New York, NY 10036, USA
-                </Link>
-                 <Link  href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=/maps/place/30%2BStamford%2BSt,%2BLondon%2BSE1%2B9LS,%2BUK/data%3D!4m2!3m1!1s0x487604b1cec7ed4d:0x24ab5debdff26773%3Fsa%3DX%26ved%3D1t:242%26ictx%3D111&ved=2ahUKEwjeidDs9NCPAxVXVqQEHSsSJQwQ8gF6BAgPEAI&usg=AOvVaw2Z4b36r2V9bkx7RawpQeAP">
-                  <i className="fa-sharp fa-solid fa-location-dot"></i>
-                  30 Stamford Street, London SE1 9LQ, UK
-                </Link>
+                  <Link href="https://maps.google.com/?q=1460+Broadway,+New+York,+NY+10036" target="_blank">
+                    1460 Broadway, New York, NY 10036, USA
+                  </Link>
+                  <br />
+                  <Link href="https://maps.google.com/?q=30+Stamford+Street,+London+SE1+9LQ" target="_blank">
+                    30 Stamford Street, London SE1 9LQ, UK
+                  </Link>
                 </p>
               </div>
             </div>
           </div>
+          {/* Office Hours */}
           <div className="col-12 col-sm-6 col-xl-3">
             <div className="contact-m__single topy-tilt fade-top">
               <div className="thumb">
-                <Image src="/images/time.png" alt="Image" width={60} height={60} />
+                <Image src="/images/time.png" alt="Time" width={60} height={60} />
               </div>
               <div className="content">
                 <h4>Office Hour</h4>
-                <p>Mon - Fri 09 am - 05pm (USA)</p>
-                <p>Sat    10am - 4pm (USA)</p>
-                 <p>Mon - Fri 12 pm - 09pm (UK)</p>
-                <p>Sat    12pm - 4pm (UK)</p>
+                <p>Mon - Fri 09 am - 05 pm (USA)</p>
+                <p>Sat 10 am - 4 pm (USA)</p>
+                <p>Mon - Fri 12 pm - 09 pm (UK)</p>
+                <p>Sat 12 pm - 4 pm (UK)</p>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Contact Form */}
         <div className="row">
           <div className="col-12">
             <div className="map-wrapper">
@@ -155,70 +168,28 @@ const ContactMain = () => {
                 <div className="col-12 col-lg-8 col-xl-6">
                   <div className="contact-main__form fade-top">
                     <h3>Leave A Message</h3>
-                    <form
-                      ref={form}
-                      onSubmit={sendEmail}
-                      className="section__content-cta"
-                    >
+                    <form ref={form} onSubmit={sendEmail} className="section__content-cta">
                       <div className="group-wrapper">
                         <div className="group-input">
-                          <input
-                            type="text"
-                            name="user_name"
-                            id="contactName"
-                            placeholder="Name"
-                            required
-                          />
+                          <input type="text" name="user_name" placeholder="Name" required />
                         </div>
                         <div className="group-input">
-                          <input
-                            type="email"
-                            name="user_email"
-                            id="contactEmail"
-                            placeholder="Email"
-                            required
-                          />
+                          <input type="email" name="user_email" placeholder="Email" required />
                         </div>
                       </div>
-                      <div className="group-input ">
+                      <div className="group-input">
                         <div className="custom-dropdown">
-                          <div 
-                            className="dropdown-toggle" 
-                            onClick={(e) => {
-                              e.preventDefault();
-                              e.stopPropagation();
-                              console.log('Toggle clicked. Current state:', isDropdownOpen);
-                              console.log('Event target:', e.target);
-                              console.log('Services array:', services);
-                              const newState = !isDropdownOpen;
-                              setIsDropdownOpen(newState);
-                              console.log('Setting new state to:', newState);
-                              // Force re-render check
-                              setTimeout(() => {
-                                console.log('State after timeout:', isDropdownOpen);
-                                const menuElement = document.querySelector('.dropdown-menu');
-                                console.log('Menu element found:', menuElement);
-                                console.log('Menu element styles:', menuElement ? window.getComputedStyle(menuElement) : 'not found');
-                              }, 100);
-                            }}
-                          >
-                            <span>{selectedService || 'Select Service'} 
-                               </span>
+                          <div className="dropdown-toggle" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+                            <span>{selectedService || 'Select Service'}</span>
                             <i className={`fa-solid fa-chevron-down ${isDropdownOpen ? 'rotate' : ''}`}></i>
                           </div>
                           {isDropdownOpen && (
                             <div className="dropdown-menu show">
-                              {/* <div style={{padding: '10px', color: 'white', background: 'red'}}>
-                                DEBUG: Dropdown is open! Services count: {services.length}
-                              </div> */}
-                              {services.map((service, index) => (
-                                <div 
-                                  key={index}
+                              {services.map((service, idx) => (
+                                <div
+                                  key={idx}
                                   className={`dropdown-item ${selectedService === service ? 'active' : ''}`}
-                                  onClick={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    console.log('Service selected:', service);
+                                  onClick={() => {
                                     setSelectedService(service);
                                     setIsDropdownOpen(false);
                                   }}
@@ -228,33 +199,19 @@ const ContactMain = () => {
                               ))}
                             </div>
                           )}
-                          {/* Hidden input for form submission */}
-                          <input 
-                            type="hidden" 
-                            name="subject" 
-                            value={selectedService}
-                          />
+                          <input type="hidden" name="service_type" value={selectedService} />
                         </div>
                       </div>
                       <div className="group-input">
-                        <textarea
-                          name="message"
-                          id="contactMessage"
-                          placeholder="Message"
-                          required
-                        ></textarea>
+                        <textarea name="message" placeholder="Message" required></textarea>
                       </div>
                       <div className="form-cta justify-content-center">
-                        <button 
-                          type="submit" 
-                          className="btn btn--primary"
-                          disabled={isSubmitting}
-                        >
-                          {isSubmitting ? 'Sending...' : 'Send Message'}
+                        <button type="submit" className="btn btn--primary" disabled={isSubmitting}>
+                          {isSubmitting ? "Sending..." : "Send Message"}
                         </button>
                       </div>
                       {submitStatus && (
-                        <div className={`submit-status ${submitStatus.includes('successfully') ? 'success' : 'error'}`}>
+                        <div className={`submit-status ${submitStatus.includes("successfully") ? "success" : "error"}`}>
                           {submitStatus}
                         </div>
                       )}
