@@ -1,19 +1,46 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
-import "swiper/swiper-bundle.css";
 import one from "public/images/teams/male-icon.png";
 import two from "public/images/teams/male-icon.png";
 import three from "public/images/teams/male-icon.png";
-import four from "public/images/teams/male-icon.png";
-import five from "public/images/teams/male-icon.png";
-import six from "public/images/teams/male-icon.png";
 
 const TeamMembers = () => {
+  const teamMembers = [
+    {
+      id: 1,
+      name: "Ryan Parker",
+      position: "Web Development Lead & Cyber Expert",
+      image: one,
+      link: "ryan-parker",
+      quote: "Leading innovative web solutions with cutting-edge technologies and user-centric design approaches.",
+      description: "Expert in modern web technologies, Ryan leads our development team with innovative solutions and clean, scalable code.",
+      skills: ["React & Next.js", "Full-Stack Development", "Cyber Security"]
+    },
+    {
+      id: 2,
+      name: "Salman",
+      position: "Project Manager",
+      image: two,
+      link: "salman",
+      quote: "Orchestrating seamless project delivery through strategic planning and efficient team coordination.",
+      description: "Master of project coordination and team leadership, ensuring every project meets deadlines and exceeds expectations.",
+      skills: ["Project Planning", "Team Leadership", "Client Relations"]
+    },
+    {
+      id: 3,
+      name: "Rohaan",
+      position: "SEO Specialist & Amazon Entrepreneur",
+      image: three,
+      link: "rohaan",
+      quote: "Driving organic growth through advanced SEO strategies and data-driven optimization techniques.",
+      description: "SEO expert with deep knowledge of search algorithms and ranking factors for organic traffic growth.",
+      skills: ["Technical SEO", "Content Optimization", "Amazon Marketing"]
+    }
+  ];
+
   return (
-    <section className="section team-slider-s">
+    <section className="section team-members-static">
       <div className="container">
         <div className="row">
           <div className="col-12">
@@ -23,7 +50,6 @@ const TeamMembers = () => {
                   <div className="section__header text-center text-lg-start mb-0">
                     <span className="sub-title">
                       our awesome crew
-                      {/* <i className="fa-solid fa-arrow-right"></i> */}
                     </span>
                     <h2 className="title title-anim">
                       our techolix team members
@@ -44,456 +70,260 @@ const TeamMembers = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="team-r position-relative">
-        <div className="team-s__slider-w">
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            slidesPerGroup={1}
-            speed={800}
-            loop={true}
-            centeredSlides={false}
-            modules={[Autoplay, Navigation]}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            navigation={{
-              nextEl: ".next-team-s",
-              prevEl: ".prev-team-s",
-            }}
-            className="team-s__slider"
-            breakpoints={{
-              768: {
-                slidesPerView: 3,
-                centeredSlides: true,
-              },
-              576: {
-                slidesPerView: 2,
-              },
-            }}
-          >
-            <SwiperSlide>
-              <div className="team-s__slider-single">
-                <div className="team-wrap">
-                  <div className="thumb">
-                    <Link href="ryan-parker">
-                      <Image src={one} alt="Image" />
-                    </Link>
-                    <div
-                      className="thumb__content"
-                      style={{ backgroundImage: "url('/images/teams/bg.png')" }}
-                    >
-                      <div className="info">
-                        <p>
-                          &quot;Leading innovative web solutions with cutting-edge technologies and user-centric design approaches.&quot;
-                        </p>
-                      </div>
-                      <h4>
-                        <Link href="ryan-parker">Ryan Parker</Link>
-                      </h4>
-                      <p>Web Development Lead & Cyber Expert</p>
-                    </div>
-                  </div>
-                  <div className="content">
-                    <div className="intro">
-                      <h5>
-                        <Link href="ryan-parker">Ryan Parker</Link>
-                      </h5>
-                      <p>Web Development Lead & Cyber Expert</p>
-                    </div>
-                    <hr />
-                    <div className="inner">
-                      <p>
-                        Expert in modern web technologies, Ryan leads our development team with innovative solutions and clean, scalable code. Specializes in React, Next.js, and full-stack development.
-                      </p>
-                      <div className="skill-wrap">
-                        <div className="skill-bar-single">
-                          <div className="skill-bar-title">
-                            <p>Frontend Development</p>
-                          </div>
-                          <div className="skill-bar-wrapper" data-percent="95%">
-                            <div className="skill-bar">
-                              <div className="skill-bar-percent">
-                                <span className="percent-value"></span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="skill-bar-single">
-                          <div className="skill-bar-title">
-                            <p>Backend Development</p>
-                          </div>
-                          <div className="skill-bar-wrapper" data-percent="90%">
-                            <div className="skill-bar">
-                              <div className="skill-bar-percent">
-                                <span className="percent-value"></span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Dedicated to delivering exceptional user experiences through thoughtful architecture and performance optimization.
-                      </p>
-                    </div>
+        
+        <div className="row justify-content-center mt-5">
+          {teamMembers.map((member, index) => (
+            <div key={member.id} className="col-12 col-md-6 col-lg-4 mb-4">
+              <div className="team-member-card fade-up">
+                <div className="member-image-wrapper">
+                  <Link href={member.link}>
+                    <Image 
+                      src={member.image} 
+                      alt={member.name}
+                      width={300}
+                      height={350}
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </Link>
+                  <div className="member-overlay">
+                    <p className="member-quote">"{member.quote}"</p>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="team-s__slider-single">
-                <div className="team-wrap">
-                  <div className="thumb">
-                    <Link href="salman">
-                      <Image src={two} alt="Image" />
-                    </Link>
-                    <div
-                      className="thumb__content"
-                      style={{ backgroundImage: "url('/images/teams/bg.png')" }}
-                    >
-                      <div className="info">
-                        <p>
-                          &quot;Orchestrating seamless project delivery through strategic planning and efficient team coordination.&quot;
-                        </p>
-                      </div>
-                      <h4>
-                        <Link href="salman">Salman</Link>
-                      </h4>
-                      <p>Project Manager</p>
-                    </div>
+                
+                <div className="member-info">
+                  <h4>
+                    <Link href={member.link}>{member.name}</Link>
+                  </h4>
+                  <p className="position">{member.position}</p>
+                  
+                  <p className="description">{member.description}</p>
+                  
+                  <div className="skills-list">
+                    <h6>Expertise:</h6>
+                    <ul>
+                      {member.skills.map((skill, skillIndex) => (
+                        <li key={skillIndex}>{skill}</li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="content">
-                    <div className="intro">
-                      <h5>
-                        <Link href="salman">Salman</Link>
-                      </h5>
-                      <p>Project Manager</p>
-                    </div>
-                    <hr />
-                    <div className="inner">
-                      <p>
-                        Master of project coordination and team leadership, Salman ensures every project meets deadlines and exceeds client expectations through strategic planning and clear communication.
-                      </p>
-                      <div className="skill-wrap">
-                        <div className="skill-bar-single">
-                          <div className="skill-bar-title">
-                            <p>Project Planning</p>
-                          </div>
-                          <div className="skill-bar-wrapper" data-percent="95%">
-                            <div className="skill-bar">
-                              <div className="skill-bar-percent">
-                                <span className="percent-value"></span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="skill-bar-single">
-                          <div className="skill-bar-title">
-                            <p>Team Leadership</p>
-                          </div>
-                          <div className="skill-bar-wrapper" data-percent="92%">
-                            <div className="skill-bar">
-                              <div className="skill-bar-percent">
-                                <span className="percent-value"></span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Committed to delivering exceptional results through effective resource management and stakeholder alignment.
-                      </p>
-                    </div>
-                  </div>
+                  
+                  <Link href={member.link} className="profile-link">
+                    View Profile
+                    <i className="fa-solid fa-arrow-right ml-2"></i>
+                  </Link>
                 </div>
               </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="team-s__slider-single">
-                <div className="team-wrap">
-                  <div className="thumb">
-                    <Link href="rohaan">
-                      <Image src={three} alt="Image" />
-                    </Link>
-                    <div
-                      className="thumb__content"
-                      style={{ backgroundImage: "url('/images/teams/bg.png')" }}
-                    >
-                      <div className="info">
-                        <p>
-                          &quot;Driving organic growth through advanced SEO strategies and data-driven optimization techniques.&quot;
-                        </p>
-                      </div>
-                      <h4>
-                        <Link href="rohaan">Rohaan</Link>
-                      </h4>
-                      <p>SEO Specialist & Amazon Entrepreneur</p>
-                    </div>
-                  </div>
-                  <div className="content">
-                    <div className="intro">
-                      <h5>
-                        <Link href="rohaan">Rohaan</Link>
-                      </h5>
-                      <p>SEO Specialist & Amazon Entrepreneur</p>
-                    </div>
-                    <hr />
-                    <div className="inner">
-                      <p>
-                        SEO expert with deep knowledge of search algorithms and ranking factors. Rohaan develops comprehensive strategies that drive organic traffic and improve search visibility.
-                      </p>
-                      <div className="skill-wrap">
-                        <div className="skill-bar-single">
-                          <div className="skill-bar-title">
-                            <p>Technical SEO</p>
-                          </div>
-                          <div className="skill-bar-wrapper" data-percent="93%">
-                            <div className="skill-bar">
-                              <div className="skill-bar-percent">
-                                <span className="percent-value"></span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="skill-bar-single">
-                          <div className="skill-bar-title">
-                            <p>Content Optimization</p>
-                          </div>
-                          <div className="skill-bar-wrapper" data-percent="88%">
-                            <div className="skill-bar">
-                              <div className="skill-bar-percent">
-                                <span className="percent-value"></span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Passionate about delivering measurable results through white-hat SEO practices and continuous optimization.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="team-s__slider-single">
-                <div className="team-wrap">
-                  <div className="thumb">
-                    <Link href="sam-collins">
-                      <Image src={four} alt="Image" />
-                    </Link>
-                    <div
-                      className="thumb__content"
-                      style={{ backgroundImage: "url('/images/teams/bg.png')" }}
-                    >
-                      <div className="info">
-                        <p>
-                          &quot;Crafting powerful WordPress solutions with custom themes and seamless functionality.&quot;
-                        </p>
-                      </div>
-                      <h4>
-                        <Link href="sam-collins">Sam Collins</Link>
-                      </h4>
-                      <p>WordPress Developer</p>
-                    </div>
-                  </div>
-                  <div className="content">
-                    <div className="intro">
-                      <h5>
-                        <Link href="sam-collins">Sam Collins</Link>
-                      </h5>
-                      <p>WordPress Developer</p>
-                    </div>
-                    <hr />
-                    <div className="inner">
-                      <p>
-                        WordPress specialist with expertise in custom theme development, plugin creation, and performance optimization. Sam delivers robust and scalable WordPress solutions.
-                      </p>
-                      <div className="skill-wrap">
-                        <div className="skill-bar-single">
-                          <div className="skill-bar-title">
-                            <p>WordPress Development</p>
-                          </div>
-                          <div className="skill-bar-wrapper" data-percent="94%">
-                            <div className="skill-bar">
-                              <div className="skill-bar-percent">
-                                <span className="percent-value"></span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="skill-bar-single">
-                          <div className="skill-bar-title">
-                            <p>Custom Themes</p>
-                          </div>
-                          <div className="skill-bar-wrapper" data-percent="91%">
-                            <div className="skill-bar">
-                              <div className="skill-bar-percent">
-                                <span className="percent-value"></span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Focused on creating user-friendly, secure, and high-performance WordPress websites that drive business growth.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="team-s__slider-single">
-                <div className="team-wrap">
-                  <div className="thumb">
-                    <Link href="abraham">
-                      <Image src={five} alt="Image" />
-                    </Link>
-                    <div
-                      className="thumb__content"
-                      style={{ backgroundImage: "url('/images/teams/bg.png')" }}
-                    >
-                      <div className="info">
-                        <p>
-                          &quot;Amplifying brand presence through strategic digital campaigns and creative marketing solutions.&quot;
-                        </p>
-                      </div>
-                      <h4>
-                        <Link href="abraham">Abraham</Link>
-                      </h4>
-                      <p>Digital Marketing Expert</p>
-                    </div>
-                  </div>
-                  <div className="content">
-                    <div className="intro">
-                      <h5>
-                        <Link href="abraham">Abraham</Link>
-                      </h5>
-                      <p>Digital Marketing Expert</p>
-                    </div>
-                    <hr />
-                    <div className="inner">
-                      <p>
-                        Digital marketing strategist with expertise in social media marketing, PPC campaigns, and content marketing. Sophia creates data-driven campaigns that deliver exceptional ROI.
-                      </p>
-                      <div className="skill-wrap">
-                        <div className="skill-bar-single">
-                          <div className="skill-bar-title">
-                            <p>Social Media Marketing</p>
-                          </div>
-                          <div className="skill-bar-wrapper" data-percent="92%">
-                            <div className="skill-bar">
-                              <div className="skill-bar-percent">
-                                <span className="percent-value"></span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="skill-bar-single">
-                          <div className="skill-bar-title">
-                            <p>PPC Campaigns</p>
-                          </div>
-                          <div className="skill-bar-wrapper" data-percent="89%">
-                            <div className="skill-bar">
-                              <div className="skill-bar-percent">
-                                <span className="percent-value"></span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Dedicated to building brand awareness and driving conversions through innovative digital marketing strategies.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="team-s__slider-single">
-                <div className="team-wrap">
-                  <div className="thumb">
-                    <Link href="oliver-mitchell">
-                      <Image src={six} alt="Image" />
-                    </Link>
-                    <div
-                      className="thumb__content"
-                      style={{ backgroundImage: "url('/images/teams/bg.png')" }}
-                    >
-                      <div className="info">
-                        <p>
-                          &quot;Building robust e-commerce solutions with Shopify expertise and conversion optimization.&quot;
-                        </p>
-                      </div>
-                      <h4>
-                        <Link href="oliver-mitchell">Oliver Mitchell</Link>
-                      </h4>
-                      <p>Shopify Developer</p>
-                    </div>
-                  </div>
-                  <div className="content">
-                    <div className="intro">
-                      <h5>
-                        <Link href="oliver-mitchell">Oliver Mitchell</Link>
-                      </h5>
-                      <p>Shopify Developer</p>
-                    </div>
-                    <hr />
-                    <div className="inner">
-                      <p>
-                        Shopify expert specializing in custom e-commerce solutions, app development, and store optimization. Oliver creates high-converting online stores that drive sales.
-                      </p>
-                      <div className="skill-wrap">
-                        <div className="skill-bar-single">
-                          <div className="skill-bar-title">
-                            <p>Shopify Development</p>
-                          </div>
-                          <div className="skill-bar-wrapper" data-percent="96%">
-                            <div className="skill-bar">
-                              <div className="skill-bar-percent">
-                                <span className="percent-value"></span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="skill-bar-single">
-                          <div className="skill-bar-title">
-                            <p>E-commerce Optimization</p>
-                          </div>
-                          <div className="skill-bar-wrapper" data-percent="93%">
-                            <div className="skill-bar">
-                              <div className="skill-bar-percent">
-                                <span className="percent-value"></span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <p>
-                        Committed to delivering seamless shopping experiences that maximize conversion rates and customer satisfaction.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-        <div className="slide-group">
-          <button aria-label="previous item" className="slide-btn prev-team-s">
-            <i className="fa-light fa-angle-left"></i>
-          </button>
-          <button aria-label="next item" className="slide-btn next-team-s">
-            <i className="fa-light fa-angle-right"></i>
-          </button>
+            </div>
+          ))}
         </div>
       </div>
+      
+      <style jsx>{`
+        .team-members-static {
+          padding: 80px 0;
+        }
+        
+        .team-member-card {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 20px;
+          overflow: hidden;
+          transition: all 0.4s ease;
+          height: 100%;
+          position: relative;
+        }
+        
+        .team-member-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 116, 37, 0.1), transparent);
+          transition: left 0.6s ease;
+        }
+        
+        .team-member-card:hover::before {
+          left: 100%;
+        }
+        
+        .team-member-card:hover {
+          transform: translateY(-10px);
+          background: rgba(255, 255, 255, 0.08);
+          border-color: #ff7425;
+          box-shadow: 0 25px 50px rgba(255, 116, 37, 0.3);
+        }
+        
+        .member-image-wrapper {
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .member-image-wrapper img {
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+        
+        .team-member-card:hover .member-image-wrapper img {
+          transform: scale(1.05);
+        }
+        
+        .member-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(transparent, rgba(0,0,0,0.9));
+          padding: 30px 20px 20px;
+          transform: translateY(100%);
+          transition: transform 0.4s ease;
+        }
+        
+        .team-member-card:hover .member-overlay {
+          transform: translateY(0);
+        }
+        
+        .member-quote {
+          color: #fff;
+          font-style: italic;
+          font-size: 14px;
+          line-height: 1.4;
+          margin: 0;
+        }
+        
+        .member-info {
+          padding: 25px;
+        }
+        
+        .member-info h4 {
+          color: #fff;
+          font-size: 22px;
+          font-weight: 600;
+          margin-bottom: 5px;
+        }
+        
+        .member-info h4 a {
+          color: #fff;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+        
+        .member-info h4 a:hover {
+          color: #ff7425;
+        }
+        
+        .position {
+          color: #ff7425;
+          font-size: 14px;
+          font-weight: 500;
+          margin-bottom: 15px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+        
+        .description {
+          color: #d9d9d9;
+          font-size: 14px;
+          line-height: 1.6;
+          margin-bottom: 20px;
+        }
+        
+        .skills-list h6 {
+          color: #fff;
+          font-size: 14px;
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
+        
+        .skills-list ul {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 20px 0;
+        }
+        
+        .skills-list li {
+          color: #ff7425;
+          font-size: 13px;
+          padding: 3px 0;
+          position: relative;
+          padding-left: 15px;
+        }
+        
+        .skills-list li::before {
+          content: '▸';
+          position: absolute;
+          left: 0;
+          color: #ff7425;
+        }
+        
+        .profile-link {
+          display: inline-flex;
+          align-items: center;
+          color: #ff7425;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          transition: all 0.3s ease;
+        }
+        
+        .profile-link:hover {
+          color: #ff9900;
+          transform: translateX(5px);
+        }
+        
+        .profile-link .ml-2 {
+          margin-left: 8px;
+          transition: transform 0.3s ease;
+        }
+        
+        .profile-link:hover .ml-2 {
+          transform: translateX(3px);
+        }
+        
+        .fade-up {
+          opacity: 0;
+          transform: translateY(30px);
+          animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .fade-up:nth-child(1) { animation-delay: 0.1s; }
+        .fade-up:nth-child(2) { animation-delay: 0.3s; }
+        .fade-up:nth-child(3) { animation-delay: 0.5s; }
+        
+        @keyframes fadeInUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .team-members-static {
+            padding: 50px 0;
+          }
+          
+          .team-member-card {
+            margin-bottom: 30px;
+          }
+          
+          .member-info {
+            padding: 20px;
+          }
+          
+          .member-info h4 {
+            font-size: 20px;
+          }
+          
+          .description {
+            font-size: 13px;
+          }
+        }
+      `}</style>
     </section>
   );
 };

@@ -373,6 +373,7 @@
 
 // 5.04 poftfolio two styles
 .portfolio-two {
+  background-color: black;
   .portfolio__text-slider {
     margin-bottom: 80px;
   }
@@ -659,6 +660,7 @@
 
 // 5.08 offer two styles
 .offer-two {
+  background-color: black;
   .offer-two__slider,
   .offer-two__slider-rtl {
     margin: -60px 0px;
@@ -1122,6 +1124,7 @@
 
 // 5.15 sponsor styles
 .sponsor {
+  background-color: black;
   .sponsor__slider-item {
     text-align: center;
     img {
@@ -1148,6 +1151,7 @@
 
 // 5.17 next page styles
 .next-page {
+  background-color: black;
   .swiper-wrapper {
     -webkit-transition-timing-function: linear !important;
     transition-timing-function: linear !important;
@@ -1309,6 +1313,7 @@
 
 // 5.19 video modal styles
 .video-modal {
+  background-color: black;
   position: relative;
   .modal-bg {
     width: 100%;
@@ -1347,6 +1352,7 @@
 
 // 5.20 cta styles
 .cta-s {
+  background-color: black;
   .cta__wrapper {
     max-width: 1320px;
     margin-left: auto;
@@ -4015,6 +4021,23 @@ select {
     }
   }
 }
+
+
+
+.sponsor{
+  &::before,
+  &::after {
+    background-image: none !important;
+  }
+  
+  background-image: none !important;
+}
+
+// Specifically target any line.png backgrounds
+
+
+
+
 
 /* ==== 
  --------- (5.0) all sections styles end ---------

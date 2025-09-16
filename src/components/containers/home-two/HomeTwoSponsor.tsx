@@ -5,14 +5,14 @@ import "swiper/swiper-bundle.css";
 
 const HomeTwoSponsor = () => {
   return (
-    <div className="sponsor section liner">
+    <div className="sponsor section ">
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8">
             <div className="section__header text-center">
               <span className="sub-title mb-0">
                 TRUSTED BY LEADING COMPANIES
-                {/* <i className="fa-solid fa-arrow-right"></i> */}
+                <i className="fa-solid fa-arrow-right"></i>
               </span>
             </div>
           </div>

@@ -165,7 +165,7 @@ const ContactMain = () => {
           <div className="col-12">
             <div className="map-wrapper">
               <div className="row justify-content-center">
-                <div className="col-12 col-lg-8 col-xl-6">
+                <div className="col-12 col-lg-10 col-xl-12">
                   <div className="contact-main__form fade-top">
                     <h3>Leave A Message</h3>
                     <form ref={form} onSubmit={sendEmail} className="section__content-cta">
@@ -228,29 +228,40 @@ const ContactMain = () => {
         .contact-main__form {
           background: rgba(255, 255, 255, 0.05);
           border-radius: 15px;
-          padding: 40px;
+          padding: 60px;
           border: 1px solid rgba(255, 255, 255, 0.1);
           backdrop-filter: blur(10px);
+          max-width: 100%;
+          margin: 0 auto;
         }
         
         .contact-main__form h3 {
           text-align: center;
-          margin-bottom: 30px;
+          margin-bottom: 40px;
           color: #fff;
-          font-size: 28px;
+          font-size: 32px;
+          font-weight: 600;
+        }
+        
+        .group-wrapper {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          margin-bottom: 20px;
         }
         
         .custom-dropdown {
           position: relative;
           width: 100%;
+          margin-bottom: 20px;
         }
         
         .dropdown-toggle {
           width: 100%;
-          padding: 15px 50px 15px 20px;
+          padding: 20px 50px 20px 25px;
           background: rgba(255, 255, 255, 0.1);
           border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 8px;
+          border-radius: 12px;
           color: #fff;
           font-size: 16px;
           cursor: pointer;
@@ -258,7 +269,7 @@ const ContactMain = () => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          min-height: 54px;
+          min-height: 60px;
         }
         
         .dropdown-toggle::after {
@@ -385,12 +396,27 @@ const ContactMain = () => {
         }
         
         /* Improve other form inputs styling to match */
+        .group-input {
+          margin-bottom: 20px;
+        }
+        
         .group-input input,
         .group-input textarea {
+          width: 100%;
+          padding: 20px 25px;
           background: rgba(255, 255, 255, 0.1);
           border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 12px;
           color: #fff;
+          font-size: 16px;
           transition: all 0.3s ease;
+          min-height: 60px;
+        }
+        
+        .group-input textarea {
+          min-height: 140px;
+          resize: vertical;
+          font-family: inherit;
         }
         
         .group-input input:focus,
@@ -410,20 +436,88 @@ const ContactMain = () => {
         .group-input input::placeholder,
         .group-input textarea::placeholder {
           color: rgba(255, 255, 255, 0.6);
+          font-size: 16px;
+        }
+        
+        .form-cta {
+          text-align: center;
+          margin-top: 30px;
+        }
+        
+        .btn--primary {
+          padding: 18px 50px;
+          font-size: 16px;
+          font-weight: 600;
+          border-radius: 30px;
+          background: black;
+          border: none;
+          color: #ff7425;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          transition: all 0.4s ease;
+          // box-shadow: 0 8px 25px rgba(255, 116, 37, 0.3);
+        }
+        
+        .btn--primary:hover {
+          background: linear-gradient(135deg, #ff9900, #ff7425);
+          transform: translateY(-3px);
+          // box-shadow: 0 12px 35px rgba(255, 116, 37, 0.5);
+        }
+        
+        .btn:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+          transform: none !important;
         }
         
         @media (max-width: 768px) {
           .contact-main__form {
-            padding: 25px;
+            padding: 30px 25px;
           }
           
           .contact-main__form h3 {
-            font-size: 24px;
+            font-size: 26px;
+            margin-bottom: 30px;
+          }
+          
+          .group-wrapper {
+            grid-template-columns: 1fr;
+            gap: 15px;
+          }
+          
+          .group-input input,
+          .group-input textarea {
+            padding: 15px 20px;
+            min-height: 50px;
+            font-size: 15px;
+          }
+          
+          .group-input textarea {
+            min-height: 120px;
           }
           
           .dropdown-toggle {
-            padding: 12px 45px 12px 15px;
+            padding: 15px 45px 15px 20px;
             font-size: 15px;
+            min-height: 50px;
+          }
+          
+          .btn--primary {
+            padding: 15px 40px;
+            font-size: 15px;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .contact-main__form {
+            padding: 25px 20px;
+          }
+          
+          .group-input input,
+          .group-input textarea,
+          .dropdown-toggle {
+            padding-left: 18px;
+            padding-right: 18px;
           }
         }
         
