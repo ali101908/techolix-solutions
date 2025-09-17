@@ -12,7 +12,7 @@ const HomeTwoSponsor = () => {
             <div className="section__header text-center">
               <span className="sub-title mb-0">
                 TRUSTED BY LEADING COMPANIES
-                <i className="fa-solid fa-arrow-right"></i>
+                {/* <i className="fa-solid fa-arrow-right"></i> */}
               </span>
             </div>
           </div>

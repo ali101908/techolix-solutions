@@ -5,8 +5,8 @@ import HomeTwoModal from "@/components/containers/home-two/HomeTwoModal";
 import Agency from "@/components/containers/home/Agency";
 import TeamMembers from "@/components/containers/TeamMembers";
 import HomeTestimonial from "@/components/containers/home/HomeTestimonial";
-import AboutCta from "@/components/containers/home-two/AboutCta";
 import HomeTwoSponsor from "@/components/containers/home-two/HomeTwoSponsor";
+import HomeTwoCta from "@/components/containers/home-two/HomeTwoCta";
 
 const AboutUs = () => {
   return (
@@ -17,7 +17,7 @@ const AboutUs = () => {
       <TeamMembers />
       <HomeTestimonial />
       <HomeTwoSponsor />
-      <AboutCta />
+      <HomeTwoCta/>
     </Layout>
   );
 };

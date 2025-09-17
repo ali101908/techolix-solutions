@@ -49,7 +49,7 @@ const HomeTwoTestimonial = () => {
             <div className="testimonial-two__content section__content testimonial-g-con">
               <span className="sub-title">
                 testimonial
-                <i className="fa-solid fa-arrow-right"></i>
+                {/* <i className="fa-solid fa-arrow-right"></i> */}
               </span>
               <h2 className="title title-anim">
                 Some Of Our Respected Happy Clients Says

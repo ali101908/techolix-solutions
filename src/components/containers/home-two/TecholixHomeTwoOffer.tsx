@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 const TecholixHomeTwoOffer = () => {
+  const [showAllServices, setShowAllServices] = useState(false);
+
   const services = [
     {
       id: "01",
@@ -23,8 +25,57 @@ const TecholixHomeTwoOffer = () => {
       description: "Improve your search engine rankings and drive organic traffic with our proven SEO strategies.",
       link: "seo-optimization",
       icon: "fas fa-search"
+    },
+    {
+      id: "04",
+      title: "WordPress Development",
+      description: "Professional WordPress websites with custom themes, plugins, and e-commerce solutions.",
+      link: "wordpress-development",
+      icon: "fab fa-wordpress"
+    },
+    {
+      id: "05",
+      title: "Shopify Development",
+      description: "Complete Shopify store setup and customization for successful e-commerce businesses.",
+      link: "shopify-development",
+      icon: "fas fa-shopping-cart"
+    },
+    {
+      id: "06",
+      title: "Google Ads Management",
+      description: "Targeted Google Ads campaigns that maximize ROI and drive qualified traffic to your business.",
+      link: "google-ads",
+      icon: "fab fa-google"
+    },
+    {
+      id: "07",
+      title: "Amazon Virtual Assistant",
+      description: "Complete Amazon store management, optimization, and growth strategies for sellers.",
+      link: "amazon-virtual-assistant",
+      icon: "fab fa-amazon"
+    },
+    {
+      id: "08",
+      title: "Cyber Security",
+      description: "Comprehensive cybersecurity solutions to protect your business from digital threats.",
+      link: "cyber-security",
+      icon: "fas fa-shield-alt"
+    },
+    {
+      id: "09",
+      title: "Mobile App Development",
+      description: "Native and cross-platform mobile applications for iOS and Android devices.",
+      link: "mobile-app-development",
+      icon: "fas fa-mobile-alt"
     }
   ];
+
+  const initialServices = services.slice(0, 3);
+  const additionalServices = services.slice(3);
+
+  const toggleServices = () => {
+    setShowAllServices(!showAllServices);
+  };
 
   return (
     <section className="section offer-two">
@@ -40,8 +91,9 @@ const TecholixHomeTwoOffer = () => {
           </div>
         </div>
         
+        {/* Initial 3 Services */}
         <div className="row justify-content-center mt-5">
-          {services.map((service, index) => (
+          {initialServices.map((service, index) => (
             <div key={index} className="col-12 col-md-6 col-lg-4 mb-4">
               <div className="service-card fade-top">
                 <div className="service-number">
@@ -65,17 +117,82 @@ const TecholixHomeTwoOffer = () => {
           ))}
         </div>
         
-        <div className="row justify-content-center mt-5">
-          <div className="col-12 text-center">
-            <Link href="our-services" className="btn btn--primary view-all-services">
-              View All Services
-              <i className="fa-solid fa-arrow-right ml-2"></i>
-            </Link>
+        {/* Additional Services (Expandable) */}
+        <div className={`additional-services ${showAllServices ? 'expanded' : ''}`}>
+          <div className="row justify-content-center">
+            {additionalServices.map((service, index) => (
+              <div key={index + 3} className="col-12 col-md-6 col-lg-4 mb-4">
+                <div className="service-card fade-in">
+                  <div className="service-number">
+                    <span>{service.id}</span>
+                  </div>
+                  <div className="service-icon">
+                    <i className={service.icon}></i>
+                  </div>
+                  <div className="service-content">
+                    <h3>
+                      <Link href={service.link}>{service.title}</Link>
+                    </h3>
+                    <p>{service.description}</p>
+                    <Link href={service.link} className="service-link">
+                      Learn More
+                      <i className="fa-solid fa-arrow-right ml-2"></i>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
+        
+        {/* View More/Less Button */}
+        <div className="row justify-content-center mt-4">
+          <div className="col-12 text-center">
+            <button 
+              onClick={toggleServices}
+              className="btn btn--secondary view-more-btn"
+            >
+              {showAllServices ? 'View Less Services' : 'View More Services'}
+              <i className={`fa-solid ${showAllServices ? 'fa-chevron-up' : 'fa-chevron-down'} ml-2`}></i>
+            </button>
+          </div>
+        </div>
+        
+       
+     
       </div>
       
       <style jsx>{`
+        .additional-services {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.8s ease, opacity 0.8s ease;
+          opacity: 0;
+        }
+        
+        .additional-services.expanded {
+          max-height: 2000px;
+          opacity: 1;
+        }
+        
+        .additional-services .service-card {
+          transform: translateY(20px);
+          opacity: 0;
+          transition: all 0.6s ease;
+        }
+        
+        .additional-services.expanded .service-card {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        
+        .additional-services.expanded .service-card:nth-child(1) { transition-delay: 0.1s; }
+        .additional-services.expanded .service-card:nth-child(2) { transition-delay: 0.2s; }
+        .additional-services.expanded .service-card:nth-child(3) { transition-delay: 0.3s; }
+        .additional-services.expanded .service-card:nth-child(4) { transition-delay: 0.4s; }
+        .additional-services.expanded .service-card:nth-child(5) { transition-delay: 0.5s; }
+        .additional-services.expanded .service-card:nth-child(6) { transition-delay: 0.6s; }
+        
         .service-card {
           background: rgba(255, 255, 255, 0.05);
           border: 1px solid rgba(255, 255, 255, 0.1);
@@ -190,6 +307,39 @@ const TecholixHomeTwoOffer = () => {
           transform: translateX(3px);
         }
         
+        .view-more-btn {
+          padding: 12px 35px;
+          background: black;
+          border: 2px solid #ff7425;
+          color: #ff7425;
+          text-decoration: none;
+          border-radius: 30px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          transition: all 0.4s ease;
+          display: inline-flex;
+          align-items: center;
+          cursor: pointer;
+          font-size: 14px;
+        }
+        
+        .view-more-btn:hover {
+          background: #ff7425;
+          color: black;
+          transform: translateY(-2px);
+        
+        }
+        
+        .view-more-btn .ml-2 {
+          margin-left: 10px;
+          transition: transform 0.3s ease;
+        }
+        
+        .view-more-btn:hover .ml-2 {
+          transform: translateX(3px);
+        }
+        
         .view-all-services {
           padding: 15px 40px;
           background: linear-gradient(135deg, #ff7425, #ff9900);
@@ -239,9 +389,14 @@ const TecholixHomeTwoOffer = () => {
             font-size: 14px;
           }
           
-          .view-all-services {
+          .view-all-services,
+          .view-more-btn {
             padding: 12px 30px;
             font-size: 14px;
+          }
+          
+          .additional-services.expanded {
+            max-height: 3000px;
           }
         }
         
