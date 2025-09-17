@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Head from "next/head";
+import { Analytics } from "@vercel/analytics/next"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import VanillaTilt from "vanilla-tilt";
@@ -510,7 +511,9 @@ const Layout = ({
             setOpenNav={setOpenNav}
           />
         )} */}
-        <main>{children}</main>
+        <main>{children}
+           <Analytics />
+        </main>
         {/* {footer === 1 && <Footer />} */}
         {footer === 2 && <FooterTwo />}
         {/* {footer === 3 && <FooterThree />} */}
