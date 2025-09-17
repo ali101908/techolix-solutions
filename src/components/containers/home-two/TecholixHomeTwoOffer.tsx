@@ -60,14 +60,8 @@ const TecholixHomeTwoOffer = () => {
       description: "Comprehensive cybersecurity solutions to protect your business from digital threats.",
       link: "cyber-security",
       icon: "fas fa-shield-alt"
-    },
-    {
-      id: "09",
-      title: "Mobile App Development",
-      description: "Native and cross-platform mobile applications for iOS and Android devices.",
-      link: "mobile-app-development",
-      icon: "fas fa-mobile-alt"
     }
+   
   ];
 
   const initialServices = services.slice(0, 3);
