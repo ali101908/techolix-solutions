@@ -6,7 +6,6 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-// import "../../../../mobile-project-slider.css";
 
 // Using string paths for better deployment compatibility
 const projectImages = {
@@ -64,407 +63,442 @@ const projectsData = [
 ];
 
 gsap.registerPlugin(ScrollTrigger);
+
 const ProjectMain = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [currentProject, setCurrentProject] = useState(0);
+  const [isScrollLocked, setIsScrollLocked] = useState(false);
+  const containerRef = useRef<HTMLElement>(null);
+  const projectsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 992);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
+    if (containerRef.current) {
+      // Initialize scroll-controlled project animation for all devices
+      const container = containerRef.current;
+      const projects = projectsRef.current.filter(Boolean);
+      
+      if (projects.length === 0) return;
+
+      // Set initial states - all projects hidden except first
+      projects.forEach((project, index) => {
+        if (project) {
+          gsap.set(project, {
+            y: index === 0 ? 0 : "100vh",
+            opacity: index === 0 ? 1 : 0,
+            zIndex: projectsData.length - index
+          });
+        }
+      });
+
+      // Create scroll trigger for smooth project transitions
+      projects.forEach((project, index) => {
+        if (project && index > 0) {
+          ScrollTrigger.create({
+            trigger: container,
+            start: `top+=${index * window.innerHeight} top`,
+            end: `top+=${(index + 1) * window.innerHeight} top`,
+            scrub: 1,
+            onUpdate: (self) => {
+              const progress = self.progress;
+              const prevProject = projects[index - 1];
+              
+              if (progress > 0) {
+                // Moving forward - current project slides up from bottom
+                gsap.to(project, {
+                  y: (1 - progress) * window.innerHeight,
+                  opacity: progress,
+                  duration: 0.1,
+                  ease: "none"
+                });
+                
+                // Previous project slides up and disappears completely
+                if (prevProject) {
+                  gsap.to(prevProject, {
+                    y: -progress * window.innerHeight,
+                    opacity: Math.max(0, 1 - progress * 2),
+                    duration: 0.1,
+                    ease: "none"
+                  });
+                }
+              } else {
+                // Moving backward - handle reverse animation smoothly
+                gsap.to(project, {
+                  y: (1 - Math.abs(progress)) * window.innerHeight,
+                  opacity: Math.abs(progress),
+                  duration: 0.1,
+                  ease: "none"
+                });
+                
+                if (prevProject) {
+                  gsap.to(prevProject, {
+                    y: Math.abs(progress) * window.innerHeight * 0.3,
+                    opacity: 1 - Math.abs(progress),
+                    duration: 0.1,
+                    ease: "none"
+                  });
+                }
+              }
+              
+              setCurrentProject(progress > 0.5 ? index : index - 1);
+            },
+            onLeave: () => {
+              // Ensure current project is fully visible and previous is completely hidden
+              gsap.set(project, { y: 0, opacity: 1 });
+              if (projects[index - 1]) {
+                gsap.set(projects[index - 1], { y: -window.innerHeight, opacity: 0 });
+              }
+            },
+            onEnterBack: () => {
+              // When scrolling back, don't flash - let onUpdate handle the smooth transition
+              // Just ensure the current project starts from the right position
+              gsap.set(project, { y: "100vh", opacity: 0 });
+            },
+            onLeaveBack: () => {
+              // When leaving backwards, ensure previous project is ready
+              if (projects[index - 1]) {
+                gsap.set(projects[index - 1], { y: 0, opacity: 1 });
+              }
+              gsap.set(project, { y: "100vh", opacity: 0 });
+            }
+          });
+        }
+      });
+
+      // Pin the entire container
+      ScrollTrigger.create({
+        trigger: container,
+        start: "top top",
+        end: `+=${window.innerHeight * projectsData.length}`,
+        pin: true,
+        pinSpacing: true
+      });
+
+      return () => {
+        ScrollTrigger.getAll().forEach(st => st.kill());
+      };
+    }
   }, []);
+
+  const addToProjectsRef = (el: HTMLDivElement | null, index: number) => {
+    if (el && !projectsRef.current[index]) {
+      projectsRef.current[index] = el;
+    }
+  };
 
   return (
     <>
-      {isMobile ? (
-        // Mobile Swiper Layout
-        <section className="section project-mobile-slider">
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                <div className="section__header text-center">
-                  <h2 className="title title-anim">Our Recent Projects</h2>
-                  <p>Swipe to explore our portfolio</p>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12">
-                <Swiper
-                  slidesPerView={1}
-                  spaceBetween={20}
-                  loop={true}
-                  pagination={{
-                    clickable: true,
-                    el: '.project-pagination'
-                  }}
-                  navigation={{
-                    nextEl: '.project-next',
-                    prevEl: '.project-prev'
-                  }}
-                  autoplay={{
-                    delay: 4000,
-                    disableOnInteraction: false,
-                  }}
-                  modules={[Navigation, Pagination, Autoplay]}
-                  className="project-mobile-swiper"
-                  breakpoints={{
-                    576: {
-                      slidesPerView: 1.2,
-                      spaceBetween: 20,
-                    },
-                    768: {
-                      slidesPerView: 1.5,
-                      spaceBetween: 30,
-                    }
-                  }}
-                >
-                  {projectsData.map((project, index) => (
-                    <SwiperSlide key={index}>
-                      <div className="project-mobile-card mx-auto">
-                        <div className="project-mobile-thumb">
-                          <Link href={project.link} target="_blank">
-                            <Image 
-                              src={project.image} 
-                              alt={project.alt} 
-                              width={400} 
-                              height={300}
-                              priority={index === 0}
-                              placeholder="blur"
-                              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                              style={{ width: '100%', height: 'auto' }}
-                            />
-                          </Link>
-                        </div>
-                        <div className="project-mobile-content text-center">
-                          <h3 className="text-center mb-0">
-                            <Link href={project.link} target="_blank" className=" text-center">
-                              {project.title}
-                              <br />
-                              {project.subtitle}
-                            </Link>
-                          </h3>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-                
-                {/* Navigation buttons */}
-                {/* <div className="project-mobile-navigation d-flex justify-content-center align-items-center mt-4">
-                  <button className="project-prev me-3">
-                    <i className="fa-light fa-angle-left"></i>
-                  </button>
-                  <div className="project-pagination mx-3"></div>
-                  <button className="project-next ms-3">
-                    <i className="fa-light fa-angle-right"></i>
-                  </button>
-                </div> */}
+      {/* Unified Scroll-Controlled Layout for All Devices */}
+      <section className="section project-scroll-unified" ref={containerRef}>
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <div className="section__header text-center mb-5">
+                <h2 className="title title-anim">Our Recent Projects</h2>
+                <p>Scroll to explore our portfolio</p>
               </div>
             </div>
           </div>
-        </section>
-      ) : (
-        // Desktop Alternating Layout
-        <section className="section project-desktop">
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                <div className="section__header text-center mb-5">
-                  <h2 className="title title-anim">Our Recent Projects</h2>
-                  <p>Explore our portfolio of successful digital solutions</p>
-                </div>
-              </div>
-            </div>
-            
+          
+          <div className="projects-scroll-container">
             {projectsData.map((project, index) => (
-              <div key={index} className={`row align-items-center mb-5 project-row ${index % 2 === 0 ? 'project-left' : 'project-right'}`}>
-                {index % 2 === 0 ? (
-                  // Even index: Image on left, content on right
-                  <>
-                    <div className="col-lg-6 col-md-6">
-                      <div className="project-desktop-thumb">
+              <div 
+                key={index} 
+                className="project-scroll-item"
+                ref={(el) => addToProjectsRef(el, index)}
+              >
+                <div className="row align-items-center">
+                  <div className={`col-lg-6 col-md-12 ${index % 2 === 0 ? '' : 'order-lg-2'}`}>
+                    <div className="project-scroll-thumb">
+                      <Link href={project.link} target="_blank">
+                        <Image 
+                          src={project.image} 
+                          alt={project.alt} 
+                          width={600} 
+                          height={400} 
+                          priority={index === 0}
+                          placeholder="blur"
+                          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                          className="img-fluid rounded"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                  <div className={`col-lg-6 col-md-12 ${index % 2 === 0 ? '' : 'order-lg-1'}`}>
+                    <div className="project-scroll-content">
+                      <div className="project-number">
+                        {String(index + 1).padStart(2, '0')}
+                      </div>
+                      <h3 className="project-title">
                         <Link href={project.link} target="_blank">
-                          <Image 
-                            src={project.image} 
-                            alt={project.alt} 
-                            width={600} 
-                            height={400} 
-                            priority={index === 0}
-                            placeholder="blur"
-                            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                            className="img-fluid rounded"
-                          />
+                          {project.title}
                         </Link>
-                      </div>
+                      </h3>
+                      <p className="project-subtitle">{project.subtitle}</p>
+                      <Link href={project.link} target="_blank" className="btn btn--primary mt-3">
+                        View Project
+                        <i className="fa-sharp fa-regular fa-arrow-up-right"></i>
+                      </Link>
                     </div>
-                    <div className="col-lg-6 col-md-6">
-                      <div className="project-desktop-content">
-                        <h3 className="project-title">
-                          <Link href={project.link} target="_blank">
-                            {project.title}
-                          </Link>
-                        </h3>
-                        <p className="project-subtitle">{project.subtitle}</p>
-                        <Link href={project.link} target="_blank" className="btn btn--primary mt-3">
-                          View Project
-                          <i className="fa-sharp fa-regular fa-arrow-up-right"></i>
-                        </Link>
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  // Odd index: Content on left, image on right
-                  <>
-                    <div className="col-lg-6 col-md-6 order-md-2">
-                      <div className="project-desktop-thumb">
-                        <Link href={project.link} target="_blank">
-                          <Image 
-                            src={project.image} 
-                            alt={project.alt} 
-                            width={600} 
-                            height={400} 
-                            priority={index === 0}
-                            placeholder="blur"
-                            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                            className="img-fluid rounded"
-                          />
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6 order-md-1">
-                      <div className="project-desktop-content">
-                        <h3 className="project-title">
-                          <Link href={project.link} target="_blank">
-                            {project.title}
-                          </Link>
-                        </h3>
-                        <p className="project-subtitle">{project.subtitle}</p>
-                        <Link href={project.link} target="_blank" className="btn btn--primary mt-3">
-                          View Project
-                          <i className="fa-sharp fa-regular fa-arrow-up-right"></i>
-                        </Link>
-                      </div>
-                    </div>
-                  </>
-                )}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
       
       <style jsx>{`
-        /* Desktop Project Styles */
-        .project-desktop {
-          padding: 80px 0;
-        }
-        
-        .project-row {
-          margin-bottom: 80px !important;
-          opacity: 0;
-          transform: translateY(50px);
-          animation: fadeInUp 0.8s ease-out forwards;
-        }
-        
-        .project-row:nth-child(even) {
-          animation-delay: 0.2s;
-        }
-        
-        .project-row:nth-child(odd) {
-          animation-delay: 0.1s;
-        }
-        
-        @keyframes fadeInUp {
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .project-desktop-thumb {
+        /* Unified Scroll-Controlled Project Styles for All Devices */
+        .project-scroll-unified {
+          height: 100vh;
           position: relative;
           overflow: hidden;
-          border-radius: 15px;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-          transition: all 0.4s ease;
         }
         
-        .project-desktop-thumb:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        .projects-scroll-container {
+          position: relative;
+          height: 100vh;
+          width: 100%;
         }
         
-        .project-desktop-thumb img {
-          transition: transform 0.4s ease;
+        .project-scroll-item {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          z-index: 1;
+          will-change: transform, opacity;
         }
         
-        .project-desktop-thumb:hover img {
-          transform: scale(1.05);
+        .project-scroll-item .row {
+          width: 100%;
+          margin: 0;
         }
         
-        .project-desktop-content {
-          padding: 0 30px;
+        .project-scroll-thumb {
+          position: relative;
+          overflow: hidden;
+          border-radius: 20px;
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+          transition: all 0.6s ease;
         }
         
-        .project-left .project-desktop-content {
-          padding-left: 40px;
+        .project-scroll-thumb:hover {
+          transform: translateY(-15px) scale(1.02);
+          box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
         }
         
-        .project-right .project-desktop-content {
-          padding-right: 40px;
+        .project-scroll-thumb img {
+          transition: transform 0.6s ease;
+        }
+        
+        .project-scroll-thumb:hover img {
+          transform: scale(1.1);
+        }
+        
+        .project-scroll-content {
+          padding: 0 50px;
+          position: relative;
+        }
+        
+        .project-number {
+          position: absolute;
+          top: -20px;
+          left: 0;
+          font-size: 120px;
+          font-weight: 900;
+          color: rgba(255, 255, 255, 0.05);
+          line-height: 1;
+          z-index: -1;
         }
         
         .project-title {
-          font-size: 2.5rem;
-          font-weight: 700;
-          margin-bottom: 15px;
+          font-size: 3.5rem;
+          font-weight: 800;
+          margin-bottom: 20px;
           color: #fff;
-          line-height: 1.2;
+          line-height: 1.1;
+          position: relative;
+          z-index: 2;
         }
         
         .project-title a {
           color: inherit;
           text-decoration: none;
-          transition: color 0.3s ease;
+          transition: color 0.4s ease;
+          background: linear-gradient(135deg, #fff, #f0f0f0);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
         
         .project-title a:hover {
-          color: #007bff;
+          background: linear-gradient(135deg, #ff7425, #ff9900);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
         
         .project-subtitle {
-          font-size: 1.2rem;
-          color: rgba(255, 255, 255, 0.7);
-          margin-bottom: 20px;
+          font-size: 1.4rem;
+          color: rgba(255, 255, 255, 0.8);
+          margin-bottom: 30px;
           font-weight: 500;
+          letter-spacing: 0.5px;
         }
         
         .btn--primary {
-          background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+          background: linear-gradient(135deg, #ff7425 0%, #ff9900 100%);
           border: none;
-          padding: 12px 30px;
+          padding: 15px 40px;
           border-radius: 50px;
           color: white;
           text-decoration: none;
-          font-weight: 600;
+          font-weight: 700;
           display: inline-flex;
           align-items: center;
-          gap: 8px;
-          transition: all 0.3s ease;
+          gap: 12px;
+          transition: all 0.4s ease;
+          font-size: 16px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
         }
         
         .btn--primary:hover {
-          background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
-          transform: translateY(-2px);
-          box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+          background: linear-gradient(135deg, #ff9900 0%, #ffaa00 100%);
+          transform: translateY(-3px);
+          box-shadow: 0 15px 35px rgba(255, 116, 37, 0.4);
           color: white;
           text-decoration: none;
         }
         
         .btn--primary i {
-          transition: transform 0.3s ease;
+          transition: transform 0.4s ease;
+          font-size: 14px;
         }
         
         .btn--primary:hover i {
-          transform: translate(3px, -3px);
+          transform: translate(5px, -5px);
         }
         
-        /* Mobile Project Styles */
-        .project-mobile-slider {
-          padding: 60px 0;
-        }
-        
-        .project-mobile-card {
-          background: rgba(255, 255, 255, 0.05);
-          border-radius: 20px;
-          padding: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-          max-width: 350px;
-        }
-        
-        .project-mobile-thumb {
-          border-radius: 15px;
-          overflow: hidden;
-          margin-bottom: 20px;
-        }
-        
-        .project-mobile-content h3 {
-          color: #fff;
-          font-size: 1.3rem;
-          font-weight: 600;
-          line-height: 1.4;
-        }
-        
-        .project-mobile-content h3 a {
-          color: inherit;
-          text-decoration: none;
-        }
-        
-        .project-mobile-swiper {
-          padding: 20px 0 60px 0;
-        }
-        
-        .project-mobile-swiper .swiper-pagination {
-          bottom: 20px;
-        }
-        
-        .project-mobile-swiper .swiper-pagination-bullet {
-          background: rgba(255, 255, 255, 0.3);
-          opacity: 1;
-        }
-        
-        .project-mobile-swiper .swiper-pagination-bullet-active {
-          background: #007bff;
-        }
-        
-        /* Responsive adjustments */
+        /* Tablet Responsive */
         @media (max-width: 1199px) {
           .project-title {
-            font-size: 2rem;
+            font-size: 3rem;
           }
           
-          .project-desktop-content {
-            padding: 0 20px;
+          .project-number {
+            font-size: 100px;
           }
           
-          .project-left .project-desktop-content {
-            padding-left: 25px;
-          }
-          
-          .project-right .project-desktop-content {
-            padding-right: 25px;
+          .project-scroll-content {
+            padding: 0 30px;
           }
         }
         
         @media (max-width: 991px) {
-          .project-desktop-content {
-            padding: 30px 0 0 0;
-            text-align: center;
+          .project-title {
+            font-size: 2.5rem;
           }
           
-          .project-left .project-desktop-content,
-          .project-right .project-desktop-content {
-            padding: 30px 0 0 0;
+          .project-number {
+            font-size: 80px;
           }
           
-          .project-row {
-            margin-bottom: 60px !important;
+          .project-scroll-content {
+            padding: 0 20px;
           }
         }
         
-        @media (max-width: 767px) {
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+          .project-scroll-item {
+            padding: 20px 0;
+          }
+          
+          .project-scroll-content {
+            padding: 30px 15px;
+            text-align: center;
+          }
+          
+          .project-number {
+            position: relative;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 20px;
+            font-size: 60px;
+          }
+          
+          .project-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+          }
+          
+          .project-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+          }
+          
+          .btn--primary {
+            padding: 12px 30px;
+            font-size: 14px;
+          }
+          
+          .project-scroll-thumb {
+            margin-bottom: 30px;
+            border-radius: 15px;
+          }
+          
+          .project-scroll-thumb:hover {
+            transform: translateY(-5px) scale(1.01);
+          }
+        }
+        
+        @media (max-width: 576px) {
           .project-title {
             font-size: 1.8rem;
           }
           
           .project-subtitle {
-            font-size: 1.1rem;
+            font-size: 1rem;
+          }
+          
+          .project-number {
+            font-size: 50px;
+          }
+          
+          .project-scroll-content {
+            padding: 20px 10px;
+          }
+          
+          .btn--primary {
+            padding: 10px 25px;
+            font-size: 13px;
+          }
+        }
+        
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+          .project-scroll-thumb:hover {
+            transform: none;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+          }
+          
+          .project-scroll-thumb:hover img {
+            transform: none;
+          }
+          
+          .btn--primary:hover {
+            transform: none;
+            background: linear-gradient(135deg, #ff7425 0%, #ff9900 100%);
+          }
+          
+          .btn--primary:hover i {
+            transform: none;
           }
         }
       `}</style>
