@@ -60,12 +60,19 @@ const TecholixHomeTwoOffer = () => {
       description: "Comprehensive cybersecurity solutions to protect your business from digital threats.",
       link: "cyber-security",
       icon: "fas fa-shield-alt"
+    },
+    {
+      id: "09",
+      title: "Cloud Infrastructure",
+      description: "Scalable cloud solutions with migration, monitoring, and cost optimization for enterprise growth.",
+      link: "cloud-infrastructure", 
+      icon: "fas fa-cloud"
     }
    
   ];
 
-  const initialServices = services.slice(0, 3);
-  const additionalServices = services.slice(3);
+  const initialServices = services.slice(0, 4); // Show first 4 services including Cloud Infrastructure
+  const additionalServices = services.slice(4);
 
   const toggleServices = () => {
     setShowAllServices(!showAllServices);
@@ -85,10 +92,10 @@ const TecholixHomeTwoOffer = () => {
           </div>
         </div>
         
-        {/* Initial 3 Services */}
+        {/* Initial 4 Services */}
         <div className="row justify-content-center mt-5">
           {initialServices.map((service, index) => (
-            <div key={index} className="col-12 col-md-6 col-lg-4 mb-4">
+            <div key={index} className="col-12 col-md-6 col-lg-3 mb-4">
               <div className="service-card fade-top">
                 <div className="service-number">
                   <span>{service.id}</span>
@@ -115,7 +122,7 @@ const TecholixHomeTwoOffer = () => {
         <div className={`additional-services ${showAllServices ? 'expanded' : ''}`}>
           <div className="row justify-content-center">
             {additionalServices.map((service, index) => (
-              <div key={index + 3} className="col-12 col-md-6 col-lg-4 mb-4">
+              <div key={index + 4} className="col-12 col-md-6 col-lg-4 mb-4">
                 <div className="service-card fade-in">
                   <div className="service-number">
                     <span>{service.id}</span>
@@ -392,6 +399,20 @@ const TecholixHomeTwoOffer = () => {
           .additional-services.expanded {
             max-height: 3000px;
           }
+          
+          /* Mobile: Stack all services in single column */
+          .col-lg-3 {
+            flex: 0 0 100%;
+            max-width: 100%;
+          }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1199px) {
+          /* Tablet: 2 columns for initial services */
+          .col-lg-3 {
+            flex: 0 0 50%;
+            max-width: 50%;
+          }
         }
         
         .fade-top {
@@ -403,6 +424,7 @@ const TecholixHomeTwoOffer = () => {
         .fade-top:nth-child(1) { animation-delay: 0.1s; }
         .fade-top:nth-child(2) { animation-delay: 0.3s; }
         .fade-top:nth-child(3) { animation-delay: 0.5s; }
+        .fade-top:nth-child(4) { animation-delay: 0.7s; }
         
         @keyframes fadeInUp {
           to {

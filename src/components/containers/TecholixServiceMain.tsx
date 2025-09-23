@@ -265,6 +265,34 @@ const TecholixServiceMain = () => {
                     </div>
                   </div>
                 </SwiperSlide>
+                <SwiperSlide>
+                  <div className="service-t-single-wrapper">
+                    <div className="service-t__slider-single">
+                      <div className="intro">
+                        <span className="sub-title">
+                          09
+                          <i className="fa-solid fa-arrow-right"></i>
+                        </span>
+                        <h4>
+                          <Link href="cloud-infrastructure">Cloud Infrastructure</Link>
+                        </h4>
+                      </div>
+                      <ul>
+                        <li>Cloud Migration & Strategy</li>
+                        <li>Multi-Cloud Architecture</li>
+                        <li>DevOps & Automation</li>
+                        <li>24/7 Monitoring & Support</li>
+                        <li>Cost Optimization</li>
+                      </ul>
+                      <div className="cta">
+                        <Link href="cloud-infrastructure">
+                          <i className="icon-arrow-top-right"></i>
+                          <span>service details</span>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
               </Swiper>
             </div>
           </div>

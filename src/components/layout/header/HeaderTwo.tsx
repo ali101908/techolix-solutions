@@ -77,7 +77,7 @@ const HeaderTwo = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
                         >
                           Services
                         </button>
-                        <ul className="navbar__sub-menu">
+                        <ul className="navbar__sub-menu services-dropdown">
                           <li>
                             <Link href="our-services">Our Services</Link>
                           </li>
@@ -104,6 +104,9 @@ const HeaderTwo = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
                           </li>
                           <li>
                             <Link href="cyber-security">Cyber Security</Link>
+                          </li>
+                          <li>
+                            <Link href="cloud-infrastructure">Cloud Infrastructure</Link>
                           </li>
                         </ul>
                       </li>
@@ -141,6 +144,73 @@ const HeaderTwo = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
         </div>
       </header>
       <Offcanvas openNav={openNav} setOpenNav={setOpenNav} />
+      
+      <style jsx>{`
+        .services-dropdown {
+          max-height: 70vh;
+          overflow-y: auto;
+          padding-right: 10px;
+        }
+        
+        /* Custom Scrollbar Styling */
+        .services-dropdown::-webkit-scrollbar {
+          width: 6px;
+        }
+        
+        .services-dropdown::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 3px;
+        }
+        
+        .services-dropdown::-webkit-scrollbar-thumb {
+          background: #ff7425;
+          border-radius: 3px;
+          transition: background 0.3s ease;
+        }
+        
+        .services-dropdown::-webkit-scrollbar-thumb:hover {
+          background: #ff9900;
+        }
+        
+        /* Firefox scrollbar */
+        .services-dropdown {
+          scrollbar-width: thin;
+          scrollbar-color: #ff7425 rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive adjustments for smaller screens */
+        @media (max-height: 800px) {
+          .services-dropdown {
+            max-height: 60vh;
+          }
+        }
+        
+        @media (max-height: 700px) {
+          .services-dropdown {
+            max-height: 50vh;
+          }
+        }
+        
+        @media (max-height: 600px) {
+          .services-dropdown {
+            max-height: 40vh;
+          }
+        }
+        
+        /* Small laptop screens */
+        @media (max-width: 1366px) and (max-height: 768px) {
+          .services-dropdown {
+            max-height: 45vh;
+          }
+        }
+        
+        /* Very small screens */
+        @media (max-width: 768px) {
+          .services-dropdown {
+            max-height: 60vh;
+          }
+        }
+      `}</style>
       
      
 
