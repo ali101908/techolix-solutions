@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const CloudInfrastructureProcess = () => {
+  const [openStep, setOpenStep] = useState(-1);
   return (
     <section className="section ux-process fade-wrapper">
       <div className="container">
@@ -20,149 +21,165 @@ const CloudInfrastructureProcess = () => {
         <div className="row">
           <div className="col-12">
             <div className="service-f-wrapper">
-              <div className="service-f-single fade-top">
+              {/* Step 1 */}
+              <div className={"service-f-single fade-top" + (openStep === 0 ? " service-f-single-active" : "") }>
                 <div className="single-item">
                   <div className="intro-btn">
                     <h4>Assessment & Strategy</h4>
                   </div>
-                  <div className="body-cn">
+                  {/* <div className="body-cn">
                     <p>
                       We begin with a comprehensive assessment of your current infrastructure, applications, and business requirements. Our cloud architects analyze workloads, dependencies, and compliance needs to develop a customized cloud strategy that aligns with your business objectives and budget constraints.
                     </p>
-                  </div>
+                  </div> */}
                 </div>
                 <button
                   aria-label="service-f"
                   className="toggle-service-f"
+                  onClick={() => setOpenStep(openStep === 0 ? -1 : 0)}
                 ></button>
-                <div className="p-single">
-                  <div className="row gaper">
-                    <div className="col-12 col-lg-6">
-                      <ul>
-                        <li>Current Infrastructure Audit</li>
-                        <li>Application Dependency Mapping</li>
-                        <li>Cloud Readiness Assessment</li>
-                        <li>Migration Strategy Development</li>
-                      </ul>
-                    </div>
-                    <div className="col-12 col-lg-6">
-                      <ul>
-                        <li>Cost-Benefit Analysis</li>
-                        <li>Risk Assessment & Mitigation</li>
-                        <li>Compliance Requirements Review</li>
-                        <li>Timeline & Milestone Planning</li>
-                      </ul>
+                {openStep === 0 && (
+                  <div className="p-single">
+                    <div className="row gaper">
+                      <div className="col-12 col-lg-6">
+                        <ul>
+                          <li>Current Infrastructure Audit</li>
+                          <li>Application Dependency Mapping</li>
+                          <li>Cloud Readiness Assessment</li>
+                          <li>Migration Strategy Development</li>
+                        </ul>
+                      </div>
+                      <div className="col-12 col-lg-6">
+                        <ul>
+                          <li>Cost-Benefit Analysis</li>
+                          <li>Risk Assessment & Mitigation</li>
+                          <li>Compliance Requirements Review</li>
+                          <li>Timeline & Milestone Planning</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
-              <div className="service-f-single fade-top">
+              {/* Step 2 */}
+              <div className={"service-f-single fade-top" + (openStep === 1 ? " service-f-single-active" : "") }>
                 <div className="single-item">
                   <div className="intro-btn">
                     <h4>Architecture Design & Planning</h4>
                   </div>
-                  <div className="body-cn">
+                  {/* <div className="body-cn">
                     <p>
                       Our certified cloud architects design scalable, secure, and cost-effective cloud architectures tailored to your specific needs. We create detailed infrastructure blueprints, security frameworks, and automation strategies using industry best practices and cloud-native technologies.
                     </p>
-                  </div>
+                  </div> */}
                 </div>
                 <button
                   aria-label="service-f"
                   className="toggle-service-f"
+                  onClick={() => setOpenStep(openStep === 1 ? -1 : 1)}
                 ></button>
-                <div className="p-single">
-                  <div className="row gaper">
-                    <div className="col-12 col-lg-6">
-                      <ul>
-                        <li>Cloud Architecture Design</li>
-                        <li>Network & Security Planning</li>
-                        <li>Auto-scaling Configuration</li>
-                        <li>Disaster Recovery Design</li>
-                      </ul>
-                    </div>
-                    <div className="col-12 col-lg-6">
-                      <ul>
-                        <li>Multi-Cloud Strategy</li>
-                        <li>DevOps Pipeline Design</li>
-                        <li>Monitoring & Alerting Setup</li>
-                        <li>Cost Optimization Planning</li>
-                      </ul>
+                {openStep === 1 && (
+                  <div className="p-single">
+                    <div className="row gaper">
+                      <div className="col-12 col-lg-6">
+                        <ul>
+                          <li>Cloud Architecture Design</li>
+                          <li>Network & Security Planning</li>
+                          <li>Auto-scaling Configuration</li>
+                          <li>Disaster Recovery Design</li>
+                        </ul>
+                      </div>
+                      <div className="col-12 col-lg-6">
+                        <ul>
+                          <li>Multi-Cloud Strategy</li>
+                          <li>DevOps Pipeline Design</li>
+                          <li>Monitoring & Alerting Setup</li>
+                          <li>Cost Optimization Planning</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
-              <div className="service-f-single fade-top">
+              {/* Step 3 */}
+              <div className={"service-f-single fade-top" + (openStep === 2 ? " service-f-single-active" : "") }>
                 <div className="single-item">
                   <div className="intro-btn">
                     <h4>Migration & Implementation</h4>
                   </div>
                   <div className="body-cn">
-                    <p>
+                    {/* <p>
                       We execute seamless cloud migrations using proven methodologies and automation tools. Our phased approach minimizes downtime and business disruption while ensuring data integrity and application performance throughout the migration process.
-                    </p>
+                    </p> */}
                   </div>
                 </div>
                 <button
                   aria-label="service-f"
                   className="toggle-service-f"
+                  onClick={() => setOpenStep(openStep === 2 ? -1 : 2)}
                 ></button>
-                <div className="p-single">
-                  <div className="row gaper">
-                    <div className="col-12 col-lg-6">
-                      <ul>
-                        <li>Environment Provisioning</li>
-                        <li>Application Migration</li>
-                        <li>Data Transfer & Sync</li>
-                        <li>Security Implementation</li>
-                      </ul>
-                    </div>
-                    <div className="col-12 col-lg-6">
-                      <ul>
-                        <li>Infrastructure as Code</li>
-                        <li>CI/CD Pipeline Setup</li>
-                        <li>Performance Testing</li>
-                        <li>User Training & Documentation</li>
-                      </ul>
+                {openStep === 2 && (
+                  <div className="p-single">
+                    <div className="row gaper">
+                      <div className="col-12 col-lg-6">
+                        <ul>
+                          <li>Environment Provisioning</li>
+                          <li>Application Migration</li>
+                          <li>Data Transfer & Sync</li>
+                          <li>Security Implementation</li>
+                        </ul>
+                      </div>
+                      <div className="col-12 col-lg-6">
+                        <ul>
+                          <li>Infrastructure as Code</li>
+                          <li>CI/CD Pipeline Setup</li>
+                          <li>Performance Testing</li>
+                          <li>User Training & Documentation</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
-              <div className="service-f-single fade-top">
+              {/* Step 4 */}
+              <div className={"service-f-single fade-top" + (openStep === 3 ? " service-f-single-active" : "") }>
                 <div className="single-item">
                   <div className="intro-btn">
                     <h4>Optimization & Monitoring</h4>
                   </div>
                   <div className="body-cn">
-                    <p>
+                    {/* <p>
                       Post-migration, we continuously monitor and optimize your cloud infrastructure for performance, security, and cost-efficiency. Our 24/7 support team ensures maximum uptime while implementing ongoing improvements and updates.
-                    </p>
+                    </p> */}
                   </div>
                 </div>
                 <button
                   aria-label="service-f"
                   className="toggle-service-f"
+                  onClick={() => setOpenStep(openStep === 3 ? -1 : 3)}
                 ></button>
-                <div className="p-single">
-                  <div className="row gaper">
-                    <div className="col-12 col-lg-6">
-                      <ul>
-                        <li>Performance Monitoring</li>
-                        <li>Cost Optimization</li>
-                        <li>Security Monitoring</li>
-                        <li>Backup Verification</li>
-                      </ul>
-                    </div>
-                    <div className="col-12 col-lg-6">
-                      <ul>
-                        <li>24/7 Technical Support</li>
-                        <li>Regular Health Checks</li>
-                        <li>Capacity Planning</li>
-                        <li>Continuous Improvement</li>
-                      </ul>
+                {openStep === 3 && (
+                  <div className="p-single">
+                    <div className="row gaper">
+                      <div className="col-12 col-lg-6">
+                        <ul>
+                          <li>Performance Monitoring</li>
+                          <li>Cost Optimization</li>
+                          <li>Security Monitoring</li>
+                          <li>Backup Verification</li>
+                        </ul>
+                      </div>
+                      <div className="col-12 col-lg-6">
+                        <ul>
+                          <li>24/7 Technical Support</li>
+                          <li>Regular Health Checks</li>
+                          <li>Capacity Planning</li>
+                          <li>Continuous Improvement</li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
