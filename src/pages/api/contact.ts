@@ -20,7 +20,7 @@ export default async function handler(
 
   // 1️⃣ Email to Admin (shows user as reply-to)
   const adminMsg = {
-    to: "mali101908@gmail.com", // your admin email
+    to: "info@techolixsolutions.com", // your admin email
     from: {
       email: "info@techolixsolutions.com",
       name: "TecholixSolutions"
