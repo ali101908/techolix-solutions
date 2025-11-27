@@ -92,8 +92,8 @@ const TermsAndConditions = () => {
                     If you have any questions about these Terms and Conditions, please contact us:
                   </p>
                   <ul className="contact-list">
-                    <li>Email: Info@techolixsolutions.com</li>
-                    <li>Phone: +1 (302) 579-5453</li>
+                    <li>Email: info@techolixsolutions.com</li>
+                    <li>Phone: +92 (339) 2010190</li>
                   </ul>
                 </div>
 

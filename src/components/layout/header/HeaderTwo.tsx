@@ -124,8 +124,8 @@ const HeaderTwo = ({ openNav, handleNav, setOpenNav }: HeaderProps) => {
                   <div className="navbar__options">
                     <div className="navbar__mobile-options d-none d-sm-flex">
                        
-                      <Link href="https://wa.me/13025795453?text=Hello%20TecholixSolutions!%20I'm%20interested%20in%20your%20services." className="btn btn--secondary">
-                       <i className="fa-brands fa-whatsapp"></i>   +1 (302) 579-5453
+                      <Link href="https://wa.me/+923392010190?text=Hello%20TecholixSolutions!%20I'm%20interested%20in%20your%20services." className="btn btn--secondary">
+                       <i className="fa-brands fa-whatsapp"></i>   +92 (339) 2010-190
                       </Link>
                     </div>
                     

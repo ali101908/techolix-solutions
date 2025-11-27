@@ -105,8 +105,8 @@ const ContactMain = () => {
               </div>
               <div className="content">
                 <h4>Phone & Contact</h4>
-                <p><Link href="tel:+13025795453">+1 (302) 579-5453</Link></p>
-                <p><Link href="tel:+447727840213">+44 (772) 7840213</Link></p>
+                <p><Link href="tel:+13025795453">+92 (339) 2010190</Link></p>
+                {/* <p><Link href="tel:+447727840213">+44 (772) 7840213</Link></p> */}
               </div>
             </div>
           </div>
@@ -124,7 +124,7 @@ const ContactMain = () => {
             </div>
           </div>
           {/* Location */}
-          <div className="col-12 col-sm-6 col-xl-3">
+          {/* <div className="col-12 col-sm-6 col-xl-3">
             <div className="contact-m__single topy-tilt fade-top">
               <div className="thumb">
                 <Image src="/images/location.png" alt="Location" width={60} height={60} />
@@ -142,7 +142,7 @@ const ContactMain = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* Office Hours */}
           <div className="col-12 col-sm-6 col-xl-3">
             <div className="contact-m__single topy-tilt fade-top">
@@ -161,7 +161,7 @@ const ContactMain = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="row">
+        {/* <div className="row">
           <div className="col-12">
             <div className="map-wrapper">
               <div className="row justify-content-center">
@@ -221,7 +221,7 @@ const ContactMain = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       
       <style jsx>{`
