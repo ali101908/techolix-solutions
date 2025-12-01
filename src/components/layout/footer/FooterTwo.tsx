@@ -166,7 +166,7 @@ const FooterTwo = () => {
                   <span>Dribble</span>
                 </Link>
               </div> */}
-              {/* <div className="footer__single-meta section__content-cta">
+              <div className="footer__single-meta section__content-cta">
                 <Link  href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=/maps/place/1460%2BBroadway,%2BNew%2BYork,%2BNY%2B10036,%2BUSA/data%3D!4m2!3m1!1s0x89c259ab29218b1d:0x34803c530c7340ec%3Fsa%3DX%26ved%3D1t:242%26ictx%3D111&ved=2ahUKEwiCjerp89CPAxWKVaQEHXzkOysQ8gF6BAgSEAI&usg=AOvVaw3ht_DPHJOk5N5olfpovW-2" target="_blank">
                   <i className="fa-sharp fa-solid fa-location-dot"></i>
                   1460 Broadway, New York, NY 10036, USA
@@ -183,7 +183,7 @@ const FooterTwo = () => {
                   <i className="fa-sharp fa-solid fa-phone-volume"></i>
                   +44 (772) 7840213
                 </Link>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>

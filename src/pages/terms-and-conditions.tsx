@@ -93,7 +93,7 @@ const TermsAndConditions = () => {
                   </p>
                   <ul className="contact-list">
                     <li>Email: info@techolixsolutions.com</li>
-                    <li>Phone: +92 (339) 2010190</li>
+                    <li>Phone: +1 (302) 5795453</li>
                   </ul>
                 </div>
 
